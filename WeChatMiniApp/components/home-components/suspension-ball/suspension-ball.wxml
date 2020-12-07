@@ -1,0 +1,24 @@
+
+  
+  <view class=" fab-box fab    " style="{{'right: '+31+'px; bottom:'+122+'px;'}}">
+    <view  class="fab-circle  {{horizontal==='left'&&direction==='horizontal'?'left':''}} {{vertical==='top'&&direction==='vertical'?'top':''}}{{vertical==='bottom'&&direction==='vertical'?'bottom':''}}{{horizontal==='right'&&direction==='horizontal'?'right':''}}"
+      style="{{'background-color:'+pattern.buttonColor+';'}}"   bindtap="open"   >
+      <image   class="  icon icon-jia     {{showContent==true?'active':''}}" src="/static/image/menu.png" mode></image>
+    </view>
+    <view class=" fab-content {{horizontal==='left'?'left':''}} {{horizontal==='right'?'right':''}} {{direction==='vertical'?'flexDirection':''}} {{flexDirectionStart==true?'flexDirectionStart':''}} {{flexDirectionEnd==true?'flexDirectionEnd':''}} " style="{{'width:'+boxWidth+';'+'height:'+boxHeight+';'+'background:'+pattern.backgroundColor+';'}}">
+      <block wx:if="{{flexDirectionStart==true||horizontalLeft==true}}">
+        <view class="fab-item first "></view>
+      </block>
+      <block wx:for="{{content}}" wx:for-item="item" wx:for-index="index" wx:key="index"  >
+        <button wx:if="{{showContent==true}}"  open-type="{{item.openType}}"   class="fab-item   {{showContent==true?'active':''}} noButtonStyle" style="{{'color:'+(item.active?pattern.selectedColor:pattern.color)+';'}}"     data-item="{{item}}"  bindtap="taps"    >
+          <!-- <image class="content-image icon " src="{{item.active?item.selectedIconPath:item.iconPath}}" mode></image> -->
+          <text style="font-size:22rpx;" >{{item.text}}</text>
+        </button>
+      </block>
+      <block wx:if="{{flexDirectionEnd==true||horizontalRight==true}}">
+        <view class="fab-item first "></view>
+      </block>
+    </view>
+  </view>
+
+  

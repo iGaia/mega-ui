@@ -1,0 +1,25 @@
+<!-- 外层pages -->
+<view class='pages'>
+  <!-- 头部 -->
+  <view class='head'>
+    <image class='head_img' src='http://simg.liecdn.cn/pic/ae/2e/13/ae2e1304be1f0231a97b7b70ea4312be.jpg'></image>
+    <label class='head_name'>已签收</label>
+    <label class='head_title'>圆通速递：{{code}}</label>
+    <label class='head_tel_name'>官方客服:95559</label>
+    <label class="head_tell"></label>
+  </view>
+  <!-- 追踪 -->
+  <view class='logisit' wx:for="{{list}}"  wx:for-index="index" wx:key="*this">
+    <!-- 列表 -->
+    <view class='list'>
+          <view class='list_img center'  > <view   class="{{index==0?'dot-closing':'dot-closing2'  }}" ></view></view>
+      <view class='list_name_page'>
+        <!-- 列表名称 -->
+        <lable class='list_name'>{{item.name}}</lable>
+      </view>
+      <!-- 时间 -->
+      <view class='list_dates_page'>{{item.dates}}</view>
+    </view>
+    
+  </view>
+</view>

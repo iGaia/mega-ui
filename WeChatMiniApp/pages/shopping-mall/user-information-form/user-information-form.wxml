@@ -1,0 +1,98 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+
+
+  <view class=" " style='   background:#f1f1f1;height:{{windowHeight}}px;'>
+    <view style="height:15rpx;"></view>
+    <view class="  " style='margin-left:15rpx;   width:calc(100% - 30rpx);  height:calc(90% - 30rpx);background:#fff;border-radius: 25rpx;'>
+
+      <view style='height:25%;display:flex;'>
+        <view style='flex:2;' class='center'>
+          <image class="avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        </view>
+        <view style='flex:2; ' class='center mp-title-one-font-size'>
+          {{userInfo.nickName}}
+        </view>
+        <view style='flex:2; ' class='center'>
+        </view>
+      </view>
+
+<view class="weui-cell weui-cell_input  " style="height:10%;">
+        <view class="weui-cell__hd">
+          <view class="weui-label mp-text-one-font-size">姓名:</view>
+        </view>
+        <view class="weui-cell__bd "   style="margin-left: 35rpx;">
+          <input class="weui-input mp-text-one-font-size" type="text" placeholder="请输入姓名" name="name" value="{{name}}"></input>
+        </view>
+
+      </view>
+      <view class="weui-cell weui-cell_input  " style="height:10%;">
+        <view class="weui-cell__hd">
+          <view class="weui-label mp-text-one-font-size">手机号:</view>
+        </view>
+        <view class="weui-cell__bd "   style="margin-left: 35rpx;">
+          <input class="weui-input mp-text-one-font-size" type="number" placeholder="请输入手机号" name="phone" value="{{phone}}" ></input>
+        </view>
+        <!-- <button class='noButtonStyle mp-text-one-font-size' style='color:#E69664; position:absolute;right:25rpx;padding:5rpx;z-index:2000;' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button> -->
+      </view>
+      
+
+      <view class="weui-cell weui-cell_input  " style="height:10%;">
+        <view class="weui-cell__hd">
+          <view class="weui-label mp-text-one-font-size">性别:</view>
+        </view>
+        <view class="weui-cell__bd "   style="margin-left: 35rpx;">
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <input class="weui-input mp-text-one-font-size" type="text" placeholder="请选择性别" name="sex" value="{{sex}}" ></input>
+            <!-- <view class="weui-input mp-text-one-font-size">{{array[index]}}</view> -->
+          </picker>
+        </view>
+      </view>
+
+      <view class="weui-cell weui-cell_input  " style="height:10%;">
+        <view class="weui-cell__hd">
+          <view class="weui-label mp-text-one-font-size">生日:</view>
+        </view>
+        <view class="weui-cell__bd "   style="margin-left: 35rpx;">
+          <picker mode="date" value="{{birthday}}" start="1930-09-01" end="2020-01-1" bindchange="bindDateChange">
+           <input class="weui-input mp-text-one-font-size" type="text" placeholder="请选择生日" name="birthday" value="{{birthday}}" ></input>
+            <!-- <view class="weui-input mp-text-one-font-size">{{date}}</view> -->
+          </picker>
+        </view>
+      </view>
+
+
+
+
+
+    </view>
+
+
+    <view class="bottom-suspension" style='height:10vh;'>
+
+      <view style='width:100%;height:100%;' class='center'>
+
+        <button formType="submit"  class='center ' style='height:70%; border-radius: 25rpx;width:90%; margin-left:5%;margin-right:5%;background:#E59665;color:#fff;'> 提交 </button>
+
+
+      </view>
+
+
+
+    </view>
+  </view>
+
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+<dialog id='dialog' title='登录提示' content='小程序需要您的信息才能提供更好的服务哦' authorizedContent='getPhoneNumber' confirmText='知道了' bind:confirmEvent='confirmEvent' bind:bindgetphonenumber='bindgetphonenumber'>
+</dialog>

@@ -1,0 +1,48 @@
+<view style='background:#F0E6E6;height:100vh;'>
+	<view style='padding:15rpx;'>
+		<view style="margin-left:15rpx;color:#666;margin-bottom:15rpx;" class="mp-text-two-font-size">选择邀请的品牌</view>
+		<scroll-view style='background:#fff; border-radius: 25rpx;' scroll-y="{{true}}" class=''>
+
+			<view bindtap='selectBrand' data-index="{{index}}" data-brand="{{item.brand}}" data-status="1" wx:for-index="index" wx:for="{{barndList}}" wx:key="item" style='display:flex;width:100%;height:18vh; background:{{item.brand==selectBrand?"#FEEED7":"#fff"}};margin-bottom:15rpx;margin-top:{{index==0?"15rpx":"0px"}}; '>
+				<view style='flex:2;' class='center'>
+					<image mode='aspectFit' style='height:calc(100% - 15rpx);width:90%;margin-left:15rpx;' src="{{item.image}}"></image>
+				</view>
+				<view style=' flex:4;font-size:23rpx;display:flex; flex-flow: column;justify-content: center;'>
+					<text class="mp-text-one-font-size {{skin}}-color" style='margin-left:12px; font-weight: bold;margin-bottom: 5rpx;text-align: left;'> {{item.title}} </text>
+				</view>
+				<view style=' flex:1;font-size:23rpx;display:flex;flex-flow: column;justify-content: center;'>
+					<icon wx:if="{{item.brand==selectBrand}}" style='margin-left:4rpx;' class='center' type="success" size="40rpx" />
+				</view>
+			</view>
+		</scroll-view>
+		<!-- <scroll-view style='background:#fff; border-radius: 25rpx;margin-top:15rpx;' scroll-y="{{true}}" class=''>
+      <view style="margin-top:3vh;">
+        <view style="display:flex; padding:30rpx;">
+          <view style="flex:1;" class="center mp-text-one-font-size">
+            <view>设置称呼:</view>
+          </view>
+          <view style="flex:2;" class="center">
+            <input bindinput="nickNameChange" class=" mp-text-one-font-size" type="text" placeholder="填写被分享人称呼" name="name" value="{{name}}"></input>
+          </view>
+          <view style="flex:1;" class="center">
+            <view class='mp-text-one-font-size ' bindtap='copyInvitationCode' style='background:#fff;padding:8rpx 37rpx; color:#E8817F;border-radius:15rpx;background:#fbd09d;'>复制</view>
+          </view>
+        </view>
+        <view class="center mp-text-two-font-size " style=" color:#666;  margin-bottom:3vh;"> 输入被邀请者称呼，无备注则使用对方微信昵称。</view>
+      </view>
+    </scroll-view> -->
+	</view>
+	<!-- <view class="bottom-suspension" style='height:10%;'>
+    <view style='width:100%;height:100%;' class='center'>
+      <view bindtap='next' class='center bigButtonStyle' style='background:{{selectId!=-1?"#FDC095":"#666"}};color:#fff;'> 下一步 </view>
+    </view>
+  </view> -->
+</view>
+
+<view class="bottom-suspension center" style='height:10vh;width:100%;'>
+
+	<!-- bindtap="invite" -->
+	<button open-type="{{inviteButtonType}}" bindtap="judgeRequestInitiation" bindgetuserinfo="getUserInfo" class='center bigButtonStyle {{skin}}-background' style=''> {{inviteButtonName}} </button>
+
+</view>
+<!-- share -->

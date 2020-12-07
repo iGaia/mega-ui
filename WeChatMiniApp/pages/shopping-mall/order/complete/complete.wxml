@@ -1,0 +1,63 @@
+<!--pages/order/complete.wxml-->
+<view style="background:#f1f1f1;height:100vh">
+<view style="height:20%;" >
+<view style="height:2vh;"></view>
+  <view style='' class='center mp-text-one-font-size'>
+    <icon type="success" size="15" />支付成功!</view>
+  <view style='margin-top:1vh;' class='center mp-text-one-font-size'>总额
+    <span style="color:#00C250;font-weight: bold;"> ￥{{totalPrice||0.01}}</span>
+  </view>
+
+  <view style="display:flex;width:100%;margin-top:1vh;">
+    <view style="flex:1;flex-flow: column;"></view>
+
+    <view bindtap='toChoose' data-id="{{0}}" style=" background:#fff;border: 0px solid red;border-radius:25rpx;flex:12;width:100%;flex-flow: column;overflow:hidden;" class="center mp-text-one-font-size">
+
+
+      <text class="center mp-text-two-font-size {{skin}}-color" style="height:100rpx;width:100%;">返回首页</text>
+
+    </view>
+    <view style="flex:1;flex-flow: column;"></view>
+    <view bindtap='toChoose' data-id="{{1}}" style="background:#fff;border: 0px solid red;border-radius:25rpx;flex:12;width:100%;flex-flow: column;overflow:hidden;" class="center mp-text-one-font-size">
+
+
+      <text class="center mp-text-two-font-size {{skin}}-color" style="height:100rpx;width:100%;">查看订单</text>
+
+    </view>
+    <view style="flex:1;flex-flow: column;"></view>
+  </view>
+
+<view  style="height:3vh;" ></view>
+</view>
+
+
+  <scroll-view scroll-y="{{true}}" style="height:80%; ">
+    
+  <view class="img-grids" style="margin-top:2vh;">
+    <view  class="center  mp-text-two-font-size"  style="color:#666;"  >猜你喜欢</view>
+    <block wx:if="{{productList.length>0}}">
+      <view>
+        <block wx:for="{{productList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+          <view class="img-grids-item"  data-id="{{item.id}}"  bindtap="toDetails" >
+            <image class="img-grids-item-t have-none" src="{{item.image}}" mode="aspectFill"></image>
+            <view class="img-grids-item-b">
+              <view class="goods-name grids-goods-name">{{item.title}}</view>
+              <view class="goods-item-c">
+                <view class="goods-price red-price">{{"￥"+item.price}}</view>
+                <image class="goods-cart" src="/static/image/ic-car.png"></image>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="order-none">
+        <image class="order-none-img" src="/static/image/order.png" mode></image>
+      </view>
+    </block>
+  </view>
+  </scroll-view>
+
+
+</view>

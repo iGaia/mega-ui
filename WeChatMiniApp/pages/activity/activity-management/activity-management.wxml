@@ -1,0 +1,33 @@
+
+
+<view style='background:#F0E6E6;height:100vh;'>
+  <view style='padding:15rpx;'>
+
+ <view  style="margin-left:15rpx;color:#666;margin-bottom:15rpx;" class="mp-text-two-font-size"   >选择活动品牌</view>
+    <scroll-view style='background:#fff; border-radius: 25rpx;' scroll-y="{{true}}" class=''>
+      
+      <view bindtap='selectActivity' data-index="{{index}}" data-brand="{{item.brand}}" data-status="1" wx:for-index="index" wx:for="{{activityList}}" wx:key="item" style='display:flex;width:100%;height:18vh;margin-bottom:15rpx;margin-top:{{index==0?"15rpx":"0px"}}; '>
+
+        <view style='  flex:4;' class='center'>
+          <image mode='widthFix' style='height:calc(100% - 15rpx);width:90%;margin-left:15rpx;' src="{{item.image}}"></image>
+        </view>
+        <view style=' flex:7;font-size:23rpx;display:flex; flex-flow: column;justify-content: center;'>
+          <text class="mp-text-one-font-size {{skin}}-color center" style='margin-left:12px; font-weight: bold;margin-bottom: 5rpx;text-align: left;'> {{item.title}} </text>
+
+        </view>
+        <view style=' flex:3;font-size:23rpx;display:flex;flex-flow: column;justify-content: center;'>
+        
+                 <text>{{item.isAlreadyPurchased==true?"查阅详情":"参加活动"}} </text>
+        </view>
+
+      </view>
+
+    </scroll-view>
+
+
+
+  </view>
+  
+</view>
+
+

@@ -1,0 +1,81 @@
+<!--pages/merchants/index/index.wxml-->
+<view style="height:100vh;background:#f1f1f1;">
+	<view style=' display: flex;height:25vh;background:#fff;'>
+		<view class='center' style='flex:5;flex-flow: column;height:100%;'>
+			<view style="height:50%;width:100%;" class="center">
+				<button wx:if="{{!hasUserInfo && canIUse}}" class="noButtonStyle" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 点击登录 </button>
+				<block wx:else>
+					<image class="avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+				</block>
+			</view>
+			<view class="mp-text-one-font-size   center " style="width:200rpx;height:40%;">
+				<text class="single-line-ellipsis"> {{userInfo.nickName}} </text>
+			</view>
+			<view style="height:5%;"></view>
+
+		</view>
+
+	</view>
+	<view style="height:1vh;"></view>
+
+	<view style="height:15vh;display:flex;background:#fff;">
+		<view style="flex:1;display:flex;flex-flow:column;" class="center">
+			<view class="center">￥0</view>
+			<view style="height:15rpx;"></view>
+			<view class="center">今日营业额</view>
+		</view>
+		<view style="flex:1;display:flex;flex-flow:column;" class="center">
+			<view class="center">29人</view>
+			<view style="height:15rpx;"></view>
+			<view class="center">今日访问</view>
+		</view>
+		<view style="flex:1;display:flex;flex-flow:column;" class="center">
+			<view class="center"> ￥2458.02</view>
+			<view style="height:15rpx;"></view>
+			<view class="center">总营业额</view>
+		</view>
+	</view>
+
+	<view style="height:1vh;"></view>
+
+	<view style="height:calc(100vw / 3);display:flex;background:#fff;">
+		<view style="flex:1;display:flex;flex-flow:column;" class="center" data-name="base-info" bindtap="clickToJump">
+			<image class="icon" src="/image/gift.svg"></image>
+			<view style="height:10rpx;"></view>
+			<view class="center">基本信息</view>
+		</view>
+		<view style="flex:1;display:flex;flex-flow:column;" class="center" data-name="commodity-management" bindtap="clickToJump">
+			<image class="icon" src="/image/gift.svg"></image>
+			<view style="height:10rpx;"></view>
+			<view class="center">商品管理</view>
+		</view>
+		<view style="flex:1;display:flex;flex-flow:column;" class="center" data-name="order-list" bindtap="clickToJump">
+			<image class="icon" src="/image/gift.svg"></image>
+			<view style="height:10rpx;"></view>
+			<view class="center">订单列表</view>
+		</view>
+	</view>
+
+	<view style="height:calc(100vw / 3);display:flex;background:#fff;">
+		<view style="flex:1;display:flex;flex-flow:column;" class="center" data-name="fund-management" bindtap="clickToJump">
+			<image class="icon" src="/image/gift.svg"></image>
+			<view style="height:10rpx;"></view>
+			<view class="center">资金管理</view>
+		</view>
+		<view style="flex:1;display:flex;flex-flow:column;" class="center" data-name="activity-management" bindtap="clickToJump">
+			<image class="icon" src="/image/gift.svg"></image>
+			<view style="height:10rpx;"></view>
+			<view class="center">活动管理</view>
+		</view>
+		<view style="flex:1;display:flex;flex-flow:column;" class="center" data-name="shop-setting" bindtap="clickToJump">
+			<image class="icon" src="/image/gift.svg"></image>
+			<view style="height:10rpx;"></view>
+			<view class="center">店铺设置</view>
+		</view>
+
+	</view>
+
+
+
+
+</view>

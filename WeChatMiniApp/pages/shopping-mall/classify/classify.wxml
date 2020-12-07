@@ -1,0 +1,101 @@
+
+<view style="height:12vh;">
+<view style="height:1vh;" ></view>
+<search-bar  height="10vh;"   />
+</view>
+<view style="height: 88vh;">
+  <block>
+    <view style="height: 100%;overflow: hidden;">
+      <view class="goods-list">
+        <scroll-view scroll-y="true">
+
+          <block wx:for="{{categoryList}}" wx:for-item="tab" wx:for-index="index" wx:key="index">
+            <view data-id="{{tab.categoryID}}" class="{{['goods-li',(currentCategoryID == tab.categoryID)?'active':'']}}" bindtap="switchCate">
+              <view class="shelectedZhu"></view>{{tab.name||tab.category}}</view>
+          </block>
+        </scroll-view>
+      </view>
+      <view class="goods-grid">
+        <scroll-view scroll-with-animation="{{true}}" class="goods-content" scroll-y="true" style="height:100vh;" scroll-into-view="{{location}}">
+
+
+          <view class="goods-item" id="{{'location'+item.id}}">
+
+            <view class="goods-item-box">
+
+
+              <block wx:for="{{specialSummary}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+                <view wx:if="{{item.categoryID==currentCategoryID}}" data-id="{{item.categoryID}}" class="goods-items" bindtap="goodsClick">
+                  <image class="goods-item-img" src="{{item.picUrl}}" alt mode="aspectFill"></image>
+                  <view class="goods-item-name">{{item.specialName}}</view>
+                </view>
+              </block>
+            </view>
+
+          </view>
+
+
+
+
+          <view style="height:90vh;"></view>
+
+        </scroll-view>
+      </view>
+    </view>
+  </block>
+
+
+
+</view>
+
+
+
+
+
+
+
+
+
+
+<!-- 以下代码包含二级分类 -->
+<!-- <view style="height: 100vh;">
+  <block>
+    <view style="height: 100%;overflow: hidden;">
+      <view class="goods-list">
+        <scroll-view scroll-y="true">
+          <block wx:for="{{categoryList}}" wx:for-item="tab" wx:for-index="index" wx:key="index">
+            <view  data-id="{{tab.id}}"  class="{{['goods-li',(currentCategory.id == tab.id)?'active':'']}}" bindtap="switchCate">
+              <view class="shelectedZhu"></view>{{tab.name}}</view>
+          </block>
+        </scroll-view>
+      </view>
+      <view class="goods-grid">
+        <scroll-view scroll-with-animation="{{true}}" class="goods-content" scroll-y="true"   style="height:100vh;"  scroll-into-view="{{location}}">
+             
+          
+            <view class="goods-item"    id="{{'location'+item.id}}"  >
+           
+                <view class="goods-item-box"   >
+                  <block wx:for="{{currentSubCategoryList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+                    <view data-id="{{item.id}}" class="goods-items" bindtap="goodsClick">
+                      <image class="goods-item-img" src="{{item.picUrl}}" alt mode="aspectFill"></image>
+                      <view class="goods-item-name">{{item.name}}</view>
+                    </view>
+                  </block>
+                </view>
+           
+            </view>
+         
+
+
+       
+ <view style="height:90vh;" ></view> 
+
+        </scroll-view>
+      </view>
+    </view>
+  </block>
+
+
+
+</view> -->

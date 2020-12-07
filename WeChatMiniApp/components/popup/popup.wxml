@@ -1,0 +1,10 @@
+<view  hidden="{{!(popshow)}}" class="lvv-popup"  >
+  <view  class="{{['lvv-popupmark',position=='top'&&!hideanimation?'pt':position=='left'&&!hideanimation?'pl':position=='right'&&!hideanimation?'pr':position=='bottom'&&!hideanimation?'pc':position=='top'&&hideanimation?'ht':position=='left'&&hideanimation?'hl':position=='right'&&hideanimation?'hr':position=='bottom'&&hideanimation?'hc':'']}}"
+     ></view>
+  <view  class="{{['lvv-popupcontent',position=='top'&&!hideanimation?'pt':position=='left'&&!hideanimation?'pl':position=='right'&&!hideanimation?'pr':position=='bottom'&&!hideanimation?'pb':position=='top'&&hideanimation?'ht':position=='left'&&hideanimation?'hl':position=='right'&&hideanimation?'hr':position=='bottom'&&hideanimation?'hb':'']}}"
+   catchtap="close" >
+    <view  class="realcontent" catchtap="notRegardAs">
+      <slot></slot>
+    </view>
+  </view>
+</view>

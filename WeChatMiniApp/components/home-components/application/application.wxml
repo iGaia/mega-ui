@@ -1,0 +1,15 @@
+<!--components/home-components/application/application.wxml-->
+<view style="height: 90px;" class="center">
+
+  <image  style="height:64px;width:64px;"   src="http://wx.qlogo.cn/mmhead/Q3auHgzwzM42OgWFZ6rYbhKAyjfG9ibcfjmOEoLib2Q1jrRSAEpgYm5Q/64"></image>
+
+</view>
+
+
+
+<view style="height: 60px;" class="center">
+
+  <button style="width: 90%;"> 一键申请</button>
+
+</view>
+

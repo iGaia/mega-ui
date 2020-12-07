@@ -1,0 +1,89 @@
+<view style="height:{{windowHeight}}px;">
+
+  <scroll-view scroll-y="{{true}}" style=' height:90%;  padding-left:8%;padding-right:5%;padding-top:5%;'>
+
+    <view class="mp-title-one-font-size" style='margin-bottom:8%;font-weight: bold;'>
+      品牌会员权益说明
+    </view>
+    <view style='margin-bottom:5%;width:80%;' class="mp-text-one-font-size">
+      <view style='float:left; height:55rpx;width:12rpx;background:#ffd700;margin-right:3%;'>
+      </view>
+      <text style='font-weight: bold;'>如何成为品牌会员</text>
+
+      <view style=' margin-top:3%;'>用户通过的小程序微信授权登录后，可浏览小程序内信息，了解品牌会员相关权益及福利政策。用户一次性确认购买价格为108元的会员资格后成为平台上的品牌会员。
+      </view>
+      <view style=''>会员资格由品牌确认。用户在后续操作中将可以积累相应</view>
+
+    </view>
+
+    <view style='margin-bottom:5%;width:80%;' class="mp-text-one-font-size">
+      <view style='float:left; height:55rpx;width:12rpx;background:#ffd700;margin-right:3%;'>
+      </view>
+      <text style='font-weight: bold;margin-bottom:5%;'>品牌会员权益</text>
+      <view style='margin-top:3%;'>
+        <view>（1）成为俏安朵/优布客会员；</view>
+        <view>（2）免费获得一件自选的品牌方服装产品；</view>
+        <view>（3）享受线上购买品牌方产品9折会员价；</view>
+        <view>（4）价值1600元航海活动优惠礼包（2020年5月1日前订购，全年有效）。</view>
+
+      </view>
+      <view style='margin-left:5%;'>
+        <view>a.1000元现金优惠券;</view>
+        <view>b.航海理论课程;</view>
+        <view>c.活动定制礼品;</view>
+        <view>d.水手服一套;</view>
+
+      </view>
+
+    </view>
+
+
+
+    <view style='margin-bottom:5%;width:80%;' class="mp-text-one-font-size">
+      <view style='float:left; height:55rpx;width:12rpx;background:#ffd700;margin-right:3%;'>
+      </view>
+      <text style='font-weight: bold;margin-bottom:5%;'>如何获得会员积分？</text>
+
+      <view style='margin-top:3%;'>
+        <view>1、成为品牌会员或邀请用户成为新会员</view>
+        <view style='margin-top:3%;'>
+          <view>（1）购买品牌VIP会员可一次性可获得100点积分；</view>
+          <view>（2）后续活动中通过小程序完成邀请用户成为新会员流程可一次性可获得100点积分； *100点积分可以抵扣10元人民币，用户消费时可选择是否抵扣。本平台会根据会员在小程序的浏览、购物、收货、履约、个人信息完整度等多个维度的表现来计算出每个行为返还积分的数额，具体数额请以智享精灵小程序用户账户实际收到数额为准。
+          </view>
+        </view>
+        <view>2、购买品牌商品</view>
+        <view>3、登录</view>
+        <view>4、评价/晒图</view>
+
+      </view>
+
+    </view>
+
+
+    <view style='margin-bottom:5%;width:80%;' class="mp-text-one-font-size">
+      <view style='float:left; height:55rpx;width:12rpx;background:#ffd700;margin-right:3%;'>
+      </view>
+      <text style='font-weight: bold;margin-bottom:5%;'>特别声明</text>
+
+      <view style=''>
+        <view>1.会员账号不得转借或转让或授权他人使用。会员积分不可兑现不可转让</view>
+        <view>2.为更好地完善会员权益，本平台与合作品牌将不定期调整会员权益，调整后的会员权益在本平台公布后，立即生效。</view>
+        <view>3.该制度规则一旦发生变动，将会在本平台小程序相关的页面上提示变更内容。变更后的规则条款在相关的页面上公布即有效代替原来的条款。用户如不同意平台或品牌对本制度所作的任何变更，应立即停止使用本平台提供的服务。如用户在本制度变更后继续使用本平台提供的服务，即视作用户已完全同意变更后的条款。</view>
+        <view>4.本声明在2020年3月1日开始生效，未尽事宜以《爱盖亚平台-智享精灵小程序用户服务协议》相关内容为准。</view>
+
+      </view>
+    </view>
+
+    <view class="bottom-suspension" style='height:10%;background:#fff;'>
+
+      <view style='width:100%;height:100%;' class='center'>
+
+        <view bindtap='back' class='center {{skin}}-background bigButtonStyle' > 返回 </view>
+
+      </view>
+
+
+    </view>
+  </scroll-view>
+
+</view>

@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "商品详情",
+  
+  "usingComponents": {
+    "popup": "/components/popup/popup",
+    "suspension-ball": "/components/suspension-ball/suspension-ball",
+    "mp-badge": "/components/badge/badge",
+    "mp-actionSheet": "/components/actionsheet/actionsheet"
+  }
+}

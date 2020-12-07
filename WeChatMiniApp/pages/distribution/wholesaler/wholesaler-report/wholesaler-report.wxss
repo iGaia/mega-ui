@@ -1,0 +1,36 @@
+
+
+
+.paved {
+ 
+  -webkit-animation: paved 2s linear ;
+  animation: paved 2s linear ;
+  animation-fill-mode:forwards;
+}
+
+@keyframes paved {
+    0% {
+        flex:1;
+    }
+   
+    100% {
+      flex:2;
+    }
+}
+.disappear{
+
+
+ -webkit-animation: disappear 2s linear ;
+  animation: disappear 2s linear ;
+  /* animation-fill-mode:forwards; */
+}
+
+@keyframes disappear {
+    0% {
+         display:none;
+    }
+   
+    100% {
+      display:none;
+    }
+}

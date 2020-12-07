@@ -1,0 +1,47 @@
+<!--components/home-components/category/category.wxml-->
+	<view style="display:flex;flex-flow:column;">
+
+		<view style="height:200px;display:flex;">
+			<view style="flex:1; flex-flow:column;" class="center grey-background">
+				<image style="height:95%;width:95%;" src="https://img.yzcdn.cn/upload_files/2020/04/20/FrVdOMYsSz4Y3SJaI3_4nCIrbY0H.jpg"></image>
+				<view style="height:25%;width:90%;" class="white-color center {{skin}}-background">
+          内搭
+        </view>
+			</view>
+			<view style="flex:1;flex-flow:column;" class="center grey-background">
+				<image style="height:95%;width:95%;" src="https://img.yzcdn.cn/upload_files/2020/04/20/FrVdOMYsSz4Y3SJaI3_4nCIrbY0H.jpg"></image>
+				<view style="height:25%;width:90%;" class="white-color center {{skin}}-background">
+          内搭
+        </view>
+			</view>
+		</view>
+		<view style="height:100px;display:flex;">
+			<view style="flex:1;flex-flow:column; " class="center grey-background">
+				<image style="height:70%;width:90%;" src="https://img.yzcdn.cn/upload_files/2020/04/20/FrVdOMYsSz4Y3SJaI3_4nCIrbY0H.jpg"></image>
+				<view style="height:25%;width:90%;" class="white-color center {{skin}}-background">
+					内搭
+				</view>
+			</view>
+
+			<view style="flex:1;flex-flow:column; " class="center grey-background">
+				<image style="height:70%;width:90%;" src="https://img.yzcdn.cn/upload_files/2020/04/20/FrVdOMYsSz4Y3SJaI3_4nCIrbY0H.jpg"></image>
+				<view style="height:25%;width:90%;" class="white-color center {{skin}}-background">
+					外套
+				</view>
+			</view>
+			<view style="flex:1;flex-flow:column; " class="center grey-background">
+				<image style="height:70%;width:90%;" src="https://img.yzcdn.cn/upload_files/2020/04/20/FrVdOMYsSz4Y3SJaI3_4nCIrbY0H.jpg"></image>
+				<view style="height:25%;width:90%;" class="white-color center {{skin}}-background">
+					套装
+				</view>
+			</view>
+			<view style="flex:1;flex-flow:column; " class="center grey-background">
+				<image style="height:70%;width:90%;" src="https://img.yzcdn.cn/upload_files/2020/04/20/FrVdOMYsSz4Y3SJaI3_4nCIrbY0H.jpg"></image>
+				<view style="height:25%;width:90%;" class="white-color center {{skin}}-background">
+					配饰
+				</view>
+			</view>
+
+		</view>
+
+	</view>

@@ -1,0 +1,63 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+
+
+<view class=" " style='   background:#f1f1f1;height:{{windowHeight}}px;padding-top:15rpx;'>
+
+<view style="height:15rpx;"></view>
+ <view class="  " style='margin-left:15rpx;   width:calc(100% - 30rpx);  height:calc(90% - 30rpx);background:#fff;border-radius: 25rpx;'>
+
+   <view class="weui-cell weui-cell_input " style="height:10%;">
+     <view class="weui-cell__hd">
+       <view class="weui-label mp-text-one-font-size">收货人：</view>
+     </view>
+     <view class="weui-cell__bd "   style="margin-left: 35rpx;"   >
+       <input class="weui-input mp-text-one-font-size" type="text" name="consigneeName" placeholder="输入收货人姓名" value="{{consigneeName}}"></input>
+     </view>
+
+   </view>
+   <view class="weui-cell weui-cell_input  " style="height:10%;">
+     <view class="weui-cell__hd">
+       <view class="weui-label mp-text-one-font-size">收货电话：</view>
+     </view>
+     <view class="weui-cell__bd "   style="margin-left: 35rpx;">
+       <input class="weui-input mp-text-one-font-size" type="number" name="phone" placeholder="输入电话号码" value='{{phone}}'></input>
+     </view>
+     <!-- <button class='noButtonStyle {{skin}}-color mp-text-one-font-size' style=' position:absolute;right:25rpx;padding:5rpx;z-index:2000;' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button> -->
+   </view>
+   <view class="weui-cell weui-cell_input  " style="height:10%;">
+     <view class="weui-cell__hd">
+       <view class="weui-label mp-text-one-font-size">所在区域：</view>
+     </view>
+     <view class="weui-cell__bd "   style="margin-left: 35rpx;">
+       <picker class="weui-input mp-text-one-font-size" style='justify-content: left; align-items: center;display: flex;background:#fff;border-radius: 23px;height:80%;' mode="region" placeholder="输入所在区域" bindchange="bindRegionChange"  custom-item="{{customItem}}">
+
+         <input class="weui-input mp-text-one-font-size" style='text-align: left;height:80%;' type="text" disabled="true" placeholder="选择省市区" name="region" value='{{region}}'></input>
+       </picker>
+     </view>
+     <!-- <button class='noButtonStyle {{skin}}-color mp-text-one-font-size' style='  position:absolute;right:25rpx;padding:5rpx;z-index:2000;' bindtap="getLocation">定位</button> -->
+   </view>
+   <view class="weui-cell weui-cell_input  " style="height:10%;">
+     <view class="weui-cell__hd">
+       <view class="weui-label mp-text-one-font-size">详细地址：</view>
+     </view>
+     <view class="weui-cell__bd "   style="margin-left: 35rpx;">
+       <input class="weui-input mp-text-one-font-size" name="address" value='{{address}}' placeholder="输入详细地址"></input>
+     </view>
+
+   </view>
+ </view>
+
+
+ <view class="bottom-suspension" style='height:10%;'>
+
+   <view style='width:100%;height:100%;' class='center'>
+
+     <button formType="submit"  class='center bigButtonStyle {{skin}}-background' > 完成 </button>
+
+   </view>
+
+ </view>
+</view>
+
+
+</form>

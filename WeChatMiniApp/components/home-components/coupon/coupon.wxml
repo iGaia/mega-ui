@@ -1,0 +1,80 @@
+<!--components/home-components/coupon/coupon.wxml-->
+<view wx:if="{{data.details.style==0}}" style="padding: 5rpx;">
+  <!--  这是第一个红色横板优惠券   -->
+
+  <view class="coupon" v-for="item in 2">
+    <view class="coupon-left">
+      <view class="coupon-inner">
+        <view class="coupon-money">
+          <text>¥</text>
+          <text class="sum">100.00</text>
+        </view>
+        <view class="coupon-condition">
+          <text>满200.00可用</text>
+        </view>
+      </view>
+    </view>
+    <view class="coupon-right">
+      <view class="coupon-inner">
+        <view class="coupon-time">
+          截止日期
+          2216-12-31
+        </view>
+        <text class="coupon-circle top"></text>
+        <text class="coupon-circle bottom"></text>
+      </view>
+    </view>
+    <view class="coupon-light"></view>
+  </view>
+
+</view>
+
+<view wx:if="{{data.details.style==1}}">
+  <view style=" height: 120px;  display:flex;" class="grey-background">
+    <view style="flex:1;"> </view>
+    <view style="flex:3;display:flex;flex-flow:column;">
+
+      <view style="flex:1;align-items:flex-end;" class="center">
+        <text class="mp-text-three-font-size">￥</text> <text class="mp-text-one-font-size">10</text>
+      </view>
+      <view style="flex:1;" class="center">
+        <text class="mp-text-three-font-size"> 满199元使用</text>
+      </view>
+      <view style="flex:1;align-items:flex-start;" class="center">
+        <view style="width:100%;height:60%;" class="center a-background">
+          <text class="mp-text-three-font-size  white-color"> 立即领取</text>
+        </view>
+      </view>
+    </view>
+    <view style="flex:1;" class="center">| </view>
+    <view style="flex:3;display:flex;flex-flow:column;">
+      <view style="flex:1;align-items:flex-end;" class="center">
+        <text class="mp-text-three-font-size">￥</text> <text class="mp-text-one-font-size">20</text>
+      </view>
+      <view style="flex:1;" class="center">
+        <text class="mp-text-three-font-size"> 满268元使用</text>
+      </view>
+      <view style="flex:1;align-items:flex-start;" class="center">
+        <view style="width:100%;height:60%;" class="center a-background">
+          <text class="mp-text-three-font-size  white-color"> 立即领取</text>
+        </view>
+      </view>
+    </view>
+    <view style="flex:1;" class="center"> |</view>
+    <view style="flex:3;display:flex;flex-flow:column;">
+      <view style="flex:1;align-items:flex-end;" class="center">
+        <text class="mp-text-three-font-size">￥</text> <text class="mp-text-one-font-size">30</text>
+      </view>
+      <view style="flex:1;" class="center">
+        <text class="mp-text-three-font-size"> 满299元使用</text>
+      </view>
+      <view style="flex:1;align-items:flex-start;" class="center">
+        <view style="width:100%;height:60%;" class="center a-background">
+          <text class="mp-text-three-font-size  white-color"> 立即领取</text>
+        </view>
+      </view>
+    </view>
+    <view style="flex:1;"> </view>
+
+  </view>
+</view>

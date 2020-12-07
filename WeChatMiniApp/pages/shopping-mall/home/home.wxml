@@ -1,0 +1,329 @@
+<!-- <view class="marquee-area" style=" color:#fff;font-size:28rpx;  width:100% ;background:#000;">
+    <view class="marquee">
+      <span>
+        点击顶部菜单,选择[添加到我的小程序]关注更多会员福利。
+      </span>
+      <span>
+        点击顶部菜单,选择[添加到我的小程序]关注更多会员福利。
+      </span>
+    </view>
+  </view> -->
+
+<!-- https://aweme.snssdk.com/aweme/v1/playwm/?s_vid=93f1b41336a8b7a442dbf1c29c6bbc566737a7f1a1c06b28972986fd7e5ad7a0ae6e60cbb7fc934125aa5b01f0c820798b1ef03215dbab54e167aa96995b4d0b&line=0
+  -->
+
+
+<!-- <view style="height:415rpx;width:100%">
+    <txv-video vid="r09495mgu0c" style='width:100%;height:100%;' isHiddenStop="{{true}}" playerid="txv1" autoplay="{{true}}">
+
+    </txv-video>
+  </view> -->
+
+<!-- <view style="height:25rpx;"></view> -->
+
+<view  wx:if="{{1==2}}"     class="wrap" style='background: {{indexBg}};'>
+	<block wx:for="{{dataList}}" wx:key="item">
+		<!-- <block wx:for="{{defaultModels}}" wx:key="item" wx:for-item="item" wx:for-index="index"> -->
+		<!-- 轮播图 -->
+		<block wx:if="{{item.type==1}}">
+
+			<banner data='{{item}}' />
+		</block>
+
+		<!-- 宫格导航 -->
+		<block wx:if="{{item.type==2}}">
+			<navigation data='{{item}}' />
+		</block>
+		<!-- 标题 -->
+		<block wx:if="{{item.type==3}}">
+			<title data='{{item}}' />
+		</block>
+
+		<!-- 图片列表 -->
+		<block wx:if="{{item.type==4}}">
+			<image-list data='{{item}}' />
+		</block>
+		<!-- 三方图 -->
+		<block wx:if="{{item.type==7}}">
+			<ThreeImage data='{{item}}' />
+		</block>
+		<!-- 四方图 -->
+		<block wx:if="{{item.type==8}}">
+			<FourImage data='{{item}}' />
+		</block>
+
+		<!-- 分类入口 -->
+		<block wx:if="{{item.type==57}}">
+			<category data='{{item}}' />
+		</block>
+
+
+		<!-- 视频 -->
+		<block wx:if="{{item.type==9}}">
+			<VideoItem data="{{item}}" />
+		</block>
+		<!-- 音频 -->
+		<block wx:if="{{item.type==10}}">
+			<AudioItem data="{{item}}" leave='{{leave}}' />
+		</block>
+		<!-- 富文本 -->
+		<block wx:if="{{item.type==11}}">
+			<RichText data='{{item}}' />
+		</block>
+		<!-- 辅助空白 -->
+		<block wx:if="{{item.type==12}}">
+			<White data='{{item}}' />
+		</block>
+
+		<!-- 悬浮图标 -->
+		<block wx:if="{{item.type==103}}">
+		 
+			<suspension-ball id="suspension-ball" pattern="{{pattern}}" content="{{content}}" horizontal="{{'right'}}" vertical="{{'bottom'}}" direction="{{'vertical'}}" />
+		</block>
+		<!-- 按钮 -->
+		<block wx:if="{{item.type==15}}">
+			<ButtonItem data='{{item}}' />
+		</block>
+		<!-- 表单 -->
+		<block wx:if="{{item.type==16}}">
+			<view class="view-chooseForm">
+				<button >
+					{{item.details.text}}
+				</button>
+			</view>
+		</block>
+		<!-- 客服 -->
+		<block wx:if="{{item.type==17}}">
+			<CustomerService data='{{item}}' />
+		</block>
+		<!-- 公告 -->
+		<block wx:if="{{item.type==18}}">
+			<Announcement data='{{item}}' />
+		</block>
+		<!-- 流量主 -->
+		<block wx:if="{{item.type==19}}">
+			<view class="view-flowMaster" style="height:{{item.details.boxHeight}}px">
+				<image lazy-load src="/images/uc-banner2.png" mode="widthFix"></image>
+			</view>
+		</block>
+		<!-- 商品集 -->
+		<block wx:if="{{item.type==20}}">
+			<GoodList data='{{item}}' leave='{{leave}}' />
+		</block>
+		<!-- 产品集 -->
+		<block wx:if="{{item.type==21}}">
+			<ProductList data='{{item}}' />
+		</block>
+		<!-- 搜索框 -->
+		<block wx:if="{{item.type==22}}">
+			<Search data='{{item}}' />
+		</block>
+		<!-- 招聘 -->
+		<block wx:if="{{item.type==23}}">
+			<Jobs data='{{item}}' />
+		</block>
+		<!-- 留言板 -->
+		<block wx:if="{{item.type==24}}">
+			<Message data='{{item}}' />
+		</block>
+		<!-- 门店 -->
+		<block wx:if="{{item.type==25}}">
+			<Stores data='{{item}}' />
+		</block>
+		<!-- 位置 -->
+		<block wx:if="{{item.type==26}}">
+			<Address data='{{item}}' />
+		</block>
+		<!-- 红包 -->
+		<block wx:if="{{item.type==27}}">
+			<Coupons data='{{item}}' bg='{{bg}}' />
+		</block>
+		<!-- 商品分类 -->
+		<block wx:if="{{item.type==28}}">
+			<ClassGoods leave='{{leave}}' bindcartUpdata='cartUpdata' reload='{{reload}}' bind:loading="changLoading" background='{{background}}' pageFlag='{{page}}' data='{{item}}' />
+		</block>
+		<!--团长组件-->
+		<block wx:if='{{item.type == 29}}'>
+			<Group reload='{{reload}}' id='group' leader_id='{{leader_id}}' isLogin='{{isLogin}}' bind:is_bool='showColose' data='{{item}}' groupFlag='{{groupFlag}}' />
+		</block>
+		<!--秒杀组件-->
+		<block wx:if='{{item.type == 30}}'>
+			<absoluteTitle data='{{item}}' />
+		</block>
+
+		<!-- 商品列表 -->
+		<block wx:if="{{item.type==52}}">
+			<product-list data='{{item}}' />
+		</block>
+
+		<!-- 分割线 -->
+		<block wx:if="{{item.type==102}}">
+			<line data='{{item}}' />
+		</block>
+
+		<!-- 公告 -->
+		<block wx:if="{{item.type==106}}">
+			<announcement data='{{item}}' />
+		</block>
+
+		<!-- 掌柜推荐 -->
+		<block wx:if="{{item.type==150}}">
+			<manager-recommendation data='{{item}}' />
+		</block>
+
+		<!-- 精品推荐 -->
+		<block wx:if="{{item.type==151}}">
+			<shop-selection data='{{item}}' />
+		</block>
+
+			<!-- 优惠券 -->
+			<block wx:if="{{item.type==51}}">
+			<coupon data='{{item}}' />
+		</block>
+
+	<!-- 商品轮播 -->
+	<block wx:if="{{item.type==56}}">
+			<carousel data='{{item}}' />
+		</block>
+		
+	<!-- 申请按钮 -->
+	<block wx:if="{{item.type==156}}">
+			<application data='{{item}}' />
+		</block>
+		
+	<!-- 分组推荐 -->
+	<block wx:if="{{item.type==58}}">
+			<group data='{{item}}' />
+		</block>
+		
+
+	<!-- 倒计时 -->
+	<block wx:if="{{item.type==59}}">
+			<count-down data='{{item}}' />
+		</block>
+
+
+
+
+	</block>
+
+	<!-- <view class='loading' wx:if='{{loading}}'>
+		<image lazy-load class='loading-img' src='/images/index/loading.png'></image>
+	</view>
+	<view wx:else class='gobottom'>~已经到底了~</view> -->
+</view>
+<view style="height:100vh;width:100%; background:#f1f1f1;">
+  <scroll-view scroll-y="{{true}}" class='topic-list' style="height:100vh;width:100%;">
+    <!-- <view style="height:415rpx;width:100%">
+      <txv-video vid="r09495mgu0c" style='width:100%;height:100%;' isHiddenStop="{{true}}" playerid="txv1" autoplay="{{true}}">
+      </txv-video>
+        </view> -->
+    <swiper current="{{currentTab}}" indicator-dots="{{true}}" style='width:100vw;height:calc(100vw / 1.6);' bindchange="swiperTab">
+      <block style='width:100vw;' wx:for="{{topPictureList}}" wx:key="*this">
+        <swiper-item style='width:100vw;' class="center">
+          <image mode='widthFix' style='display: block;width:100vw;' src='{{item}}'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+
+
+    <image mode='widthFix' style='margin-top:3vh;  display: block;width:100%;height:auto;' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587981065340&di=2e26c411adce05ed3c98fb523ee287ee&imgtype=0&src=http%3A%2F%2Fimg.aiimg.com%2Fuploads%2Fallimg%2F130923%2F1-130923221Q3.jpg'></image>
+
+    <image mode='widthFix' style='margin-top:3vh; display: block;width:100%;height:auto;' src='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3429675591,2408054045&fm=26&gp=0.jpg'></image>
+
+    
+
+
+    <view  class="img-grids"  style="background:#fff;margin-top:3vh;">
+      <view class="center" >新品上市</view>
+      <block wx:if="{{productList.length>0}}">
+        <view>
+          <block wx:for="{{productList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+            <view  class="img-grids-item"  data-id="{{item.id}}" bindtap="toDetails">
+              <image class="img-grids-item-t have-none" src="{{item.image}}" mode="aspectFill"></image>
+              <view class="img-grids-item-b">
+                <view class="goods-name grids-goods-name">{{item.title}}</view>
+                <view class="goods-item-c">
+                  <view class="goods-price red-price">{{"￥"+item.price}}</view>
+                  <image class="goods-cart" src="/image/cart.png"></image>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="order-none">
+          <image class="order-none-img" src="/static/image/order.png" mode></image>
+        </view>
+      </block>
+    </view>
+
+     <!-- <image   mode='widthFix' style='display: block;width:100%;height:auto;' src='https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2353457644,2584919985&fm=26&gp=0.jpg'></image>  -->
+
+
+
+
+
+
+
+
+
+    <!-- <image wx:if="{{showMLFS==true}}" lazy-load mode='widthFix' style='display: block;width:100%;height:auto;' src='https://pic.imgdb.cn/item/5e954d69c2a9a83be5954235.jpg'></image> -->
+
+
+
+    <!-- <view bindtap="preview" class="tCBGCoral center" style='height:25vh;width:calc(100% - 30rpx);margin-top:15rpx;border-radius: 25rpx;margin-left:15rpx;margin-right:15rpx;color:#fff;flex-flow: column;'>
+
+      <view style="flex:6;flex-flow: column;" class="center">
+        <view class="center mp-title-one-font-size">购买价值108元VIP会员</view>
+
+        <view class="center mp-title-one-font-size">免费获得自选的一件(套)服装</view>
+
+          <view class='center mp-title-one-font-size ' style='margin-top:3%;  padding:8rpx 37rpx; color:#974817;border-radius:15rpx;background:#ffe3bb;color:#984817;'>点击查看赠品</view>
+
+        <view class="center titleTwoFont"  style='margin-top:3%;' >仅￥980，即可享受 帆船+跑车+航海礼包!</view>
+      </view>
+      
+
+    </view> -->
+
+
+
+    <!-- <view  style="position:relative;">
+      <image mode='widthFix' bindtap="preview" class=" center" style='width:calc(100% - 30rpx);                     margin-top:15rpx;border-radius: 25rpx;margin-left:15rpx;margin-right:15rpx;color:#fff;flex-flow: column;position:relative;' src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586853301196&di=7e32f649dcff0303f8166b5285a5735b&imgtype=0&src=http%3A%2F%2Fku.90sjimg.com%2Fback_pic%2F04%2F56%2F22%2F405865239d014d5.jpg%2521%2Ffwfh%2F804x508%2Fquality%2F90%2Funsharp%2Ftrue%2Fcompress%2Ftrue">
+
+
+
+      </image>
+
+
+      <view style="position:absolute;left:0px;top:0px; height:100%;width:100%;">
+
+        <view style="flex-flow: column;height:100%;width:100%;color:#fff;" class="center">
+          <view class="center mp-text-one-font-size"   style='font-size: 4.3vw;color:#f6f0be;'      >购买价值108元VIP会员</view>
+
+          <view class="center mp-text-one-font-size"     style='margin-top:1%;font-size: 4.3vw;color:#f6f0be;'>免费获得自选服装一件</view>
+
+          <view class='center mp-title-one-font-size ' style='margin-top:3%;  padding:8rpx 37rpx; color:#974817;border-radius:15rpx;background:#ffe3bb;color:#984817;'>点击查看赠品</view>
+
+          <view class="center " style='margin-top:3%;color:#f6f0be;'>VIP会员仅需980元 即可享受</view>
+          <view class="center " style='margin-top:1%;color:#f6f0be;'>帆船体验+跑车+航海大礼包</view>
+        </view>
+      </view>
+    </view> -->
+
+    <!-- <image wx:if="{{showMLFS==true}}" bindtap="preview" lazy-load mode='widthFix' style='display: block;width:100%;height:auto;' src="https://pic.imgdb.cn/item/5e966c93c2a9a83be5535e4c.jpg"></image> -->
+
+
+
+    <!-- <image wx:for="{{longImage}}" lazy-load wx:key="item" mode='widthFix' style='display: block;width:100%;height:auto;' src='{{item}}'></image> -->
+
+  </scroll-view>
+
+</view>
+
+
+
+<dialog id='dialog' title='登录提示' content='小程序需要您的信息才能提供更好的服务哦' confirmText='知道了' bind:confirmEvent='confirmEvent' bind:bindGetUserInfo='bindGetUserInfo'>
+</dialog>

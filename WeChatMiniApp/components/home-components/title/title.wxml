@@ -1,0 +1,79 @@
+<view class="view-title">
+  <!-- 
+  <view wx:if="{{temp.details.style==2}}" class="{{'title style'+temp.details.style}}" style="{{'display: flex;background-color:'+temp.details.color2+';color:'+temp.details.color1}}">
+
+<image style="flex:1;justify-content:flex-end;" class="center"> <img style="height: 25px;width: 25px;" src="/image/double_arrow_left.svg" />
+</image>
+
+<view :style="'flex:1;font-weight:bold;font-size:'+temp.details.titleFontSize" class="center"> {{temp.details.text}}
+</view>
+
+<image style="flex:1;justify-content:flex-start;" class="center"> <img style="height: 25px;width: 25px;" src="/image/double_arrow_right.svg" />
+</image>
+
+</view>
+<view v-else>
+<view :class="'title style'+temp.details.style" :style="'background-color:'+temp.details.color2+';color:'+temp.details.color1">
+<text class="txt" :style="'font-weight:bold;font-size:'+temp.details.titleFontSize">{{temp.details.text}}</text>
+
+</view>
+
+
+</view>
+
+<view v-if="temp.details.style==2">
+<view class="'title2 style1'" style="{{'background-color:'+temp.details.color2+';color:'+temp.details.color1}}">
+  <block><text style="{{'white-space: pre-wrap;font-size:'+temp.details.describeFontSize}}">{{temp.details.text2}}</text>
+  </block>
+</view>
+
+</view>
+<view v-else>
+<view class="{{'title2 style'+temp.details.style}}" style="{{'background-color:'+temp.details.color2+';color:'+temp.details.color1}}">
+  <block><text style="{{'white-space: pre-wrap;font-size:'+temp.details.describeFontSize}}">{{temp.details.text2}}</text>
+  </block>
+</view>
+
+</view>
+
+</view>  -->
+
+  <view class="title style{{data.details.style}}"
+    style="background-color:{{data.details.color2}};color:{{data.details.color1}}">
+
+    <view wx:if="{{data.details.style==2}}" class="{{'title style'+data.details.style}}"
+      style="{{'display: flex;background-color:'+data.details.color2+';color:'+data.details.color1}}">
+
+      <view style="flex:1;justify-content:flex-end;" class="center"> <image style="height: 25px;width: 25px;"
+          src="/image/double_arrow_left.svg" />
+      </view>
+
+      <view style="{{'flex:1;font-weight:bold;font-size:'+data.details.titleFontSize}}" class="center">
+        {{data.details.text}}
+      </view>
+
+      <view style="flex:1;justify-content:flex-start;" class="center"> <image style="height: 25px;width: 25px;"
+          src="/image/double_arrow_right.svg" />
+      </view>
+
+    </view>
+
+    <text wx:else class="txt" style="font-weight:bold;font-size:{{data.details.titleFontSize}}">{{data.details.text}}</text>
+
+
+  </view>
+
+</view>
+
+<view class="view-title">
+  <view class="title style{{data.details.style}}"
+    style="background-color:{{data.details.color2}};color:{{data.details.color1}}">
+    <text class="line"></text>
+
+
+    <text class="txt" style="font-size:{{data.details.describeFontSize}}">{{data.details.text2}}</text>
+
+    <text class="line"></text>
+  </view>
+
+</view>

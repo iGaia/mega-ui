@@ -1,0 +1,11 @@
+<view class='dialog-container' hidden="{{!isShow}}">
+  <view class='dialog-mask'></view>
+  <view class='dialog-info'>
+    <view class='dialog-title'>{{ title }}</view>
+    <view class='dialog-content'>{{ content }}</view>
+    <view class='dialog-footer'>
+      <button class='dialog-btn'  catchtap='cancel'>拒绝</button>
+      <button class='dialog-btn' open-type="{{authorizedContent}}" bindgetphonenumber='bindgetphonenumber' bindgetuserinfo='bindGetUserInfo' catchtap='confirmEvent'>{{ confirmText }}</button>
+    </view>
+  </view>
+</view>

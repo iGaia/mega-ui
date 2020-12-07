@@ -1,0 +1,26 @@
+/* pages/order/list/list.wxss */
+
+
+.swiper-tab{  
+    width: 100%;  
+    /* border-bottom: 2rpx solid #eee;   */
+    text-align: center;  
+    height:80rpx;
+    line-height: 80rpx;
+    background: #fff;
+    font-size: 14px;
+    }  
+.swiper-tab-list{  
+  font-size: 29rpx;  
+    display: inline-block;  
+    width: 33%;  
+    color: #333; 
+} 
+.swiper-box{
+  background: #fff;
+  display: block; 
+  /*heigaqht: 100%;. */
+  width: 100%; 
+  /*overflow: hidden;*/
+} 
+

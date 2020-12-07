@@ -1,0 +1,131 @@
+<view style="height:100vh;">
+
+	<view style="height:10vh;">
+		<view style="height:1vh;"></view>
+		<search-bar bind:searchBarConfirmEvent="searchBarConfirmEvent" />
+	</view>
+
+	<view class="screen" style="height:10vh;">
+		<view class="screen-item">
+			<text class="screen-item-text">综合</text>
+			<view class="screen-item-icon">
+				<block wx:if="{{searchData.order.key=='sort'&&searchData.order.sort=='asc'}}">
+					<image class="screen-item-icon-img" src="/image/bottom-orange.svg"></image>
+				</block>
+				<block wx:else>
+					<image class="screen-item-icon-img" src="/image/bottom-gray.svg"></image>
+				</block>
+			</view>
+		</view>
+		<view class="screen-item">
+			<text class="screen-item-text">价格</text>
+			<view class="screen-item-icon">
+				<block wx:if="{{searchData.order.key=='price'&&searchData.order.sort=='asc'}}">
+					<image class="screen-item-icon-img" src="/image/top-orange.svg"></image>
+				</block>
+				<block wx:else>
+					<block wx:if="{{!(searchData.order.key=='price'&&searchData.order.sort=='asc')}}">
+						<image class="screen-item-icon-img" src="/image/top-gray.svg"></image>
+					</block>
+				</block>
+				<block wx:if="{{searchData.order.key=='price'&&searchData.order.sort=='desc'}}">
+					<image class="screen-item-icon-img" src="/image/bottom-orange.svg"></image>
+				</block>
+				<block wx:if="{{!(searchData.order.key=='price'&&searchData.order.sort=='desc')}}">
+					<image class="screen-item-icon-img" src="/image/bottom-gray.svg"></image>
+				</block>
+			</view>
+		</view>
+		<view class="screen-item">
+			<text class="screen-item-text">销量</text>
+			<view class="screen-item-icon">
+				<block wx:if="{{searchData.order.key=='buy_count'&&searchData.order.sort=='asc'}}">
+					<image class="screen-item-icon-img" src="/image/top-orange.svg"></image>
+				</block>
+				<block wx:else>
+					<block wx:if="{{!(searchData.order.key=='buy_count'&&searchData.order.sort=='asc')}}">
+						<image class="screen-item-icon-img" src="/image/top-orange.svg"></image>
+					</block>
+				</block>
+				<block wx:if="{{searchData.order.key=='buy_count'&&searchData.order.sort=='desc'}}">
+					<image class="screen-item-icon-img" src="/image/bottom-orange.svg"></image>
+				</block>
+				<block wx:if="{{!(searchData.order.key=='buy_count'&&searchData.order.sort=='desc')}}">
+					<image class="screen-item-icon-img" src="/image/bottom-gray.svg"></image>
+				</block>
+			</view>
+		</view>
+		<view class="screen-item">
+			<view class="screen-item-icon" style-type="button" current="{{current}}" bindtap="listGridChange">
+				<block wx:if="{{current==0}}">
+					<image class="list-grid" src="/static/image/switch-ic-side-2.png"></image>
+				</block>
+				<block wx:else>
+					<block wx:if="{{current==1}}">
+						<image class="list-grid" src="/static/image/switch-ic-list.png"></image>
+					</block>
+				</block>
+			</view>
+		</view>
+		<block wx:if="{{screents}}">
+			<view class="screen-item screents">
+				<text class="screen-item-text">筛选</text>
+				<image class="filter-img" src="/static/image/top.png"></image>
+			</view>
+		</block>
+		<block wx:else>
+			<block wx:if="{{screentc}}">
+				<view class="screen-item screents">
+					<text class="screen-item-text">筛选</text>
+					<image class="filter-img" src="/static/image/bottom.png"></image>
+				</view>
+			</block>
+		</block>
+	</view>
+
+	<scroll-view scroll-y="{{true}}" style="height:80vh;">
+
+
+		<block wx:if="{{specialSummary.length>0}}">
+			<view hidden="{{current==1}}" class="img-grids">
+				<block wx:for="{{specialSummary}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+					<view class="img-grids-item" data-itemid="{{item.id||item.specialID}}" data-item="{{item}}" bindtap="clickToJump">
+						<image class="img-grids-item-t have-none" src="{{item.image}}" mode="aspectFill"></image>
+						<view class="img-grids-item-b">
+							<view class="goods-name grids-goods-name">{{item.title||item.specialName}}</view>
+							<view class="goods-item-c">
+								<view class="goods-price red-price">{{"￥"+item.price}}</view>
+								<image class="goods-cart" src="/image/cart.svg"></image>
+							</view>
+						</view>
+					</view>
+				</block>
+			</view>
+
+			<view hidden="{{current==0}}" class="img-list">
+				<block wx:for="{{specialSummary}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+					<view class="img-list-item" data-itemid="{{item.id||item.specialID}}" data-item="{{item}}" bindtap="clickToJump">
+						<image class="img-list-item-l" src="{{item.image}}" mode="aspectFill"></image>
+						<view class="img-list-item-r">
+							<view class="goods-name list-goods-name">{{item.title||item.specialName}}</view>
+							<view class="goods-item-c">
+								<view class="goods-price red-price">{{"￥"+item.price}}</view>
+								<view class="goods-buy">
+
+									<image class="goods-cart" src="/image/cart.svg"></image>
+								</view>
+							</view>
+						</view>
+					</view>
+				</block>
+			</view>
+		</block>
+		<block wx:else>
+			<view class="order-none">
+				<image class="order-none-img" src="/image/noOrder.svg" mode></image>
+			</view>
+		</block>
+
+
+	</scroll-view>
+</view>

@@ -1,0 +1,207 @@
+<!-- pages/distribution/team/team.wxml -->
+<view class="view-main">
+
+	<view class="center-column">
+		<text class="top-invite">管理团队</text>
+		<image class="img-portrait" src="{{portraitImgURL}}" />
+		<text class="top-level">{{userLevel}}</text>
+		<text class="mp-text-two-font-size top-name">{{userName}}</text>
+	</view>
+
+	<view class="view-center">
+		<view class="divider"></view>
+		<view class="center-content center mp-text-two-font-size">
+			<view class="center-text {{skin}}-color center mp-text-one-font-size">
+				{{salesRecord.orderSize}}
+
+			</view>
+			<view class="center-text center mp-text-two-font-size">
+				{{salesRecord.periodType==1?"今年":(salesRecord.periodType==2?"今月":"今日")}}订单 </view>
+			<view class="center-text center mp-text-three-font-size">
+				<text style="color:#b5b5b5;">{{salesRecord.orderSize==1?"去年":(salesRecord.orderSize==2?"上月":"昨日")}} </text>
+				<text class="{{skin}}-color ">+{{salesRecord.orderSizeChange}} </text>
+			</view>
+		</view>
+		<view class="divider center">|</view>
+		<view class="center-content mp-text-two-font-size">
+			<view class="center-text {{skin}}-color center mp-text-one-font-size">
+				<text>￥</text>
+				{{salesRecord.salesAmount}}
+			</view>
+			<view class="center-text center mp-text-two-font-size">
+				{{salesRecord.periodType==1?"今年":(salesRecord.periodType==2?"今月":"今日")}}销售额</view>
+			<view class="center-text center mp-text-three-font-size">
+				<text style="color:#b5b5b5;">{{salesRecord.orderSize==1?"去年":(salesRecord.orderSize==2?"上月":"昨日")}} </text>
+				<text class="{{skin}}-color ">+{{salesRecord.salesAmountChange}} </text>
+			</view>
+		</view>
+		<view class="divider center">|</view>
+		<view class="center-content mp-text-two-font-size">
+			<view class="center-text {{skin}}-color center mp-text-one-font-size">
+				<text>￥</text>
+				{{salesRecord.salesTarget}}
+			</view>
+			<view class="center-text center mp-text-two-font-size">
+				{{salesRecord.periodType==1?"今年":(salesRecord.periodType==2?"今月":"今日")}}销售目标</view>
+			<view class="center-text center mp-text-three-font-size">
+				<text style="color:#b5b5b5;">完成</text>
+				<text class="{{skin}}-color ">{{ completionRate}}% </text>
+			</view>
+		</view>
+		<view class="divider"></view>
+	</view>
+	<!-- Bottom -->
+	<!-- SearchBar -->
+	<view class="view-bottom">
+		<view class="bottom-nav">
+			<view class="tab-item center " bindtap="tabCilck" data-index="{{0}}">
+				<text class="{{swiperTabIndex === 0? skin +'-color': '' }}">团队成员</text>
+				<text style="color:#b2b2b2">( {{distributorDetail.length}} )</text>
+			</view>
+			<view class="tab-item center" bindtap="tabCilck" data-index="{{1}}">
+				<text class=" {{swiperTabIndex === 1? skin +'-color': '' }}">销售数据</text>
+			</view>
+		</view>
+
+
+		<view wx:if="{{swiperTabIndex==0}}" style="height: 92vh;">
+
+			<search-bar height="8vh" />
+			<scroll-view class="bottom-scroll-view" scroll-y="{{scrollViewScroll}}">
+				<view class="list-item" wx:for="{{distributorDetail}}">
+					<image class="list-portrait" src="{{item.portraitImgURL}}" />
+					<view class="list-name">{{item.lastName+item.firstName}}</view>
+					<view
+						class="{{item.userLevel === '普通分销员' ? 'list-level-normal' : (item.userLevel === '白银分销员' ? 'list-level-silver' : 'list-level-gold' )}}">
+						{{item.distributionLevelName}}
+					</view>
+					<view class="list-integral">团队规模: {{item.distributionGroupSize}}</view>
+					<view class="list-sale">销售额: {{item.accountBalance}}</view>
+				</view>
+			</scroll-view>
+		</view>
+
+
+		<view wx:if="{{swiperTabIndex==1}}" style="height: 92vh; padding-buttom:20px;">
+	
+				<view class=" center" style='   display:flex;  height:10vh;background:#f1f1f1;'>
+
+					<view style="flex:3; height:100%;display:{{status=='edit'?'none':'flex'}}" class="   center">
+						<picker class=" center  " mode="date" data-type="end" style=" height:90%; width:80%;"
+							value="{{selectedStartTime}}" start="{{startTime}}" end="{{endTime}}" bindchange="bindDateChange">
+							<view style="height:100%;flex:1;">
+								<view class="" style="height:50%;width:100%;">开始时间</view>
+								<view class="{{skin}}-color" style="height:50%;width:100%;">{{selectedStartTime}}</view>
+							</view>
+						</picker>
+						<text class="down-arrow"></text>
+					</view>
+					<view style="flex:3;height:100%;display:{{status=='edit'?'none':'flex'}}" class="   center">
+						<picker class=" center  " mode="date" data-type="end" style=" height:90%; width:80%;"
+							value="{{selectedEndTime}}" start="{{selectedStartTime}}" end="{{endTime}}" bindchange="bindDateChange">
+							<view style="height:100%;flex:1;">
+								<view class="" style="height:50%;width:100%;">结束时间</view>
+								<view class="{{skin}}-color" style="height:50%;width:100%;">{{selectedEndTime}}</view>
+							</view>
+						</picker>
+						<text class="down-arrow"></text>
+					</view>
+				</view>
+				
+					<view class="center mp-title-one-font-size bold">人数统计</view>
+					<view style="height:40vh;width:100vw;margin-bottom:3vh;">
+						<ec-canvas style="height:40vh;width:100vw;" id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}">
+						</ec-canvas>
+					</view>
+					<view class="center mp-title-one-font-size bold">下级代理商销售额分布</view>
+					<view style="height:40vh;width:100vw;margin-bottom:3vh;">
+						<ec-canvas style="height:40vh;width:100vw;" id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec2 }}">
+						</ec-canvas>
+					</view>
+					<view class="center mp-title-one-font-size bold" style="margin-bottom:3vh;">销售报表</view>
+					<view class="table mp-text-three-font-size" style="margin-left:15rpx;margin-right:15rpx;">
+						<view class="tr bg-b" style="border-top-left-radius: 25rpx;border-top-right-radius: 25rpx;">
+							<view class="th">时间</view>
+							<view class="th">订单id</view>
+							<!-- <view class="th">成员id</view> -->
+							<view class="th" style="justify-content:flex-end;padding-right:15rpx;">佣金比例</view>
+							<view class="th" style="justify-content:flex-end;padding-right:15rpx;">交易额(￥)</view>
+						
+							<view class="th" style="justify-content:flex-end;padding-right:15rpx;">佣金(￥)</view>
+							
+						</view>
+						<scroll-view scroll-y="{{true}}" style="height:50vh;">
+							<block wx:for="{{listData}}" wx:key="index">
+
+								<view wx:if="{{item.isDisplay==true}}" class="tr  {{index % 2 == 0?'bg-g':''}}">
+									<view class="td">
+										<view>{{item.updateDate}}</view>
+										<!-- <view>{{item.time.time}}</view> -->
+									</view>
+									<view class="td">{{item.orderID}}</view>
+									<!-- <view class="td">
+										<view>{{item.distributionCommission[0].distributorDetail.distributorMemberID}} </view>
+								
+									</view> -->
+
+									<view class="td" style="text-align:right;padding-right:15rpx;">
+									{{item.distributionCommission[0].distributorCommissionPercentage}} %
+									<!-- {{8}} % -->
+										</view>
+									<view class="td" style="text-align:right;padding-right:15rpx;">
+										{{item.totalPrice}}
+									</view>
+								
+									<view class="td" style="text-align:right;padding-right:15rpx;">
+										{{item.distributionCommission[0].distributorCommissionAmount}} 
+									</view>
+								</view>
+								<!-- <view wx:if="{{item.isDisplay==true}}" class="tr  {{index % 2 == 0?'bg-g':''}}">
+									<view class="td">
+										<view>{{item.time.exactDate}}</view>
+										<view>{{item.time.time}}</view>
+									</view>
+									<view class="td">{{item.orderId}}</view>
+									<view class="td">
+										<view>{{item.memberID.top}}</view>
+										<view>{{item.memberID.last}}</view>
+									</view>
+
+									<view class="td" style="text-align:right;padding-right:15rpx;">
+									{{item.commissionPercentage}} %
+										</view>
+									<view class="td" style="text-align:right;padding-right:15rpx;">
+										{{item.totalPrice}}
+									</view>
+								
+									<view class="td" style="text-align:right;padding-right:15rpx;">
+										{{item.commissionAmount}}
+									</view>
+								</view> -->
+							</block>
+						</scroll-view>
+						<view class="tr bg-b" style="border-bottom-left-radius: 25rpx;border-bottom-right-radius: 25rpx;">
+							<view class="th">汇总</view>
+							<view class="th"></view>
+							<view class="th"></view>
+						
+							<view class="th" style="justify-content:flex-end;">{{allTotalPrice}}</view>
+							<view class="th" style="justify-content:flex-end;padding-right:15rpx;">{{allCommissionAmount}}</view>
+						</view>
+					</view>
+				 <view style="height:20px;"  ></view>
+
+		</view>
+
+
+
+
+
+
+
+
+
+
+
+	</view>
+</view>

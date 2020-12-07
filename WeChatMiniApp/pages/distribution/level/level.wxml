@@ -1,0 +1,67 @@
+<!-- pages/distribution/level/level.wxml -->
+<view>
+
+  <!-- Info Panel -->
+  <view style="background-image: linear-gradient(to right, #FDF2EE, #FDF6EE); padding: 15px 0;">
+    <!-- Info Portrait -->
+    <view class="center">
+      <image class="info-portrait" />
+    </view>
+    <view class="center"> <text class="info-text">初级分销员</text> </view>
+
+    <view class="center">
+
+      <view class="center" style="flex-flow:column;">
+        <view> 初级</view>
+        <view style="width:100%; display:flex;justify-content:flex-end;">
+          <view class="progress-circle" style="background: #F8804B;"></view>
+        </view>
+
+        <view> 210</view>
+      </view>
+
+      <progress style="width:50%;" percent="75" active-color="#F6814C" background-color="#A8A8A8"></progress>
+
+      <view class="center" style="flex-flow:column;">
+        <view> 中级</view>
+        <view style="width:100%; display:flex;justify-content:flex-start;">
+          <view class="progress-circle" style="background:#A8A8A8;"></view>
+        </view>
+
+        <view> 600</view>
+      </view>
+    </view>
+
+    <view  class="center  default-color"      >当前积分: 470</view>
+   
+  </view>
+  <!-- Info Ratio -->
+  <view class="view-top-title">—— 初级分销员权益 ——</view>
+  <view class="view-top-status">
+    <view class="view-status-info" wx:for="{{statusInfo}}">
+      <!-- Ratio Image -->
+      <image class="img-status-info" />
+      <!-- Ratio -->
+      <view class="view-status-info-text">
+        <text class="{{skin}}-color">{{item.ratioInvite}}%</text>
+        <text class="{{skin}}-color">{{item.ratioTitle}}</text>
+      </view>
+    </view>
+    <text class="status-bottom-text">再推广{{statusCash}}元升级为{{stautsLevel}}分销员，看{{stautsLevel}}权益 ></text>
+  </view>
+
+  <!-- Bottom -->
+  <view class="view-bottom">
+    <text class="text-bottom-title">—— 等级规则 ——</text>
+    <view class="list-bottom">
+      <text class="text-bottom-rule-role">{{userRole}}</text>
+      <view class="list-item" wx:for="{{ruleList}}">
+        <image class="list-item-img" src="{{item.imageURL}}" />
+        <view class="list-text">
+          <text class="list-item-text1">{{item.text1}}</text>
+          <text class="list-item-text2">{{item.text2}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,3 @@
+<!--pages/shopping-mall/goods/poster/poster.wxml-->
+<aposter id="aposterid" />
+<view class="" bind:tap="genPoster">生成海报</view>

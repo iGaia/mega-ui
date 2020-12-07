@@ -1,0 +1,55 @@
+<!--pages/distribution/distribution-center/distribution-center.wxml-->
+<view class="view-main">
+		<!-- Top -->
+		<view class="view-top">
+				<image class="img-portrait" src="{{portraitImgURL}}" mode="center" />
+				<text class="text-name">{{userName}}</text>
+				<view class="view-level">
+						<text class="text-level-title">{{userLevel}}</text>
+						<image class="img-level" src="{{levelImgURL}}" mode="center" />
+				</view>
+		</view>
+		<!-- Center -->
+		<view class="view-center-panel">
+				<!-- Center Block 1 -->
+				<view>
+						<view>
+								<text class="small-text">￥</text>
+								<text class="bold-text">0.00{{userEarnings}}</text>
+						</view>
+						<text class="normal-text">累计收益 ></text>
+				</view>
+				<!-- Center Block 2 -->
+				<view>
+						<view>
+								<text class="small-text">￥</text>
+								<text class="bold-text">0.00{{userCash}}</text>
+						</view>
+						<text class="normal-text">可提现金额 ></text>
+				</view>
+		</view>
+		<!-- Center Panel - 循环生成 -->
+		<!-- <view class="view-center-panel" wx:for="{{panelInfo}}">
+				<view class="view-center-block">
+						<view class="center-block-money">
+								<text class="small-text">{{panelCurrency}}</text>
+								<text class="bold-text">{{panelEarnings}}</text>
+						</view>
+						<text class="normal-text">{{panelURLText}}</text>
+				</view>
+		</view> -->
+		<!-- Center Panel -->
+		<view class="view-center-menu">
+				<view class="menu-item" wx:for="{{menuInfo}}">
+						<image class="img-menu" mode="center" src="{{item.imgUrl}}" />
+						<view class="menu-item-block">
+								<text class="big-text">{{item.blockTitle}}</text>
+								<text class="small-text">{{item.blockText}}</text>
+						</view>
+				</view>
+		</view>
+		<!-- Bottom -->
+		<view class="view-bottom">
+				<image class="img-invite" src="{{inviteImgURL}}" />
+		</view>
+</view>

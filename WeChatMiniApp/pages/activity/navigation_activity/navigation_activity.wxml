@@ -1,0 +1,33 @@
+<!--pages/activity/navigation_activity/navigation_activity.wxml-->
+
+
+
+<scroll-view scroll-y="{{true}}" style="height:92vh">
+  <image mode='widthFix' style='display: block;width:100%;height:auto' src='{{postersSrc}}'></image>
+
+</scroll-view>
+
+<view class="bottom-suspension" style='display:flex;   height:8vh;background:#fff;'>
+  <view style='flex:1;height:100%;' class='center' >
+    <view class='center' style='border-left:solid  1px #f1f1f1; width:100%;height:100%;'>
+      <button class='button center' bindtap="contactSeaNavigationCustomerService" style='background:rgba(255, 255, 255, 0.8);flex-flow: column;height:100%;width:100%;' >
+
+        <view class="center" >
+          <image style='width: 50rpx;height: 50rpx;' src="/image/kefu.svg"></image>
+        </view>
+
+        <text class='{{skin}}-color mp-text-three-font-size center' style='font-weight: bold;'> 客服 </text>
+      </button>
+    </view>
+  </view>
+<view  wx:if="{{isAlreadyPurchased==false}}" style='flex:1;height:100%;' class='center' bindtap='intoPay'>
+    <view class='center {{skin}}-background mp-text-one-font-size' style='width:100%;height:100%;flex-flow: column;'>
+      <text style='font-weight: bold;'> 参加活动 </text>
+    </view>
+  </view>
+<view  wx:if="{{isAlreadyPurchased==true}}" style='flex:1;height:100%;' class='center' bindtap='viewDetails'>
+    <view class='center {{skin}}-background mp-text-one-font-size' style='width:100%;height:100%;flex-flow: column;'>
+      <text style='font-weight: bold;'> 查看 </text>
+    </view>
+  </view>
+</view>

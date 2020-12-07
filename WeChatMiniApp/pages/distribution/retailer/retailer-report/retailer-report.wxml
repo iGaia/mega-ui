@@ -1,0 +1,81 @@
+<view style="width:100%;">
+	<view class=" center" style='   display:flex;  height:10vh;background:#f1f1f1;'>
+
+		<view style="flex:3; height:100%;display:{{status=='edit'?'none':'flex'}}" class="   center">
+			<picker class=" center  " mode="date" data-type="end" style=" height:90%; width:80%;" value="{{selectedStartTime}}" start="{{startTime}}" end="{{endTime}}" bindchange="bindDateChange">
+				<view style="height:100%;flex:1;">
+					<view class="" style="height:50%;width:100%;">
+						开始时间
+					</view>
+					<view class="{{skin}}-color" style="height:50%;width:100%;">
+						{{selectedStartTime}}
+					</view>
+				</view>
+			</picker>
+			<text class="down-arrow"></text>
+		</view>
+
+		<view style="flex:3;height:100%;display:{{status=='edit'?'none':'flex'}}" class="   center">
+			<picker class=" center  " mode="date" data-type="end" style=" height:90%; width:80%;" value="{{selectedEndTime}}" start="{{selectedStartTime}}" end="{{endTime}}" bindchange="bindDateChange">
+				<view style="height:100%;flex:1;">
+					<view class="" style="height:50%;width:100%;">
+						结束时间
+					</view>
+					<view class="{{skin}}-color" style="height:50%;width:100%;">
+						{{selectedEndTime}}
+					</view>
+				</view>
+			</picker>
+			<text class="down-arrow"></text>
+		</view>
+
+	</view>
+
+	<view>
+		<view class="center mp-title-one-font-size bold">
+			人数统计购买人数统计</view>
+		<view style="height:40vh;width:100vw;margin-bottom:3vh;">
+			<ec-canvas style="height:40vh;width:100vw;" id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+		</view>
+
+		<view class="center mp-title-one-font-size bold" style="margin-bottom:3vh;">VIP会员销售报表</view>
+
+		<view class="table mp-text-three-font-size" style="margin-left:15rpx;margin-right:15rpx;">
+			<view class="tr bg-b" style="border-top-left-radius: 25rpx;border-top-right-radius: 25rpx;">
+				<view class="th">时间</view>
+				<view class="th">消费者id</view>
+				<view class="th">会员号</view>
+				<view class="th" style="justify-content:flex-end;padding-right:15rpx;">交易额(￥)</view>
+				<view class="th" style="justify-content:flex-end;padding-right:15rpx;">成本价(￥)</view>
+				<view class="th" style="justify-content:flex-end;padding-right:15rpx;">佣金(￥)</view>
+			</view>
+			<scroll-view scroll-y="{{true}}" style="height:50vh;">
+				<block wx:for="{{listData}}" wx:key="*this">
+					<view wx:if="{{item.isDisplay==true}}" class="tr  {{index % 2 == 0?'bg-g':''}}">
+						<view class="td">
+							<view>{{item.time.exactDate}}</view>
+							<view>{{item.time.time}}</view>
+						</view>
+						<view class="td">{{item.userId}}</view>
+						<view class="td">
+							<view>{{item.memberID.top}}</view>
+							<view>{{item.memberID.last}}</view>
+						</view>
+						<view class="td" style="text-align:right;padding-right:15rpx;">{{item.transactionAmount}}</view>
+						<view class="td" style="text-align:right;padding-right:15rpx;">{{item.costPrice}}</view>
+						<view class="td" style="text-align:right;padding-right:15rpx;">{{item.commission}}</view>
+					</view>
+
+				</block>
+			</scroll-view>
+			<view class="tr bg-b" style="border-bottom-left-radius: 25rpx;border-bottom-right-radius: 25rpx;">
+				<view class="th">汇总</view>
+				<view class="th"></view>
+				<view class="th"></view>
+				<view class="th" style="justify-content:flex-end;padding-right:15rpx;">890.00</view>
+				<view class="th" style="justify-content:flex-end;padding-right:15rpx;">230.00</view>
+				<view class="th" style="justify-content:flex-end;padding-right:15rpx;">540.00</view>
+			</view>
+		</view>
+	</view>
+</view>

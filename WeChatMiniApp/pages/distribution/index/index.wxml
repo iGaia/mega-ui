@@ -1,0 +1,136 @@
+<!-- pages/distribution/index/index.wxml -->
+<!-- Distribution Center -->
+<view style="padding: 0 6%;">
+	<view style=' display: flex;height:160px;background:#fff;'>
+		<view class='center' style='flex:6;flex-flow: column;height:100%;'>
+			<view style="height:50%;width:100%;" class="center">
+				<button wx:if="{{!hasUserInfo && canIUse}}" class="noButtonStyle" open-type="getUserInfo"
+					bindgetuserinfo="getUserInfo"> {{internationalization.login}} </button>
+				<block wx:else>
+					<image class="avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+				</block>
+			</view>
+			<view class="mp-text-one-font-size   center " style="width:200rpx;height:40%;">
+				<text class="single-line-ellipsis"> {{userInfo.nickName}} </text>
+			</view>
+
+			<view class="mp-text-three-font-size grey-color center">
+
+				{{userLevel}}
+
+
+				<!-- <image class="img-level" /> -->
+			</view>
+			<!-- <view style="height:5%;"></view> -->
+
+		</view>
+
+	</view>
+	<!-- <view class="view-top">
+		<image class="avatar img-portrait" />
+		<text class="mp-text-two-font-size bold text-name">{{userName}}</text>
+		<view class="view-level">
+			<text class="mp-text-three-font-size grey-color">{{userLevel}}</text>
+			<image class="img-level" />
+		</view>
+	</view> -->
+	<view class="view-panel">
+		<view class="divider"></view>
+		<view class="panel-content">
+			<view class="content-top">
+				<text class="mp-text-four-font-size">￥</text>
+				<text class="mp-title-one-font-size bold">{{totalCash}}</text>
+			</view>
+			<text class="mp-text-three-font-size  nowrap"> {{interfaceText.accumulatedProfit}} </text>
+		</view>
+		<view class="panel-content">
+			<view class="content-top">
+				<text class="mp-text-four-font-size">￥</text>
+				<text class="mp-title-one-font-size bold">{{totalCash}}</text>
+			</view>
+			<text class="mp-text-three-font-size nowrap">{{interfaceText.withdrawAvailable}} </text>
+		</view>
+		<view class="divider">
+			<image class="icon-show" src="/image/review_gray.svg" />
+		</view>
+	</view>
+	<view class="view-menu">
+		<view class="menu-item" bindtap="clickJump" data-type="accumulative-customer">
+			<image class="icon menu-item-icon" src="/image/temp/111.png" />
+			<view class="item-content">
+				<text class="mp-text-two-font-size "> {{interfaceText.myCustomers}} </text>
+				<text class="mp-text-three-font-size gray-color">17 {{interfaceText["个客户"]}} </text>
+			</view>
+		</view>
+		<view class="menu-item" bindtap="clickJump" data-type="team">
+			<image class="icon menu-item-icon" src="/image/temp/222.png" />
+			<view class="item-content">
+				<text class="mp-text-two-font-size"> {{interfaceText.myTeam}} </text>
+				<text class="mp-text-three-font-size gray-color"> 3个团队成员 </text>
+			</view>
+		</view>
+		<view class="menu-item" bindtap="clickJump" data-type="">
+			<image class="icon menu-item-icon" src="/image/temp/333.png" />
+			<view class="item-content">
+				<text class="mp-text-two-font-size"> {{interfaceText.myOrders}}</text>
+				<text class="mp-text-three-font-size gray-color">17 {{interfaceText["个订单"]}}</text>
+			</view>
+		</view>
+		<view class="menu-item" bindtap="clickJump" data-type="">
+			<image class="icon menu-item-icon" src="/image/temp/444.png" />
+			<view class="item-content">
+				<text class="mp-text-two-font-size">{{interfaceText.dataAnalysis}} </text>
+				<!-- <text class="mp-text-three-font-size">查看销售数据</text> -->
+			</view>
+		</view>
+		<view class="menu-item" bindtap="clickJump" data-type="rule">
+			<image class="icon menu-item-icon" src="/image/temp/555.png" />
+			<view class="item-content">
+				<text class="mp-text-two-font-size">{{interfaceText.vipRules}} </text>
+			</view>
+		</view>
+		<view class="menu-item" bindtap="clickJump" data-type="declaration">
+			<image class="icon menu-item-icon" src="/image/temp/666.png" />
+			<view class="item-content">
+				<text class="mp-text-two-font-size"> {{interfaceText.manifesto}} </text>
+			</view>
+		</view>
+	</view>
+	<view class="" style="margin-top:20px;">
+
+		<image style="width:88vw;"  mode="widthFix"  src="/image/temp/yaoqing.png" />
+	</view>
+</view>
+<!-- Index -->
+
+<view wx:if="{{1==2}}">
+	<view class="center" style="display:flex; height:20vh;">
+		<!-- <view wx:if="{{roleKvtList.kvt.length>0}}" style="flex:1;" bindtap="clickJump" data-type="invitation">邀请功能</view> -->
+		<view class="brand" style="flex:1;" bindtap="clickJump" data-type="brand">供应商大数据分析</view>
+	</view>
+	<view class="center" style="display:flex; height:20vh;">
+		<view class="" style="flex:1;" bindtap="clickJump" data-type="wholesaler">代理商大数据分析</view>
+		<view class="" style="flex:1;" bindtap="clickJump" data-type="retailer">经销商大数据分析</view>
+	</view>
+	<!-- <view class="center" style="display:flex; height:20vh;">
+		<view class="" style="flex:1;" bindtap="clickJump" data-type="declaration">合作宣言</view>
+		<view class="" style="flex:1;" bindtap="clickJump" data-type="rule">VIP活动规则</view>
+</view> -->
+	<view class="center" style="display:flex; height:20vh;">
+		<view class="" style="flex:1;" bindtap="clickJump" data-type="poster">生成海报</view>
+		<!-- <view class="" style="flex:1;" bindtap="clickJump" data-type="distribution-center">分销中心</view> -->
+	</view>
+	<view class="center" style="display:flex; height:20vh;">
+		<!-- <view class="" style="flex:1;" bindtap="clickJump" data-type="accumulative-customer">累计客户</view> -->
+		<view class="" style="flex:1;" bindtap="clickJump" data-type="level">分销员等级</view>
+	</view>
+	<view class="center" style="display:flex; height:20vh;">
+		<!-- <view class="" style="flex:1;" bindtap="clickJump" data-type="team">我的团队</view> -->
+		<view class="" style="flex:1;" bindtap="clickJump" data-type="approval">申请审核</view>
+	</view>
+	<view class="center" style="display:flex; height:20vh;">
+		<view class="" style="flex:1;" bindtap="clickJump" data-type="detail">分销员详情</view>
+		<!-- <view class="" style="flex:1;" bindtap="clickJump" data-type="manage">管理团队</view> -->
+	</view>
+
+</view>

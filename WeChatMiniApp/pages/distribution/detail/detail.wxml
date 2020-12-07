@@ -1,0 +1,82 @@
+<!--pages/distribution/detail/detail.wxml-->
+<view class="view-main">
+  <view class="view-top">
+    <view class="view-top-contact">
+      <text class="text-contact">联系TA</text>
+      <image class="img-contact" src="" />
+    </view>
+    <view class="view-top-info">
+      <image class="img-info" src="" />
+      <view class="{{ userLevel ==='普通分销员'  ? 'text-level-normal' : ( userLevel ==='白银分销员' ? 'text-level-sliver' : 'text-level-gold' )}}">
+        <text class="mp-text-three-font-size">{{userLevel}}</text>
+      </view>
+      <text class="text-name">微信昵称{{userName}}</text>
+    </view>
+  </view>
+  <view class="view-center">
+    <view class="view-center-title">
+      <image class="center-img" />
+      <text class="text-title-main">基本信息</text>
+    </view>
+    <view class="center-content">
+      <text class="text-title">姓名</text>
+      <text class="text-content">{{distributorDetail.lastName}}{{distributorDetail.firstName}}</text>
+    </view>
+    <view class="center-content">
+      <text class="text-title">手机号</text>
+      <text class="text-content">{{distributorDetail.contactNumber}}</text>
+    </view>
+    <view class="center-content">
+      <text class="text-title">电子邮箱</text>
+      <text class="text-content">123456789@xx.com</text>
+    </view>
+    <view class="center-content">
+      <text class="text-title">邀请人</text>
+      <text class="text-content">{{distributorDetail.inviterNickName}}</text>
+    </view>
+    <view class="center-content">
+      <text class="text-title">打款方式</text>
+      <text class="text-content">微信支付</text>
+    </view>
+  </view>
+  <view class="divider"></view>
+  <view class="view-bottom">
+    <view class="view-bottom-title">
+      <image class="img-bottom" />
+      <text class="text-title-main">订单列表</text>
+    </view>
+    <view class="view-bottom-choose">
+      <block wx:for="{{chooseTitle}}">
+        <text class="choose-item">{{item}}</text>
+      </block>
+    </view>
+    <view class="view-bottom-status">
+      <view class="status-total">
+        <text class="mp-text-two-font-size">总订单金额: ￥{{totalCash}}</text>
+      </view>
+      <view class="status-total">
+        <text class="mp-text-two-font-size">总单数: {{totalOrder}}</text>
+      </view>
+    </view>
+    <view class="view-bottom-list-title">
+      <block wx:for="{{tableTitle}}">
+        <view class="table-item">
+          <text class="mp-text-two-font-size">{{item}}</text>
+        </view>
+      </block>
+    </view>
+    <scroll-view class="srcoll-bottom" scroll-y="{{true}}">
+      <view class="view-bottom-list">
+        <block wx:for="{{orderList}}">
+          <view class="list-content">
+            <view class="list-item">{{item.orderNum}}</view>
+            <view class="list-item">{{item.orderCash}}</view>
+            <view class="list-item">{{item.orderCommission}}</view>
+            <view class="list-item">{{item.orderNum}}</view>
+            <view class="list-item">{{item.orderStatus}}</view>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,219 @@
+<view >
+  <view wx:if="{{data.details.style==0}}">
+    <block  wx:for="{{data.details.imgs}}"  wx:for-item="itemImg">
+     
+      <view style="height:150px;display:flex;border:  solid #f1f1f1;">
+        <view style="flex:8;">
+          <image style="height:100%;width:100%;" src="{{itemImg.src}}"  />
+        </view>
+        <view style="flex:9;display:flex;flex-flow:column;padding-left:3%;padding-right:3%;">
+          <view style="flex:1;margin: 2px;" class="mp-text-two-font-size">{{itemImg.title}}</view>
+          <view style="flex:1;margin: 2px;" class="mp-text-three-font-size  grey-color  ">{{itemImg.text}}</view>
+          <view style="flex:1;margin: 2px;" class="mp-text-three-font-size"> <text>￥{{itemImg.price}}</text>
+            <!-- <text class="grey-color"
+                  style="text-decoration:line-through">￥{{itemImg.price2}}</text> -->
+          </view>
+          <view style="flex:1;margin: 2px;" class="mp-text-three-font-size"><text
+              style="background:#FF0000;   padding:3px  7.5px;color:#fff;">{{itemImg.button}}
+            </text></view>
+          <view style="flex:1;margin: 2px;" class="mp-text-three-font-size grey-color">
+            已售{{itemImg.quantitySold}}{{itemImg.company}}</view>
+        </view>
+      </view>
+
+    </block>
+  </view>
+
+  <view wx:if="{{data.details.style==1}}">
+    <block wx:for="{{data.details.imgs}}"  wx:for-item="itemImg">
+      <view style="height:150px;display:flex;border:  solid #f1f1f1;">
+        <view wx:if="{{index%2==0}}" style="flex:8;">
+          <image style="height:100%;width:100%;" src="{{itemImg.src}}"></image>
+        </view>
+        <view style="flex:9;display:flex;flex-flow:column;padding-left:3%;padding-right:3%;">
+          <view style="flex:1;margin: 2px;" class="mp-text-two-font-size">{{itemImg.title}}</view>
+          <view style="flex:1;margin: 2px;" class="mp-text-three-font-size  grey-color  ">{{itemImg.text}}</view>
+          <view style="flex:1;margin: 2px;" class="mp-text-three-font-size"> <text>￥{{itemImg.price}}</text>
+            <!-- <text class="grey-color"
+                  style="text-decoration:line-through">￥{{itemImg.price2}}</text> -->
+          </view>
+          <view style="flex:1;margin: 2px;" class="mp-text-three-font-size"><text
+              style="background:#FF0000;   padding:3px  7.5px;color:#fff;">{{itemImg.button}}
+            </text></view>
+          <view style="flex:1;margin: 2px;" class="mp-text-three-font-size grey-color">
+            已售{{itemImg.quantitySold}}{{itemImg.company}}</view>
+        </view>
+        <view wx:if="{{index%2==1}}" style="flex:8;">
+          <image style="height:100%;width:100%;" src="{{itemImg.src}}"></image>
+        </view>
+      </view>
+    </block>
+
+  </view>
+  <view wx:if="{{data.details.style==2}}">
+    <view style="display:flex;flex-wrap: wrap;">
+
+      <block wx:for="{{data.details.imgs}}"  wx:for-item="itemImg">
+        <view style="width:100%;   flex-flow:column;" class="center">
+          <image style="height:350px;width:90%;" src="{{itemImg.src}}"></image>
+          <view style="display:flex;flex-flow:column;padding-left:5%;padding-right:5%;">
+            <view style="flex:1;margin: 2px;" class="mp-text-two-font-size  center  ">{{itemImg.title}}</view>
+            <view style="flex:1;margin: 2px;" class="mp-text-three-font-size  grey-color center ">{{itemImg.text}}
+            </view>
+            <view style="flex:1;margin: 2px;" class="mp-text-three-font-size center">
+
+              <text>￥{{itemImg.price}}</text>
+
+
+            </view>
+            <view style="flex:1;margin: 2px;" class="mp-text-three-font-size center">
+              <text style="background:#FF0000;   padding:3px  7.5px;color:#fff;">{{itemImg.button}}</text></view>
+            <!-- <view style="flex:1;" class="mp-text-three-font-size grey-color">已售{{itemImg.quantitySold}}{{itemImg.company}}</view> -->
+          </view>
+          <!-- <text style="margin-top:5%;" class=" center   spanThreeFont">￥399</text> -->
+        </view>
+
+      </block>
+
+    </view>
+  </view>
+
+  <view wx:if="{{data.details.style==3}}">
+    <view style="display:flex;flex-wrap: wrap;">
+
+      <block wx:for="{{data.details.imgs}}"  wx:for-item="itemImg">
+        <view style="width:50%;   flex-flow:column;" class="center">
+          <image style="height:210px;width:90%;" src="{{itemImg.src}}"></image>
+          <view style="display:flex;flex-flow:column;padding-left:5%;padding-right:5%;">
+            <view style="flex:1;margin: 2px;" class="mp-text-two-font-size  center  ">{{itemImg.title}}</view>
+            <view style="flex:1;margin: 2px;" class="mp-text-three-font-size  grey-color center ">{{itemImg.text}}
+            </view>
+            <view style="flex:1;margin: 2px;" class="mp-text-three-font-size center">
+
+              <text>￥{{itemImg.price}}</text>
+
+
+            </view>
+            <view style="flex:1;margin: 2px;" class="mp-text-three-font-size center">
+              <text style="background:#FF0000;   padding:3px  7.5px;color:#fff;">{{itemImg.button}}</text></view>
+            <!-- <view style="flex:1;" class="mp-text-three-font-size grey-color">已售{{itemImg.quantitySold}}{{itemImg.company}}</view> -->
+          </view>
+        </view>
+
+      </block>
+
+    </view>
+  </view>
+
+  <view wx:if="{{data.details.style==4}}">
+  
+    <view style="display:flex;flex-wrap: wrap;">
+
+      <block wx:for="{{data.details.imgs}}"  wx:for-item="itemImg">
+        <view style="width:33.3%;flex-flow:column;" class="center">
+          <image style="height:140px;width:90%;" src="{{itemImg.src}}"></image>
+          <view style="display:flex;flex-flow:column;padding-left:5%;padding-right:5%;">
+            <view style="flex:1;margin: 2px;" class="mp-text-two-font-size  center  ">{{itemImg.title}}</view>
+            <view style="flex:1;margin: 2px;" class="mp-text-three-font-size  grey-color center ">{{itemImg.text}}
+            </view>
+            <view style="flex:1;margin: 2px;" class="mp-text-three-font-size center">
+
+              <text>￥{{itemImg.price}}</text>
+
+
+            </view>
+            <view style="flex:1;margin: 2px;" class="mp-text-three-font-size center">
+              <text style="background:#FF0000;   padding:3px  7.5px;color:#fff;">{{itemImg.button}}</text></view>
+            <!-- <view style="flex:1;" class="mp-text-three-font-size grey-color">已售{{itemImg.quantitySold}}{{itemImg.company}}</view> -->
+          </view>
+        </view>
+
+      </block>
+
+    </view>
+
+  </view>
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <view class="view-product fa{{data.details.style}}" style="background-color:{{data.details.color2}}">
+
+
+	<block wx:for="{{data.details.imgs}}" wx:key="itemImg" wx:for-item="itemImg" wx:for-index="itemIndex">
+		<block wx:if="{{data.details.style==1}}"  >
+			<view style="display:flex;margin-top: 10px;border:  solid #f1f1f1;"    >
+				<view style="flex:8;">
+					<image lazy-load class="img" src="{{itemImg.src}}" mode="widthFix"></image>
+				</view>
+				<view style="flex:9;display:flex;flex-flow:column;padding-left:5%;padding-right:5%;">
+					<view style="flex:1;" class="mp-text-two-font-size">{{itemImg.title}}</view>
+					<view style="flex:1;" class="mp-text-three-font-size  grey-color  ">{{itemImg.text}}</view>
+					<view style="flex:1;" class="mp-text-three-font-size"> <text style="padding:3rpx;background:#fff1f6;">
+							新款特惠价 </text> </view>
+					<view style="flex:1;" class="mp-text-three-font-size"> <text>￥{{itemImg.price}}</text> <text class="grey-color" style="text-decoration:line-through">￥{{itemImg.price2}}</text></view>
+					<view style="flex:1;" class="mp-text-three-font-size"><text style="background:#FF0000;   padding:6rpx  15rpx;color:#fff;">{{itemImg.button}}
+						</text></view>
+					<view style="flex:1;" class="mp-text-three-font-size grey-color">已售{{itemImg.quantitySold}}{{itemImg.company}}</view>
+				</view>
+
+			</view>
+		</block>
+
+
+		<block wx:elif="{{data.details.style==2}}">
+			<view style="display:flex;margin-top: 10px;border:  solid #f1f1f1;">
+			
+				<view style="flex:9;display:flex;flex-flow:column;padding-left:5%;padding-right:5%;">
+					<view style="flex:1;" class="mp-text-two-font-size">{{itemImg.title}}</view>
+					<view style="flex:1;" class="mp-text-three-font-size  grey-color  ">{{itemImg.text}}</view>
+					<view style="flex:1;" class="mp-text-three-font-size"> <text style="padding:3rpx;background:#fff1f6;">
+							新款特惠价 </text> </view>
+					<view style="flex:1;" class="mp-text-three-font-size"> <text>￥{{itemImg.price}}</text> <text class="grey-color" style="text-decoration:line-through">￥{{itemImg.price2}}</text></view>
+					<view style="flex:1;" class="mp-text-three-font-size"><text style="background:#FF0000;   padding:6rpx  15rpx;color:#fff;">{{itemImg.button}}
+						</text></view>
+					<view style="flex:1;" class="mp-text-three-font-size grey-color">已售{{itemImg.quantitySold}}{{itemImg.company}}</view>
+				</view>
+	<view style="flex:8;">
+					<image lazy-load class="img" src="{{itemImg.src}}" mode="widthFix"></image>
+				</view>
+			</view>
+		</block>
+
+
+		<block wx:elif="{{data.details.style==3}}">
+			<view class="img"   style="margin-top: 10px;">
+				<image lazy-load class="img" src="{{itemImg.src}}" mode="widthFix"></image>
+				<view class="con">
+					<view class="txt1" style="color:{{item.details.color1}};font-size:{{item.details.fontSize}}; display: flex;text-align: center;align-items: center;justify-content: center;">
+						{{itemImg.title}}
+					</view>
+			
+					<view style="display: flex;text-align: center;align-items: center;justify-content: center;">
+						<text class="txt2">￥{{itemImg.price}}</text>
+						<text class="txt2">已售{{itemImg.quantitySold}}{{itemImg.company}}</text>
+					</view>
+
+					<view class="txt2" style="display: flex;text-align: center;align-items: center;justify-content: center;">{{itemImg.button}}</view>
+				</view>
+			</view>
+		</block>
+
+
+
+
+
+	</block>
+</view> -->

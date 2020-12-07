@@ -1,0 +1,17 @@
+
+
+.userinfo {
+  position: relative;
+  width: 100vw;
+  height: 320rpx;
+  background: #008842;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.userinfo-nickname {
+  color: #aaa;
+}

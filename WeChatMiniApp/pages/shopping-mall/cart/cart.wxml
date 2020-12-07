@@ -1,0 +1,130 @@
+<!--pages/cart/cart.wxml-->
+
+<view wx:if="{{cartData.list && cartData.list.length > 0}}" style="height:100vh;">
+
+  <scroll-view scroll-y="{{true}}" style="height:92%;">
+    <view style="display:flex;height:10%;">
+      <view style="flex:8;" class="center"  style="justify-content: flex-start; " >
+        <image style="width:50rpx;height:50rpx;margin-left:15rpx;margin-right:15rpx;" src="/image/home.svg"></image>
+        智享精灵商城
+      </view>
+      <view style="flex:1;" class="center"></view>
+      <view style="flex:1;" class="center" style="justify-content: flex-end;"> 
+        <text wx:if="{{editStatus==false}}" bindtap="editStatusChange" style="margin-right:15rpx;">编辑</text>
+        <text wx:else bindtap="editStatusChange" style="margin-right:15rpx;">完成</text>
+      </view>
+    </view>
+    <checkbox-group bindchange='checkboxChange' style="height:90%;">
+      <block wx:for="{{cartData.list}}" wx:for-index="index" wx:key="index">
+        <view style=" height:15vh;border-top:1rpx solid #f1f1f1;display:flex;">
+          <view style="flex:1;" class="center">
+            <checkbox checked="{{ item.products.isChecked}}" data-state="{{item.products.isChecked}}" value="{{index}}" /> </view>
+          <view style="flex:4;display:flex;  ">
+            <view style='  flex:2;' class='center'>
+              <image mode='aspectFill' style='width:140rpx;height:140rpx;' src="{{item.products.image_path}}"></image>
+            </view>
+            <view style=' flex:4;font-size:23rpx;display:flex; flex-flow: column;justify-content: center;'>
+              <text class="mp-text-one-font-size {{skin}}-color lineEllipsis2" style='margin-left:12px; font-weight: bold;margin-bottom: 5rpx;text-align: left;	'> {{item.products.title}} </text>
+              <text class="mp-text-two-font-size lineEllipsis2" style='margin-left:12px;  color:#666;text-align: left;'>  {{item.products.title}}</text>
+            </view>
+          </view>
+          <view style="flex:1;display:flex; flex-flow: column;justify-content: center;'">
+
+            <view style="flex:1;justify-content:flex-end;display: flex;align-items:center;" ><text style="margin-right:15rpx;">￥{{item.products.price}}</text></view>
+            <view style="flex:1;justify-content:flex-end;display: flex;align-items:center;">
+              <image mode='aspectFill' style='height:50rpx;width:50rpx;margin-right:15rpx;' src="/image/delete.svg"></image>
+            </view>
+
+          </view>
+
+
+        </view>
+
+      </block>
+    </checkbox-group>
+
+  </scroll-view>
+
+
+  <view style="display:flex;height:8%;">
+
+    <view style="flex:2;" class="center">
+      <checkbox checked="{{isSelectAll}}" bindtap="selectAllClick" /> </view>
+    <view style="flex:2;display:flex;  " class="center">
+
+      全选
+    </view>
+    <view style="flex:5;display:flex;  " class="center">
+
+      <text wx:if="{{editStatus==false}}">合计：￥</text>
+      <text wx:else></text>
+    </view>
+    <view style="flex:3;display:flex; " class="{{skin}}-background center">
+
+      <text wx:if="{{editStatus==false}}">去结算</text>
+      <text wx:else>删除</text>
+
+    </view>
+
+
+
+  </view>
+
+
+
+
+</view>
+
+
+
+<view wx:else style="height:100vh;">
+  <view class="center" style="margin-top:20vh;">
+    <image style="width:30vw" src="/static/image/car.png" mode="widthFix"></image>
+  </view>
+
+  <view class="center" style="margin-top:2vh;">购物车快饿瘪了 T.T</view>
+  <view class="center" style="margin-top:2vh;">快给我挑点宝贝吧</view>
+
+
+  <view class="center" style="margin-top:2vh;">
+    <view class="bigButtonStyle  center {{skin}}-background"  data-name="分类" bindtap="clickToJump" style="width:30%;"> 去逛逛</view>
+  </view>
+</view>
+
+ <view class="bottom-suspension" wx:if="{{1==2}}" style="display:flex;height:8vh;border-top:3rpx solid #f1f1f1;">
+
+    <view style='flex:1;height:100%;' class='center' data-name="首页" bindtap='clickToJump'>
+      <view class='button center' style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+        <view class="center" style="margin-bottom:4%;">
+          <image style='width: 50rpx;height: 50rpx;' src="/static/image/homepage.png"></image>
+        </view>
+        <text class=' mp-text-three-font-size center ' style='font-weight: bold;'> 首页 </text>
+      </view>
+    </view>
+    <view style='flex:1;height:100%;' class='center' data-name="分类" bindtap='clickToJump'>
+      <view class='button center' style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+        <view class="center" style="margin-bottom:4%;">
+          <image style='width: 50rpx;height: 50rpx;' src="/static/image/switch-ic-side-2.png"></image>
+        </view>
+        <text class=' mp-text-three-font-size center ' style='font-weight: bold;'> 分类 </text>
+      </view>
+    </view>
+    <view style='flex:1;height:100%;' class='center' data-name="购物车" bindtap='clickToJump'>
+      <view class='button center' style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+        <view class="center" style="margin-bottom:4%;">
+          <image style='width: 50rpx;height: 50rpx;' src="/static/image/ic-me-car.png"></image>
+        </view>
+        <text class=' mp-text-three-font-size center ' style='font-weight: bold;'> 购物车 </text>
+      </view>
+    </view>
+    <view style='flex:1;height:100%;' class='center'>
+      <view class='button center' style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+        <view class="center" style="margin-bottom:4%;" data-name="我的" bindtap='clickToJump'>
+          <image style='width: 50rpx;height: 50rpx;' src="/image/personalData.svg"></image>
+        </view>
+        <text class=' mp-text-three-font-size center ' style='font-weight: bold;'> 我的 </text>
+      </view>
+    </view>
+
+
+  </view>

@@ -1,0 +1,138 @@
+<view style="height:92vh;">
+  <scroll-view scroll-y="{{true}}" style="height:100%;background:#f1f1f1;">
+    <view wx:if="{{addemt>0}}">
+      <view class="address"  style='padding-left:15rpx;'>
+
+        <view style="margin-left:15rpx; width:calc(100vw-30rpx);">
+          <view  style="width:100%;" bindtap="toSetAddress" data-type="edit">
+            <view class="address-name-phone">
+              <text class="address-name mp-text-one-font-size">收货人: {{address.consigneeName}}</text>
+              <text class="address-phone mp-text-one-font-size">{{address.phone}}</text>
+            </view>
+            <view class="address-info mp-text-two-font-size">{{address.region}} {{address.address}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else>
+      <view class="address"  style=''>
+        <view class="address" style='border-radius: 15rpx;padding-left:15rpx;'>
+          <view style="margin-left:15rpx; width:calc(100vw-30rpx);">
+            <view  style="width:100%;" bindtap="toSetAddress" data-type="add">
+              <view class="address-name-phone">
+                <text class="address-name mp-text-one-font-size"> </text>
+                <text class="address-phone mp-text-one-font-size"></text>
+              </view>
+              <view class="address-info mp-text-one-font-size">添加收货地址</view>
+              <view class="address-info mp-text-one-font-size"></view>
+            </view>
+          </view>
+
+
+
+        </view>
+
+
+
+      </view>
+
+    </view>
+
+
+      <view style=" height:15vh;border-top:1rpx solid #f1f1f1;display:flex;background:#fff;">
+        <view style="flex:4;display:flex;  ">
+          <view style='  flex:2;' class='center'>
+            <image mode='aspectFill' style='width:140rpx;height:140rpx;' src="{{order.image}}"></image>
+          </view>
+          <view style=' flex:4;font-size:23rpx;display:flex; flex-flow: column;justify-content: center;'>
+            <text class="mp-text-one-font-size {{skin}}-color lineEllipsis2" style='margin-left:12px; font-weight: bold;margin-bottom: 5rpx;text-align: left;	'> {{order.specialName}} </text>
+            <text  wx:for="{{order.selectValue}}" class="mp-text-two-font-size lineEllipsis2" style='margin-left:12px;  color:#666;text-align: left;'> {{item.description}} - {{item.value}}</text>
+          </view>
+        </view>
+        <view style="flex:1;display:flex; flex-flow: column;justify-content: center;'">
+
+          <view style="flex:1;justify-content:flex-end;display: flex;align-items:center;">
+            <text style="margin-right:15rpx;">￥{{order.price||0.00}}</text>
+          </view>
+          <view style="flex:1;justify-content:flex-end;display: flex;align-items:center;">
+            <text style="margin-right:15rpx;">x{{order.quantity}}</text>
+          </view>
+
+        </view>
+
+
+      </view>
+  
+
+
+
+
+    <!-- <block wx:for="{{productData.productContent}}" wx:for-index="index" wx:key="index">
+      <view style=" height:15vh;border-top:1rpx solid #f1f1f1;display:flex;background:#fff;">
+        <view style="flex:4;display:flex;  ">
+          <view style='  flex:2;' class='center'>
+            <image mode='aspectFill' style='width:140rpx;height:140rpx;' src="{{item.image}}"></image>
+          </view>
+          <view style=' flex:4;font-size:23rpx;display:flex; flex-flow: column;justify-content: center;'>
+            <text class="mp-text-one-font-size {{skin}}-color lineEllipsis2" style='margin-left:12px; font-weight: bold;margin-bottom: 5rpx;text-align: left;	'> {{item.name}} </text>
+            <text class="mp-text-two-font-size lineEllipsis2" style='margin-left:12px;  color:#666;text-align: left;'>  {{item.selectColor}}</text>
+          </view>
+        </view>
+        <view style="flex:1;display:flex; flex-flow: column;justify-content: center;'">
+
+          <view style="flex:1;justify-content:flex-end;display: flex;align-items:center;">
+            <text style="margin-right:15rpx;">￥{{item.price}}</text>
+          </view>
+          <view style="flex:1;justify-content:flex-end;display: flex;align-items:center;">
+            <text style="margin-right:15rpx;">x{{item.num}}</text>
+          </view>
+
+        </view>
+
+
+      </view>
+    </block> -->
+
+    <view style="background:#fff;margin-top:1vh;">
+      <view style="display:flex;">
+        <view style="flex:1;display: flex;align-items:center;margin:15rpx;">商品价格</view>
+        <view style="flex:1;justify-content:flex-end;display: flex;align-items:center;margin:15rpx;">￥0.00</view>
+      </view>
+      <view style="display:flex;">
+        <view style="flex:1;display: flex;align-items:center;margin:15rpx;">商品优惠</view>
+        <view style="flex:1;justify-content:flex-end;display: flex;align-items:center;margin:15rpx;">-￥0.00</view>
+      </view>
+      <view style="display:flex;">
+        <view style="flex:1;display: flex;align-items:center;margin:15rpx;">运费</view>
+        <view style="flex:1;justify-content:flex-end;display: flex;align-items:center;margin:15rpx;">￥0.01</view>
+      </view>
+    </view>
+    <view style="background:#fff;margin-top:1vh;margin-bottom:3vh;">
+      <view style="margin:15rpx;">买家留言</view>
+      <input class="mp-text-two-font-size" style='width:100%;margin:15rpx;' type="text" name="remark" placeholder="添加备注" value="{{remark}}" bindinput="remarkInput" />
+    </view>
+
+
+
+
+
+  </scroll-view>
+</view>
+<view class="bottom-suspension   center " style="height:8vh;display:flex;">
+
+  <view style="flex:3;height:100%;" class="center mp-text-two-font-size ">
+    共计{{productData.productContent.length||1}}件商品
+  </view>
+
+  <view style="flex:4;display:flex; height:100%; " class="center">
+    合计：￥{{totalPrice||0.01}}
+  </view>
+  <view style="flex:5;display:flex;height:100%; " class="tCBG center"  bindtap="createProductOrderByWX">
+
+    立即支付
+
+
+  </view>
+
+
+</view>

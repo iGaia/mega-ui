@@ -1,0 +1,42 @@
+<!--pay.wxml-->
+<view class="w100">
+
+  <card buttonName="查看权益" backgroundColorClass="tCBGCoral" cardName="{{membershipType}}VIP会员" brandUpperCase="{{brandUpperCase}}" bind:cardButtonClick="cardButtonClick" data-relationBrand="{{brandUpperCase}}"   data-cardSubName=""       >    </card>
+  <card buttonName="查看权益" backgroundColorClass="tCBGBlue" cardName="航海俱乐部优惠" brandUpperCase="GJNXFXHHJLB.HHJLB" bind:cardButtonClick="cardButtonClick" data-relationBrand="{{brandUpperCase}}"    data-cardSubName=""       > </card>
+
+  <view class="zhifu mt10 tc mp-text-one-font-size">总计：
+    <span class="  mp-title-one-font-size" style="color:#00C250;font-weight: bold;">¥ {{total}}</span>
+  </view>
+
+  <view  style='height:16%;background:#fff;width: 100%;overflow: hidden;position: fixed;z-index: 2000;background: #fff;'>
+    <view style='width:100%;height:65%;' class='center'>
+      <view id="wxPay" bindtap="createProductOrderByWX" class='center bigButtonStyle' style='background:#00C250;color:#fff;'> 微信支付 </view>
+    </view>
+<!-- createProductOrderByWX -->
+    <view style='width:100%;height:35%;display:flex;'>
+      <view style=' flex:7;' class='center'>
+        <radio-group bindtap="radioChange" class='center' style='font-size:22rpx;'>
+
+          <radio checked="{{isReadAgreement}}" style="font-size:23rpx;" value="radio" />
+          <text>阅读并同意</text>
+          <text bindtap='intoAgreement' data-state='0' style='color:#5289C6;'>《小程序服务协议》</text>
+
+        </radio-group>
+
+      </view>
+      <view style='  flex:4;font-size:23rpx;' class='center'>
+        <!-- <text bindtap='intoAgreement' data-state='1' style='color:#5289C6;'>《品牌会员权益规则》</text> -->
+      </view>
+      <view style=' flex:1;font-size:23rpx;' class='center'>
+        <!-- <text style='color:#5289C6;'>《权益规则详情》</text> -->
+      </view>
+
+    </view>
+
+
+  </view>
+
+
+
+
+</view>

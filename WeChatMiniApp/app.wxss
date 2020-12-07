@@ -1,0 +1,608 @@
+/**app.wxss**/
+@import "/config/skin.wxss";
+@import "/common/lib/weui.wxss";
+
+.tCBG {
+  background: #e59665;
+  color: #fff !important;
+}
+
+.tCBGRed {
+  background: #f00;
+  color: #fff !important;
+}
+
+
+.tCBGCoral {
+  background: #e8817f;
+}
+
+.tCBGBlue {
+  background: #526aaf;
+}
+
+.center {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-column{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+}
+
+
+.mp-title-one-font-size {
+  font-size: 45rpx;
+  /* font-size: 5vw; */
+}
+
+.mp-text-one-font-size {
+  font-size: 35rpx;
+  /* font-size: 4vw; */
+}
+
+.mp-text-two-font-size {
+  font-size: 30rpx !important;
+  /* font-size: 3.5vw!important; */
+}
+
+.mp-text-three-font-size {
+  font-size: 25rpx !important;
+  /* font-size: 3vw!important; */
+}
+
+.mp-text-four-font-size {
+  font-size: 22rpx !important;
+  /* font-size: 2.7vw!important; */
+}
+
+.mp-text-five-font-size {
+  font-size: 20rpx !important;
+ 
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.icon {
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.grey-color {
+  color: #b5b5b5;
+}
+
+.grey-background {
+  background-color: #f1f1f1;
+}
+
+.white-color {
+  color: #fff;
+}
+
+.white-background {
+  background-color: #fff;
+}
+
+.noButtonStyle {
+  background-color: #fff;
+  border: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  border-radius: 0;
+}
+
+.noButtonStyle::after {
+  border: none;
+}
+
+.single-line-ellipsis {
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.bigButtonStyle {
+  height: 7vh;
+  border-radius: 25rpx;
+  width: 90vw;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+/* 表格 */
+
+.table {
+  border: 0px solid darkgray;
+}
+
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 3rem;
+  align-items: center;
+}
+
+.td {
+  flex: 1;
+  justify-content: center;
+  text-align: center;
+}
+
+.bg-w {
+  background: snow;
+}
+
+.bg-g {
+  background: #e6f3f9;
+}
+
+.bg-b {
+  background: #36f;
+}
+
+.th {
+  flex: 1;
+  justify-content: center;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+}
+
+/* 文字两端对齐 */
+
+.justifyText {
+  text-align: justify;
+}
+
+.justifyText::after {
+  width: 100%;
+  display: inline-block;
+  content: '';
+}
+
+/* 底部工具栏 */
+
+
+  .bottom-suspension{
+    /* 悬浮于界面底部 */
+    
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+}
+
+.down-arrow {
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+/* 重写 checkbox 样式 */
+
+/* 未选中的 背景样式 */
+
+checkbox .wx-checkbox-input {
+  border-radius: 50%;
+  /* 圆角 */
+  width: 46rpx;
+  /* 背景的宽 */
+  height: 46rpx;
+  /* 背景的高 */
+}
+
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  border: 1rpx solid #09bb07;
+  background: #09bb07;
+}
+
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  border-radius: 50%;
+  /* 圆角 */
+  width: 40rpx;
+  /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 40rpx;
+  /* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 30rpx;
+  /* 对勾大小 30rpx */
+  color: #fff;
+  /* 对勾颜色 白色 */
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+/* view {
+  box-sizing: border-box;
+} */
+
+.lineEllipsis2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+
+/* 以下是模板小程序的css未来会逐渐优化掉 */
+search2 {
+  width: 100%;
+  height: 104rpx;
+  padding: 16rpx 26rpx;
+  background-color: rgba(255, 255, 255, 1);
+  position: fixed;
+  z-index: 997;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.screen {
+  width: 100%;
+  padding: 10rpx 26rpx 20rpx;
+
+  background-color: #fff;
+
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  z-index: 997;
+}
+
+.screen-item {
+  width: 20%;
+  height: 50rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  position: relative;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.screents {
+  border-left: 2rpx solid #eee;
+}
+
+.screen-item-text {
+  font-size: 24rpx;
+  color: #333;
+  margin-right: 8rpx;
+}
+
+.screen-item-icon {
+  display: inline-block;
+}
+
+.screen-item-icon-img {
+  width: 16rpx;
+  height: 8rpx;
+  display: block;
+}
+
+.screen-item-icon .screen-item-icon-img:first-child {
+  margin-bottom: 4rpx;
+}
+
+.list-grid {
+  width: 44rpx;
+  height: 44rpx;
+  float: left;
+}
+
+.filter-img {
+  width: 18rpx;
+  height: 8rpx;
+}
+
+.img-grids {
+  padding-bottom: 26rpx;
+}
+
+.img-grids-item {
+  width: 336rpx;
+  height: 476rpx;
+  margin: 26rpx;
+  display: inline-block;
+  background-color: #fff;
+ 
+  min-height: 130rpx;
+  margin-bottom: 0;
+}
+
+.img-grids>view,
+.img-list>view {
+  overflow: hidden;
+}
+
+
+
+.order-none {
+  text-align: center;
+  padding: 200rpx 0;
+}
+
+.order-none-img {
+  width: 274rpx;
+  height: 274rpx;
+}
+
+
+
+.img-grids-item:nth-child(2n-1) {
+  margin-right: 0;
+}
+
+.img-grids-item-t {
+  width: 336rpx;
+  height: 336rpx;
+}
+
+.have-none {
+  background-color: #f3f3f3;
+}
+
+.img-grids-item-b {
+  padding: 0 10rpx 10rpx;
+}
+
+.goods-name {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  color: #333;
+  width: 100%;
+
+}
+
+.grids-goods-name {
+  font-size: 26rpx;
+}
+
+.goods-item-c {
+  overflow: hidden;
+  margin-top: 10rpx;
+}
+
+.goods-price {
+  min-width: 120rpx;
+  min-height: 40rpx;
+  color: #333;
+  font-size: 28rpx;
+  display: inline-block;
+  float: left;
+}
+
+.red-price {
+  color: #FF7159 !important;
+}
+
+.img-list-item {
+  padding: 30rpx 26rpx;
+  background-color: #fff;
+  margin-bottom: 2rpx;
+  overflow: hidden;
+}
+
+.img-list-item-l {
+  width: 250rpx;
+  height: 250rpx;
+  display: inline-block;
+  float: left;
+}
+
+.img-list-item-r {
+  width: 410rpx;
+  min-height: 250rpx;
+  display: inline-block;
+  margin-left: 26rpx;
+  float: left;
+  padding: 10rpx 0;
+  position: relative;
+}
+
+.list-goods-name {
+  font-size: 28rpx;
+}
+
+.img-list-item .goods-item-c {
+  width: 100%;
+  margin-top: 0;
+}
+
+.img-list-item .goods-price {
+  min-width: 150rpx;
+  min-height: 50rpx;
+  font-size: 38rpx;
+  float: none;
+}
+
+.goods-buy {
+  overflow: hidden;
+}
+
+.goods-cart {
+  width: 40rpx;
+  height: 40rpx;
+  float: right;
+}
+
+.goods-salesvolume {
+  min-width: 100rpx;
+  height: 30rpx;
+  font-size: 20rpx;
+  color: #999;
+  display: inline-block;
+}
+
+
+
+.goods-list {
+  overflow: auto;
+  height: 100%;
+  width: 160rpx;
+  float: left;
+  display: inline-block;
+  background-color: #f8f8f8;
+}
+
+.goods-li {
+  font-size: 24rpx;
+  color: #666;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.goods-li.active {
+  background-color: #fff;
+}
+
+.shelectedZhu {
+  height: 56rpx;
+  width: 8rpx;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.goods-li.active .shelectedZhu {
+  background-color: #333;
+}
+
+.goods-content {
+  width: 590rpx;
+  display: inline-block;
+  float: left;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.goods-grid {
+  height: 100%;
+  overflow: auto;
+  background-color: #fff;
+}
+
+.goods-banner {
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+
+.goods-banner image {
+  width: 100%;
+  height: 100%;
+}
+
+.goods-item {}
+
+.goods-item-box {
+  overflow: hidden;
+}
+
+.goods-items {
+  width: 100%;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  display: inline-block;
+}
+
+.goods-items:nth-child(3n) {
+  margin-right: 0;
+}
+
+.goods-item-img {
+  width: 170rpx;
+  height: 170rpx;
+}
+
+.goods-item-name {
+  text-align: center;
+  color: #666;
+  font-size: 26rpx;
+  height: 1rem;
+  overflow: hidden;
+}
+
+/* 以下是2020年10月26日小康新编辑后的CSS */
+
+.tabs-active-bar{
+  color: #e59665;  
+}
+
+.tabs-active-bar::after{
+ content: "";
+ width: 76%;
+ height: 0px;
+ display:block;
+ margin: 0 auto;
+ border-bottom:2px solid #dd2727;
+}
+
+
+.profile-picture-panel{
+  /* 页面顶部头像面板的 */
+   height: 150px;
+   background: #FEF3ED;
+}
+
+.avatar {
+  height: 128rpx;
+  width: 128rpx;
+  border-radius: 50%;
+}
+
+.nowrap{
+  white-space: nowrap
+  }
+
+
+
+
+

@@ -1,0 +1,75 @@
+
+
+<search-bar  placeholder="请输入订单号/姓名/手机号"    > </search-bar>
+
+
+<view class="swiper-tab" style="display:flex;">
+	<view style="flex:1;" class=" swiper-tab-list {{currentTab==0 ? 'tabs-active-bar' : ''}}" data-current="0" bindtap="swichNav">全部</view>
+	<!-- <view style="flex:1;" class=" swiper-tab-list {{currentTab==1 ? 'tabs-active-bar' : ''}}" data-current="1" bindtap="swichNav">待付款</view> -->
+	<view style="flex:1;" class=" swiper-tab-list {{currentTab==1 ? 'tabs-active-bar' : ''}}" data-current="1" bindtap="swichNav">待发货</view>
+	<view style="flex:1;" class=" swiper-tab-list {{currentTab==2 ? 'tabs-active-bar' : ''}}" data-current="2" bindtap="swichNav">待收货</view>
+	<!-- <view style="flex:1;" class=" swiper-tab-list {{currentTab==4 ? 'tabs-active-bar' : ''}}" data-current="4" bindtap="swichNav">待评价</view> -->
+</view>
+
+
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:calc(100vh - 80rpx);width:100%" bindchange="swiperTab">
+
+	<swiper-item style="height:100%;">
+
+		<scroll-view scroll-y="{{true}}" style="height:100%;">
+
+			<block>
+				<view style="display:flex;padding:15rpx;">
+					<view   class="mp-text-two-font-size"   style="flex:2;display: flex;align-items:center;"> 订单号：12133123121212</view>
+					<view  class="mp-text-two-font-size"   style="flex:1;justify-content:flex-end;display: flex;align-items:center;">状态：待发货</view>
+				</view>
+
+
+				<block wx:for="{{cartData.list}}" wx:for-index="index" wx:key="index">
+					<view style=" height:15vh;border-top:1rpx solid #f1f1f1;display:flex;">
+						<view style="flex:4;display:flex;  ">
+							<view style='  flex:2;' class='center'>
+								<image mode='aspectFill' style='width:140rpx;height:140rpx;' src="{{item.products.image_path}}"></image>
+							</view>
+							<view style=' flex:4;font-size:23rpx;display:flex; flex-flow: column;justify-content: center;'>
+								<text class="mp-text-one-font-size {{skin}}-color lineEllipsis2" style='margin-left:12px; font-weight: bold;margin-bottom: 5rpx;text-align: left;	'> {{item.products.title}} </text>
+								<text class="mp-text-two-font-size lineEllipsis2" style='margin-left:12px;  color:#666;text-align: left;'> {{item.products.subtitle }}</text>
+							</view>
+						</view>
+						<view style="flex:1;display:flex; flex-flow: column;justify-content: center;'">
+							<view style="flex:1;justify-content:flex-end;display: flex;align-items:center;">
+								<text style="margin-right:15rpx;">￥{{item.products.price}}</text>
+							</view>
+							<view style="flex:1;justify-content:flex-end;display: flex;align-items:center;">
+							</view>
+						</view>
+					</view>
+
+					<view>
+					</view>
+				</block>
+
+				<view style="display:flex;padding:15rpx;">
+					<view       style="flex:2;display: flex;align-items:center;"> </view>
+					<view    class="mp-text-two-font-size"       style="flex:1;display: flex;align-items:center;"> 查看物流</view>
+					<view     class="mp-text-two-font-size"           style="flex:1;display: flex;align-items:center;">确认收货</view>
+				</view>
+
+
+			</block>
+
+
+
+		</scroll-view>
+
+	</swiper-item>
+
+	<swiper-item>
+
+	</swiper-item>
+	<swiper-item>
+
+	</swiper-item>
+
+
+</swiper>

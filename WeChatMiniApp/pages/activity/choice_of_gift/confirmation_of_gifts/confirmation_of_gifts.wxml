@@ -1,0 +1,105 @@
+<view style='height:100vh;'>
+
+  <view class="mp-text-one-font-size" style='margin-left:15rpx;width:88%;margin-bottom:2%;color:#E69664;'>赠品信息</view>
+  <view style="height:1rpx;"></view>
+  <view bindtap='viewGiftDetail' style='border-radius: 25rpx;display:flex;width:calc(100% - 30rpx);height:20.5vh; background:#fff;margin:15rpx;'>
+
+    <view style='  flex:4;' class='center'>
+      <image mode='aspectFill' style='height:90%;width:90%;margin-left:15rpx;' src="{{itemData.image}}"></image>
+    </view>
+    <view style=' flex:9;font-size:23rpx;display:flex; flex-flow: column;justify-content: center;'>
+      <text class="mp-text-one-font-size {{skin}}-color" style='margin-left:12px; font-weight: bold;margin-bottom: 5rpx;text-align: left;'> {{itemData.title}} </text>
+      <text class="mp-text-two-font-size" style='margin-left:12px;  color:#666;text-align: left;'>  {{itemData.subtitle}}</text>
+      <view class="mp-text-two-font-size" style='margin-left:12px;  color:#666;' wx:for="{{productData.productContent}}" wx:key="*this">
+        <!-- <block wx:for="{{productData.productContent}}" wx:key="*this"> -->
+          {{item.name}}颜色:
+          <text class="{{skin}}-color">   {{item.selectColor}} </text>
+        <!-- </block> -->
+
+      </view>
+
+    </view>
+    <view style=' flex:1;font-size:23rpx;display:flex;flex-flow: column;justify-content: center;'>
+
+
+    </view>
+
+  </view>
+
+  <view class="mp-text-one-font-size" style='margin-left:15rpx;width:88%;margin-bottom:2%;color:#E69664;'>收货信息</view>
+
+  <view wx:if="{{addemt>0}}">
+    <view class="address" style='border-radius: 15rpx;padding-left:15rpx;'>
+
+
+      <view style="margin-left:15rpx; width:calc(100vw-30rpx);">
+
+        <view bindtap="toSetAddress" style="width:100%;" data-type="edit">
+          <view class="address-name-phone">
+            <text class="address-name mp-text-one-font-size"> {{address.consigneeName}}</text>
+            <text class="address-phone mp-text-one-font-size">{{address.phone}}</text>
+          </view>
+          <view class="address-info mp-text-two-font-size">{{address.region}}   {{address.address}}</view>
+        
+        </view>
+
+
+        <input class="mp-text-two-font-size" disabled="{{userModel.isGiftSelected==true?true:false}}" style='width:100%;' type="text" name="remark" placeholder="添加备注" value="{{remark}}" bindinput="remarkInput" />
+
+      </view>
+
+
+
+    </view>
+  </view>
+
+  <view wx:else>
+    <view class="address" style='border-radius: 15rpx;'>
+
+      <view class="address" style='border-radius: 15rpx;padding-left:15rpx;'>
+
+
+        <view style="margin-left:15rpx; width:calc(100vw-30rpx);">
+
+          <view bindtap="toSetAddress" style="width:100%;" data-type="add">
+            <view class="address-name-phone">
+              <text class="address-name mp-text-one-font-size"> </text>
+              <text class="address-phone mp-text-one-font-size"></text>
+            </view>
+            <view class="address-info mp-text-one-font-size">添加收货地址</view>
+            <view class="address-info mp-text-one-font-size"></view>
+          </view>
+
+          <input class="mp-text-two-font-size" style='width:100%;' type="text" name="remark" placeholder="添加备注" value="{{remark}}" bindinput="remarkInput" />
+
+        </view>
+
+
+
+      </view>
+
+
+
+    </view>
+
+  </view>
+
+
+
+
+  <view class="bottom-suspension" style='height:10%;background:#fff;;'>
+
+
+    <view style='width:100%;height:65%;' class='center'>
+
+      <view bindtap="confirmation" class='center bigButtonStyle {{skin}}-background'> 确认选择 </view>
+
+
+    </view>
+
+
+
+  </view>
+
+
+</view>

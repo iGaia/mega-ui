@@ -1,0 +1,44 @@
+.announcement{
+   margin: 0rpx 0rpx; 
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 0;
+  /* border-radius: 10rpx; */
+  overflow: hidden;
+}
+
+.icon{
+  width:24px;
+  height:24px;
+  margin-right:10px;
+}
+
+
+.marquee-area {
+    position: relative;
+    height: 45rpx;
+    border: 0px solid #ccc;
+    width: 100vw;
+    overflow: hidden;
+  }
+  
+  .marquee {
+    position: absolute;
+    line-height: 45rpx;
+    left: 100%;
+    top: 0;
+    white-space: nowrap;
+    -webkit-animation: todayScroll 14s linear infinite;
+    animation: todayScroll 14s linear infinite;
+  }
+  
+  @keyframes todayScroll {
+    0% {
+      transform: translate(-50%);
+    }
+  
+    100% {
+      transform: translate(-100%);
+    }
+  }

@@ -1,0 +1,42 @@
+<!--pages/order/complete.wxml-->
+<view style="background:#f1f1f1;height:100vh">
+  <view style="height:5vh;"></view>
+  <view style='' class='center'>
+    <icon type="success" size="75" />
+  </view>
+
+  <view style='margin-top:3vh;' class='center mp-text-one-font-size'>支付成功!</view>
+  <view style='margin-top:3vh;' class='center mp-text-one-font-size'>总额
+    <span style="color:#00C250;font-weight: bold;"> ￥108</span>
+  </view>
+
+
+  <view style='margin-top:4vh;' class='center mp-title-one-font-size bold'>开始享受优惠</view>
+
+
+  <view style="display:flex;width:100%;margin-top:2vh;">
+    <view style="flex:1;flex-flow: column;"></view>
+
+    <view bindtap='toChoose' data-id="{{0}}" style=" background:#fff;border: 0px solid red;border-radius:25rpx;flex:12;width:100%;flex-flow: column;overflow:hidden;" class="center mp-text-one-font-size">
+
+      <image mode="aspectFit" style="height:45vw;width:45vw;" src="https://pic.imgdb.cn/item/5e853e58504f4bcb049eaff5.jpg"></image>
+<text class="center mp-text-two-font-size {{skin}}-color" style="height:100rpx;width:100%;">选择赠品</text>
+  
+    </view>
+    <view style="flex:1;flex-flow: column;"></view>
+    <view bindtap='toChoose' data-id="{{1}}" style="background:#fff;border: 0px solid red;border-radius:25rpx;flex:12;width:100%;flex-flow: column;overflow:hidden;" class="center mp-text-one-font-size">
+
+      <image mode="aspectFit" style="height:45vw;width:45vw;" src="https://pic.imgdb.cn/item/5e853e58504f4bcb049eaff2.jpg"></image>
+<text class="center mp-text-two-font-size {{skin}}-color" style="height:100rpx;width:100%;">立即领取\n价值￥1600航海大礼包</text>
+   
+    </view>
+    <view style="flex:1;flex-flow: column;"></view>
+  </view>
+
+  <view class="bottom-suspension" style='height:10%;'>
+    <view style='width:100%;height:100%;' class='center'>
+      <view data-id="{{2}}" bindtap='toChoose' class='center {{skin}}-background bigButtonStyle'> 完成 </view>
+    </view>
+  </view>
+
+</view>

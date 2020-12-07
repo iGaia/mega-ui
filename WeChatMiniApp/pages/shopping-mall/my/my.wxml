@@ -1,0 +1,434 @@
+<!--user.wxml-->
+<view style='height:100vh;background:#f1f1f1;'>
+
+	<scroll-view scroll-y="{{true}}" style="height:100%;">
+	
+		<view class="center-column profile-picture-panel"   >
+			<button wx:if="{{!hasUserInfo && canIUse}}" class="noButtonStyle" open-type="getUserInfo"
+				bindgetuserinfo="getUserInfo"> 点击登录 </button>
+			<block wx:else>
+				<image class="avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+			</block>
+			<text class="single-line-ellipsis"> {{userInfo.nickName}} </text>
+		</view>
+
+		<view style="display:flex;height:8vh;border-top:3rpx solid #f1f1f1;background:#fff;" data-name="我的订单"
+			bindtap="clickToJump">
+			<view class="center mp-text-two-font-size" style="flex:1;justify-content: flex-start;margin-left:2vh;">
+				<image style='width: 50rpx;height: 50rpx;' src="/image/order.svg"></image>
+				<text style="margin-left:15rpx;">我的订单</text>
+			</view>
+			<view class="center" style="flex:1;justify-content: flex-end;margin-right:2vh;">></view>
+		</view>
+		<view style="display:flex;height:20vw;border-top:3rpx solid #f1f1f1;">
+
+			<!-- <view style='flex:1;height:100%;' class='center'  data-name="待付款"    bindtap='clickToJump'>
+      <view class='button center' style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+        <view class="center" style="margin-bottom:4%;">
+          <image style='width: 50rpx;height: 50rpx;' src="/static/image/me-ic-obligation.png"></image>
+        </view>
+        <text class=' mp-text-three-font-size center ' style='font-weight: bold;'> 待付款 </text>
+      </view>
+    </view> -->
+			<view style='flex:1;height:100%;' class='center' data-name="待发货" bindtap='clickToJump'>
+				<view class='button center'
+					style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+					<view class="center" style="margin-bottom:4%;">
+						<image style='width: 50rpx;height: 50rpx;' src="/image/delivered.svg"></image>
+					</view>
+					<text class=' mp-text-three-font-size center ' style='font-weight: bold;'> 待发货 </text>
+				</view>
+			</view>
+			<view style='flex:1;height:100%;' class='center' data-name="待收货" bindtap='clickToJump'>
+				<view class='button center'
+					style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+					<view class="center" style="margin-bottom:4%;">
+						<image style='width: 50rpx;height: 50rpx;' src="/image/received.svg"></image>
+					</view>
+					<text class=' mp-text-three-font-size center ' style='font-weight: bold;'> 待收货 </text>
+				</view>
+			</view>
+			<view style='flex:1;height:100%;' class='center'>
+				<view class='button center'
+					style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+
+				</view>
+			</view>
+			<view style='flex:1;height:100%;' class='center'>
+				<view class='button center'
+					style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+
+				</view>
+			</view>
+			<!-- <view style='flex:1;height:100%;' class='center' data-name="待评价" bindtap='clickToJump'>
+      <view class='button center' style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+        <view class="center" style="margin-bottom:4%;">
+          <image style='width: 50rpx;height: 50rpx;' src="/static/image/me-ic-evaluate.png"></image>
+        </view>
+        <text class=' mp-text-three-font-size center ' style='font-weight: bold;'> 待评价 </text>
+      </view>
+    </view>
+    <view style='flex:1;height:100%;' class='center' data-name="退换货" bindtap='clickToJump'>
+      <view class='button center' style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+        <view class="center" style="margin-bottom:4%;">
+          <image style='width: 50rpx;height: 50rpx;' src="/static/image/me-ic-evaluate.png"></image>
+        </view>
+        <text class=' mp-text-three-font-size center ' style='font-weight: bold;'> 退换货 </text>
+      </view>
+    </view> -->
+
+		</view>
+
+		<view style="display:flex;height:8vh;border-top:3rpx solid #f1f1f1;margin-top:1vh;background:#fff;">
+			<view class="center mp-text-two-font-size" style="flex:1;justify-content: flex-start;margin-left:2vh;">
+				<image style='width: 50rpx;height: 50rpx;' src="/image/service.svg"></image>
+				<text style="margin-left:15rpx;">我的服务</text>
+			</view>
+			<view class="center" style="flex:1;justify-content: flex-end;margin-right:2vh;"></view>
+		</view>
+
+		<view style="display:flex;height:25vw;border-top:3rpx solid #f1f1f1;">
+			<view style='flex:1;height:100%;' class='center' data-name="个人信息" bindtap='clickToJump'>
+				<view class='button center'
+					style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+					<view class="center" style="margin-bottom:4%;">
+						<image style='width: 50rpx;height: 50rpx;' src="/image/personalData.svg"></image>
+					</view>
+					<text class=' mp-text-three-font-size center ' style='font-weight: bold;'> 个人信息 </text>
+				</view>
+			</view>
+			<view style='flex:1;height:100%;' class='center' data-name="地址管理" bindtap='clickToJump'>
+				<view class='button center'
+					style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+					<view class="center" style="margin-bottom:4%;">
+						<image style='width: 50rpx;height: 50rpx;' src="/image/addressG.svg"></image>
+					</view>
+					<text class=' mp-text-three-font-size center ' style='font-weight: bold;'> 地址管理 </text>
+				</view>
+			</view>
+			<view style='flex:1;height:100%;' class='center' data-name="赠品管理" bindtap='clickToJump'>
+				<view class='button center'
+					style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+					<view class="center" style="margin-bottom:4%;">
+						<image style='width: 50rpx;height: 50rpx;' src="/image/gift.svg"></image>
+					</view>
+					<text class=' mp-text-three-font-size center ' style='font-weight: bold;'> 赠品管理 </text>
+				</view>
+			</view>
+			<view style='flex:1;height:100%;' class='center' data-name="航海报名" bindtap='clickToJump'>
+				<view class='button center'
+					style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+					<view class="center" style="margin-bottom:4%;">
+						<image style='width: 50rpx;height: 50rpx;' src="/image/navigation.svg"></image>
+					</view>
+					<text class=' mp-text-three-font-size center ' style='font-weight: bold;'> 航海报名 </text>
+				</view>
+			</view>
+
+
+		</view>
+
+
+		<view style="display:flex;height:8vh;border-top:3rpx solid #f1f1f1;margin-top:1vh;background:#fff;">
+			<view class="center mp-text-two-font-size" style="flex:1;justify-content: flex-start;margin-left:2vh;">
+				<image style='width: 50rpx;height: 50rpx;' src="/image/distribution.svg"></image>
+				<text style="margin-left:15rpx;">分销中心</text>
+			</view>
+			<view class="center" style="flex:1;justify-content: flex-end;margin-right:2vh;"></view>
+		</view>
+
+		<view style="display:flex;height:25vw;border-top:3rpx solid #f1f1f1;">
+			<view style='flex:1;height:100%;' class='center' data-name="分销模块" bindtap='clickToJump'>
+				<view class='button center'
+					style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+					<view class="center" style="margin-bottom:4%;">
+						<image style='width: 50rpx;height: 50rpx;' src="/image/invite.svg"></image>
+					</view>
+					<text class=' mp-text-three-font-size center ' style='font-weight: bold;'> 分销模块 </text>
+				</view>
+			</view>
+
+
+			<view style='flex:1;height:100%;' class='center' data-name="加盟邀请" bindtap='clickToJump'>
+				<view class='button center'
+					style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+					<!-- <view class="center" style="margin-bottom:4%;">
+						<image style='width: 50rpx;height: 50rpx;' src="/image/invite.svg"></image>
+					</view>
+					<text class=' mp-text-three-font-size center ' style='font-weight: bold;'> 加盟邀请 </text> -->
+				</view>
+			</view>
+			<view style='flex:1;height:100%;' class='center' data-name="合作宣言" bindtap='clickToJump'>
+				<view class='button center'
+					style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+					<!-- <view class="center" style="margin-bottom:4%;">
+						<image style='width: 50rpx;height: 50rpx;' src="/image/declaration.svg"></image>
+					</view>
+					<text class=' mp-text-three-font-size center ' style='font-weight: bold;'> 合作宣言 </text> -->
+				</view>
+			</view>
+			<!-- <view style='flex:1;height:100%;' class='center' data-name="VIP活动规则" bindtap='clickToJump'>
+				<view class='button center' style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+					<view class="center" style="margin-bottom:4%;">
+						<image style='width: 50rpx;height: 50rpx;' src="/image/vip.svg"></image>
+					</view>
+					<text class=' mp-text-three-font-size center ' style='font-weight: bold;'> VIP活动规则 </text>
+				</view>
+			</view> -->
+
+			<view style='flex:1;height:100%;' class='center' data-name="大数据分析" bindtap='clickToJump'>
+				<view class='button center'
+					style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+					<!-- <view class="center" style="margin-bottom:4%;">
+						<image style='width: 50rpx;height: 50rpx;' src="/image/report.svg"></image>
+					</view>
+					<text class=' mp-text-three-font-size center ' style='font-weight: bold;'> 大数据分析 </text> -->
+				</view>
+			</view>
+
+		</view>
+
+
+
+
+		<view style="display:flex;height:8vh;border-top:3rpx solid #f1f1f1;margin-top:1vh;background:#fff;">
+			<view class="center mp-text-two-font-size" style="flex:1;justify-content: flex-start;margin-left:2vh;">
+				<image style='width: 50rpx;height: 50rpx;' src="/image/distribution.svg"></image>
+				<text style="margin-left:15rpx;">商家中心</text>
+			</view>
+			<view class="center" style="flex:1;justify-content: flex-end;margin-right:2vh;"></view>
+		</view>
+		<view style="display:flex;height:25vw;border-top:3rpx solid #f1f1f1;">
+			<view style='flex:1;height:100%;' class='center' data-name="店铺管理" bindtap='clickToJump'>
+				<view class='button center'
+					style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+					<view class="center" style="margin-bottom:4%;">
+						<image style='width: 50rpx;height: 50rpx;' src="/image/order.svg"></image>
+					</view>
+					<text class=' mp-text-three-font-size center ' style='font-weight: bold;'> 店铺管理 </text>
+				</view>
+			</view>
+			<view style='flex:1;height:100%;' class='center' data-name="运单查询" bindtap='clickToJump'>
+				<view class='button center'
+					style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+					<view class="center" style="margin-bottom:4%;">
+						<image style='width: 50rpx;height: 50rpx;' src="/image/order.svg"></image>
+					</view>
+					<text class=' mp-text-three-font-size center ' style='font-weight: bold;'> 运单查询 </text>
+				</view>
+			</view>
+			<view style='flex:1;height:100%;'>
+				<view class='button center'
+					style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+
+				</view>
+			</view>
+			<view style='flex:1;height:100%;'>
+				<view class='button center'
+					style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+
+				</view>
+			</view>
+
+
+		</view>
+
+
+
+
+		<!-- ////////////////////////////////////////////////////////////////////////////////// -->
+
+		<view wx:if="{{1==2}}"
+			style='height:56%;   background:#F0E6E6;padding-left:15rpx;padding-right:15rpx;background:#F0E6E6;'>
+			<view style="height:15rpx;"></view>
+			<view class="" style="display:flex;height:10%;background:#fff;">
+				<view wx:for="{{tabs}}" wx:key="id"
+					style="{{tabs[index].isShow==true&&(index!=2)||(tabs[index].isShow==true&&index==2&&cardList.length>0)?'flex:1':'display:none'}};height:100%;">
+					<view
+						style="width:100%;height:100%;background:{{currentTab==(tabs[0].isShow==true?index:index-1)?'#F0E6E6':'#fff'}};"
+						class="mp-text-one-font-size   center ">
+						<view
+							style="border-top-left-radius:{{currentTab==(tabs[0].isShow==true?index:index-1)?'25':'0'}}rpx;border-top-right-radius: {{currentTab==(tabs[0].isShow==true?index:index-1)?'25':'0'}}rpx;                                           border-bottom-left-radius: {{currentTab+1==(tabs[0].isShow==true?index:index-1)?'25':'0'}}rpx;     border-bottom-right-radius: {{currentTab-1==(tabs[0].isShow==true?index:index-1)?'25':'0'}}rpx;background:{{currentTab==(tabs[0].isShow==true?index:index-1)?'#fff':'#F0E6E6'}};color:{{currentTab==0?'#000':'#666'}};  height:100%;width:100%;"
+							class="mp-text-one-font-size   center " data-current="{{tabs[0].isShow==true?index:index-1}}"
+							bindtap="clickTab">{{item.name}}</view>
+					</view>
+				</view>
+			</view>
+			<swiper
+				style="border-top-left-radius:{{currentTab==0?'0':'25'}}rpx;border-top-right-radius: {{currentTab!=tabsCount?'25':'0'}}rpx; border-bottom-left-radius: 25rpx;border-bottom-right-radius: 25rpx;       height:calc(90% - 30rpx);background:#fff;"
+				current="{{currentTab}}" duration="300" bindchange="swiperTab">
+				<swiper-item wx:if="{{tabs[0].isShow==true}}" style="height:100%;">
+					<scroll-view scroll-y="{{true}}" style='height:100%;'>
+						<view style="height:15rpx;"></view>
+						<navigator wx:if="{{isAllowInvitation==true}}"
+							url="../company/invitation/invite_next_level/invite_next_level">
+							<view class="qbdd center">
+								<image style='flex:1;height: 45rpx;' src="/image/invite.svg"></image>
+								<span class="mp-text-one-font-size " style=" flex:3;text-align:left;">
+									加盟邀请</span>
+								<span class="  mp-text-one-font-size " style=" flex:1;"> ></span>
+							</view>
+						</navigator>
+						<navigator url="../publicity/declaration/declaration">
+							<view class="qbdd center">
+								<image style='flex:1;height: 45rpx;' src="/image/declaration.svg"></image>
+								<span class="mp-text-one-font-size " style=" flex:3;text-align:left;">
+									米粒服饰战略合作宣言</span>
+								<span class="  mp-text-one-font-size " style=" flex:1;"> ></span>
+							</view>
+						</navigator>
+						<navigator url="../publicity/rule/rule">
+							<view class="qbdd center">
+								<image style='flex:1;height: 45rpx;' src="/image/vip.svg"></image>
+								<span class="mp-text-one-font-size " style=" flex:3;text-align:left;">
+									VIP活动规则</span>
+								<span class="  mp-text-one-font-size " style=" flex:1;"> ></span>
+							</view>
+						</navigator>
+						<!-- <view bindtap="showPopup" data-status="1" class="qbdd center">
+            <image style='flex:1;height: 45rpx;' src="/image/sent.svg"></image>
+            <span class="mp-text-one-font-size " style=" flex:3;text-align:left;">
+              转发分享</span>
+            <span class="  mp-text-one-font-size " style=" flex:1;"> ></span>
+          </view> -->
+						<!-- 
+          <navigator  url="../company/retailer/retailer_ report/retailer_ report">
+            <view class="qbdd center">
+              <image style='flex:1;height: 45rpx;' src="/image/report.svg"></image>
+              <span class="mp-text-one-font-size " style=" flex:3;text-align:left;">
+                经销商大数据分析</span>
+              <span class="  mp-text-one-font-size " style=" flex:1;"> ></span>
+            </view>
+          </navigator>
+          <navigator  url="../company/wholesaler/wholesaler_report/wholesaler_report">
+            <view class="qbdd center">
+              <image style='flex:1;height: 45rpx;' src="/image/report.svg"></image>
+              <span class="mp-text-one-font-size " style=" flex:3;text-align:left;">
+                代理商大数据分析</span>
+              <span class="  mp-text-one-font-size " style=" flex:1;"> ></span>
+            </view>
+          </navigator>
+          <navigator  url="../company/brand/brand_report/brand_report">
+            <view class="qbdd center">
+              <image style='flex:1;height: 45rpx;' src="/image/report.svg"></image>
+              <span class="mp-text-one-font-size " style=" flex:3;text-align:left;">
+                供应商大数据分析</span>
+              <span class="  mp-text-one-font-size " style=" flex:1;"> ></span>
+            </view>
+          </navigator> -->
+					</scroll-view>
+				</swiper-item>
+				<swiper-item wx:if="{{tabs[1].isShow==true}}" style="height:100%;">
+					<scroll-view scroll-y="{{true}}" style='height:100%;'>
+						<view style="height:15rpx;"></view>
+						<view wx:if="{{isVIP==true}}">
+							<navigator url="../gift-management/gift-management">
+								<view class="qbdd center">
+									<image style=' flex:1;  height: 45rpx;' src="/image/gift.svg"></image>
+									<span class=" mp-text-one-font-size " style="flex:3;text-align:left;">
+										选择赠品</span>
+									<span class="  mp-text-one-font-size " style="flex:1;float: right; " hover-class="none"> ></span>
+								</view>
+							</navigator>
+						</view>
+						<view wx:if="{{isVIP==true}}">
+							<!-- <navigator url="../activity/activity-management/activity-management"> -->
+							<view bindtap="intoNavigationActivitie" class="qbdd center">
+								<image style='flex:1;height: 45rpx;' src="/image/navigation.svg"></image>
+								<span class="mp-text-one-font-size " style=" flex:3;text-align:left;">
+									航海报名</span>
+
+								<span class="  mp-text-one-font-size " style=" flex:1;"> ></span>
+							</view>
+							<!-- </navigator> -->
+						</view>
+						<navigator url="../user-information-form/user-information-form">
+							<view class="qbdd center">
+								<image style='flex:1;height: 45rpx;' src="/image/personalData.svg"></image>
+								<span class="mp-text-one-font-size " style=" flex:3;text-align:left;">
+									个人资料</span>
+								<span class="  mp-text-one-font-size " style=" flex:1;"> ></span>
+							</view>
+						</navigator>
+
+						<navigator url="../address/address-list/address-list">
+							<view class="qbdd center">
+								<image style='flex:1;height: 45rpx;' src="/image/addressG.svg"></image>
+								<span class="mp-text-one-font-size " style=" flex:3;text-align:left;">
+									我的地址</span>
+								<span class="  mp-text-one-font-size " style=" flex:1;"> ></span>
+							</view>
+						</navigator>
+						<!-- <view >
+              <button  open-type="contact" style="width:100%;"  class="noButtonStyle  qbdd center">
+                <image style='flex:1;height: 45rpx;' src="/image/kefu2.svg"></image>
+                <span class="mp-text-one-font-size " style=" flex:3;text-align:left;">
+                  联系客服</span>
+                <span class="  mp-text-one-font-size " style=" flex:1;"> ></span>
+              </button>     
+          </view> -->
+					</scroll-view>
+				</swiper-item>
+				<swiper-item wx:if="{{tabs[2].isShow==true}}" style="height:100%;">
+					<scroll-view scroll-y="{{true}}" style='height:100%;'>
+						<block wx:for="{{cardList}}" wx:key="id" wx:for-item="cardItem">
+							<card buttonName="查看权益" cardName="{{cardItem.cardName}}" cardSubName="{{cardItem.cardSubName}}"
+								backgroundColorClass="{{cardItem.backgroundColorClass}}" cardNumber="{{cardItem.cardNumber}}"
+								brandUpperCase="{{cardItem.brandUpperCase}}" cardEndTime="{{cardItem.cardEndTime}} "
+								bind:cardButtonClick="intoMembershipCardDetails" data-brand="{{cardItem.cardBrand}}"
+								data-relationBrand="{{cardItem.relationBrand}}"> </card>
+						</block>
+						<view style="height:15rpx;"></view>
+					</scroll-view>
+				</swiper-item>
+			</swiper>
+		</view>
+	</scroll-view>
+
+	<view class="bottom-suspension" wx:if="{{1==2}}" style="display:flex;height:8vh;border-top:3rpx solid #f1f1f1;">
+
+		<view style='flex:1;height:100%;' class='center' data-name="首页" bindtap='clickToJump'>
+			<view class='button center'
+				style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+				<view class="center" style="margin-bottom:4%;">
+					<image style='width: 50rpx;height: 50rpx;' src="/static/image/homepage.png"></image>
+				</view>
+				<text class=' mp-text-three-font-size center ' style='font-weight: bold;'> 首页 </text>
+			</view>
+		</view>
+		<view style='flex:1;height:100%;' class='center' data-name="分类" bindtap='clickToJump'>
+			<view class='button center'
+				style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+				<view class="center" style="margin-bottom:4%;">
+					<image style='width: 50rpx;height: 50rpx;' src="/static/image/switch-ic-side-2.png"></image>
+				</view>
+				<text class=' mp-text-three-font-size center ' style='font-weight: bold;'> 分类 </text>
+			</view>
+		</view>
+		<view style='flex:1;height:100%;' class='center' data-name="购物车" bindtap='clickToJump'>
+			<view class='button center'
+				style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+				<view class="center" style="margin-bottom:4%;">
+					<image style='width: 50rpx;height: 50rpx;' src="/static/image/ic-me-car.png"></image>
+				</view>
+				<text class=' mp-text-three-font-size center ' style='font-weight: bold;'> 购物车 </text>
+			</view>
+		</view>
+		<view style='flex:1;height:100%;' class='center'>
+			<view class='button center'
+				style='background:rgba(255, 255, 255, 0.9); width:100%;height:100%;flex-flow: column;'>
+				<view class="center" style="margin-bottom:4%;">
+					<image style='width: 50rpx;height: 50rpx;' src="/image/personalData.svg"></image>
+				</view>
+				<text class=' mp-text-three-font-size center ' style='font-weight: bold;'> 我的 </text>
+			</view>
+		</view>
+
+
+	</view>
+</view>
+
+
+<dialog id='dialog' title='需要信息授权' content='小程序需要您的信息才能提供更好的服务哦' confirmText='允许' bind:confirmEvent='hideDialog'
+	bind:cancel='hideDialog' bind:bindGetUserInfo='bindGetUserInfo'>
+</dialog>

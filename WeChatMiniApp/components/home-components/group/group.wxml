@@ -1,0 +1,51 @@
+<!--components/home-components/group/group.wxml-->
+<view style="height:35px; display:flex;">
+     
+      <view wx:for="{{data.details.list}}"  style="{{current==index?'color:#fff;flex:1;':'flex:1;'}}"
+        class="{{current==index?'center a-background':'center grey-background '}}"   data-index="{{index}}"   bindtap="changeCurrent">
+        {{ item.name }}
+      </view>
+     
+    </view>
+
+    <view style="display:flex;flex-wrap: wrap;margin-top: 10px;">
+      <block wx:for="{{data.details.list[current].list}}"  >
+
+        <block wx:if="{{data.details.style==0}}">
+          <view style="width:50%;   flex-flow:column;" class="center">
+            <image style="height:80px;width:80px;" src="{{item.src}}"  ></image>
+            <view style="display:flex;flex-flow:column;padding-left:5%;padding-right:5%;margin: 10px;">
+              <view style="flex:1;margin: 2px;" class="mp-text-two-font-size  center  ">{{item.title}}</view>
+            <!--  <view style="flex:1;margin: 2px;" class="mp-text-three-font-size  grey-color center ">{{item.text}}</view> -->
+              <view style="flex:1;margin: 2px;" class="mp-text-three-font-size center">
+                <text>￥{{item.price}}</text>     
+              </view>        
+            </view>
+          </view>
+        </block>
+
+
+        <block wx:if="{{data.details.style==1}}">
+
+          <view style="width:33.3%;   flex-flow:column;" class="center">
+            <image style="height:80px;width:80px;" src="{{item.src}}"></image>
+            <view style="display:flex;flex-flow:column;padding-left:5%;padding-right:5%;margin: 10px;">
+              <view style="flex:1;margin: 2px;" class="mp-text-two-font-size  center  ">{{item.title}}</view>
+        <!--      <view style="flex:1;margin: 2px;" class="mp-text-three-font-size  grey-color center ">{{item.text}}</view> -->
+              <view style="flex:1;margin: 2px;" class="mp-text-three-font-size center">
+
+                <text>￥{{item.price}}</text>
+
+          
+              </view>
+        
+            </view>
+          </view>
+
+        </block>
+
+
+      </block>
+
+
+    </view>

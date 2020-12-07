@@ -1,0 +1,43 @@
+<!--components/card/card.wxml-->
+<view class="{{backgroundColorClass}}" style='height:18vh;width:calc(100% - 30rpx);margin-top:15rpx;border-radius: 25rpx;margin-left:15rpx;margin-right:15rpx;'>
+  <view style='height:75%;display:flex;border-top-left-radius: 25rpx;border-top-right-radius: 25rpx;'>
+    <view style='flex:7;color:#fff; padding-left:15rpx; display:flex;flex-flow: column;' class='mp-text-two-font-size'>
+
+      <view class='bold' style='flex:1;align-items: center;justify-content: flex-start;display: flex;'></view>
+
+      <view style='flex:3;align-items: center;justify-content: flex-start;display: flex;'>{{cardName}} </view>
+
+      <view class='mp-text-three-font-size ' style='flex:2;align-items: center;justify-content: flex-start;display: flex;'>
+        <text       style="color:#ffe3bb">{{cardSubName}}  </text>
+        
+      </view>
+       <view style="flex:3;" class="center">
+       
+      </view>
+    </view>
+    <view style='flex:4;display:flex;flex-flow: column;'>
+       <view style="flex:1;" class="center">
+       
+      </view>
+      <view style="flex:3;" class="center"  style="justify-content: flex-end;">
+        <view wx:if="{{isShowButton==true}}" class='mp-text-three-font-size ' bindtap='cardButtonClick' data-brand="{{brandUpperCase}}" style='padding:8rpx 37rpx; color:#974817;border-radius:15rpx;background:#ffe3bb;color:#984817;margin-right:15rpx;'>{{buttonName}}</view>
+      </view>
+       <view style="flex:5;" class="center">
+       
+      </view>
+    </view>
+  </view>
+  <view style='height:25%;display:flex;border-bottom-left-radius: 25rpx;border-bottom-right-radius: 25rpx;'>
+
+    <view style='flex:3;color:#fff;padding-left:15rpx;' class='mp-text-three-font-size '>
+
+     <text  wx:if="{{cardNumber}}" style=" white-space: nowrap"  >卡号:{{cardNumber}}</text>   
+     
+    </view>
+    <view style='flex:2;padding-right:15rpx;' class="mp-text-three-font-size">
+     <view wx:if="{{cardEndTime}}" style="width:100%;text-align:right;   color:#fff; white-space: nowrap">    有效期 : {{cardEndTime}}</view>
+    </view>
+
+
+  </view>
+</view>

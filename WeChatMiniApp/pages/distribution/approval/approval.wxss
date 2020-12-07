@@ -1,0 +1,53 @@
+/* pages/distribution/approval/approval.wxss */
+.view-main {
+  width: 100vh;
+  height: 100vh;
+}
+
+.divider {
+  height: 2vh;
+  background-color: #F4F4F4;
+}
+
+.list {
+  width: 100vw;
+  height: 98vh;
+  background-color: white;
+}
+
+.list-item {
+  width: 92vw;
+  display: flex;
+  flex-direction: row;
+  margin: 2vh;
+}
+
+.item-portrait {
+  display: flex;
+  flex: 2;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-portrait {
+  background-color: #9C96BA;
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 100%;
+}
+
+.item-name {
+  display: flex;
+  align-items: center;
+  flex: 5;
+}
+
+.item-passed {
+  display: flex;
+  flex: 3;
+  color: white;
+  background-color: #E49665;
+  align-items: center;
+  justify-content: center;
+  border-radius: 36rpx;
+}

@@ -1,0 +1,23 @@
+<!--pages/publicity/declaration/declaration.wxml-->
+
+<view style="padding:30rpx;" class="justifyText">
+<view class="mp-title-one-font-size bold" style="margin-bottom:1vh;">亲爱的合作伙伴：</view>
+<view class="mp-text-two-font-size" style="text-indent:2em">
+<view class="mp-text-one-font-size" style="margin-bottom:1vh;" >米粒服饰倡议共建战略同盟，打造“互联网+”产业新生态，并做出宣言：</view>
+<view class="bold mp-text-one-font-size" style="text-indent:0em;margin-bottom:1vh;">一、核心价值观</view>
+
+<view style="margin-bottom:1vh;"  >我们本着<span style="color:#f00;">互信、互助、共赢</span>的初心，米粒服饰将以“互联网+”的新战略、新技术、新手段为产业盟友的搭建全新的线上销售平台，以互信、互助作为信念基石，以共赢作为最终目的，共建米粒服饰战略合作伙伴的销售生态体系。</view>
+
+
+<view style="margin-bottom:1vh;">核心目标是实现产业链商业版图拓展、全盟友销售业绩提升的共赢。</view>
+
+<view class="bold mp-text-one-font-size" style="text-indent:0em;margin-bottom:1vh;"> 二、挑战与机遇</view>
+<view style="margin-bottom:1vh;"> 技术飞速变革的年代，对传统线下企业的冲击非常大。传统的市场销售方式落后有限，市场的不确定性可能给传统商业模式的销售带来难以预料的打击。</view>
+<view style="margin-bottom:1vh;">同时，这也是一个寻求产业升级的良机，市场困难的状况是最能锻炼团队与提高技能的历史时刻。米粒服饰决心通过新兴的云技术、AI新零售、线上社群等手段，以“互联网+”的模式寻求产业突破。米粒服饰的平台将致力于赋能供应链上下所有盟友的销售体系，为各位产业同盟在新环境下谋求更大的利益！</view>
+<view class="bold mp-text-one-font-size" style="text-indent:0em;margin-bottom:1vh;">三、米粒服饰的承诺 </view>
+<view style="margin-bottom:1vh;">米粒服饰战略同盟将以核心价值观作为信用基石，打造一个长期高效的合作生态。在资源共享的同时米粒服饰承诺所有盟友在产业供应链上每一个环节的原有及未来的既得利益必须得到最大程度的保障。 </view>
+<view style="margin-bottom:1vh;">所有的优质资源在米粒服饰的生态圈实现共享，最大程度利用爆炸式社群效应，产业链将会得到快速发展，升级为线上线下销售双轨并行的“互联网+产业”的新零售模式。每一位盟友可以放心地借助平台上的资源获得长期的成长。</view>
+<view style="margin-bottom:1vh;">米粒服饰将坚持为真诚合作的各位提供最优质的产品和服务。</view>
+</view>
+
+</view>

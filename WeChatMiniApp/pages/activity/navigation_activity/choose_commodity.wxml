@@ -1,0 +1,172 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+
+  <swiper style="height:90vh; width:100vw;" current="{{currentTab}}">
+    <swiper-item catchtouchmove='catchTouchMove'>
+      <scroll-view scroll-into-view="{{last}}" scroll-with-animation="{{true}}" style="height:90vh; width:100vw;background:#f1f1f1;  " scroll-y="{{true}}">
+        <view id="activityPackage" style="color:#666;  margin-left:15rpx;margin-top:15rpx;margin-bottom:15rpx;" class=" mp-text-two-font-size  ">选择套餐</view>
+
+        <checkbox-group bindchange='choosePackage' style="margin-left:15rpx;margin-right:15rpx;border-radius: 25rpx; overflow:hidden;background:#fff;">
+          <view data-index="{{index}}" data-itemid="{{item.id}}" wx:for-index="index" wx:for="{{productList}}" wx:key="item" style='margin-bottom:{{index!=productList.length-1?"2vh":0}};  display:flex;width:100%;height:18vh; background:{{item.isChecked==true?"#FEEED7":"#fff"}};'>
+
+            <view style=' flex:5;display:flex; flex-flow: column;justify-content: center;'>
+              <text class="mp-text-one-font-size {{skin}}-color center" style='flex:1; color:#666;margin-left:12px; font-weight: bold;justify-content:flex-start;'> {{item.title}}{{item.subtitle}}  </text>
+              <text class="mp-text-one-font-size {{skin}}-color center" style='flex:1;margin-left:12px; justify-content:flex-start;'> <text class="mp-text-two-font-size " style='color:#aaa; text-align: left;text-decoration:line-through'>  {{item.lineThroughTexe}}</text> {{item.priceDescription}}</text>
+
+            </view>
+            <view style='  flex:2; display:flex; flex-flow: column;' class='center'>
+
+              <checkbox style="flex:1; justify-content:flex-end;width:90%;" class="center" value="{{index}}" />
+              <view class="stepper center" style="flex:1;width:90%;justify-content:flex-end;padding-right:10rpx;">
+
+                <!-- 减号 -->
+                <text class="mp-text-one-font-size center" style="height:46rpx;width:46rpx;" data-id="{{item.id}}" bindtap='bindMinus'>-</text>
+                <!-- 数值 -->
+                <view class="mp-text-one-font-size center" style="height:46rpx;width:46rpx;">{{item.num}}</view>
+                <!-- 加号 -->
+                <text class="mp-text-one-font-size center" style="height:46rpx;width:46rpx;" data-id="{{item.id}}" bindtap='bindPlus'>+</text>
+              </view>
+
+            </view>
+            <!-- <view style='  flex:1;' class='center'>
+
+            
+            </view> -->
+          </view>
+        </checkbox-group>
+
+
+
+
+        <view id="activityPhase" style="color:#666;margin-left:15rpx;margin-top:15rpx;margin-bottom:15rpx;" class=" mp-text-two-font-size  ">选择活动日期</view>
+        <view style="margin:15rpx;" class=" mp-text-two-font-size  ">
+          <text class=" mp-text-one-font-size   {{skin}}-color">注：</text>
+          <text class="mp-text-two-font-size" style="color:#666;">活动主办方将会基于您选择的日期与您协商最终赴约日期。</text>
+        </view>
+
+        <view style="   margin-left:15rpx;margin-right:15rpx;border-radius: 25rpx; overflow:hidden;background:#fff;">
+          <view style="height:25rpx;"></view>
+
+          <view class="bold center mp-text-one-font-size"> 首选日期</view>
+          <view bindtap="bindPickerChange" data-id="{{0}}">
+            <view class="center mp-text-one-font-size">
+              <view wx:if="{{activityPhase.length<=0}}" style="color:#666"> 点击选择主选日期</view>
+
+
+              <view wx:else style='padding-left:30rpx;padding-right:30rpx;     display:flex; flex-flow: column;justify-content: center;'>
+
+                <view class="mp-text-one-font-size {{skin}}-color" style=' margin-right:12rpx;'>{{themeList[activityPhase[0]].phase }} </view>
+                <view class="mp-text-one-font-size" style='color:#666; margin-right:12rpx;'>{{themeList[activityPhase[0]].title}} </view>
+              </view>
+
+            </view>
+          </view>
+          <view wx:if="{{activityPhase.length>=1}}" class="bold center mp-text-one-font-size" style="margin-top:3vh;"> 备选日期</view>
+          <view wx:if="{{activityPhase.length>=1}}" bindtap="bindPickerChange" data-id="{{1}}">
+            <view class="center mp-text-one-font-size">
+
+              <view wx:if="{{activityPhase.length<=1}}" style="color:#666"> 点击选择备选日期</view>
+
+              <view wx:else style='padding-left:30rpx;padding-right:30rpx; display:flex; flex-flow: column;justify-content: center;'>
+
+                <view class="mp-text-one-font-size {{skin}}-color" style=' margin-right:12rpx;'>{{themeList[activityPhase[1]].phase }} </view>
+                <view class="mp-text-one-font-size" style='color:#666; margin-right:12rpx;'>{{themeList[activityPhase[1]].title}} </view>
+              </view>
+
+
+            </view>
+          </view>
+
+          <view style="height:25rpx;"></view>
+
+        </view>
+        <view id="contactInfo" style="color:#666;margin-left:15rpx;margin-top:15rpx;margin-bottom:15rpx;" class=" mp-text-two-font-size  ">活动联系人信息</view>
+        <view style="background:#fff;  height:30%;  margin-left:15rpx;margin-right:15rpx;margin-bottom:15rpx;border-radius: 25rpx; overflow:hidden;">
+          <view class="weui-cell weui-cell_input  " style="height:33%;">
+            <view class="weui-cell__hd" style="width:22%;">
+              <view class=" mp-text-one-font-size">姓名:</view>
+            </view>
+            <view class="weui-cell__bd ">
+              <input class="weui-input mp-text-one-font-size" type="text" placeholder="请输入姓名" name="name" value="{{name}}"></input>
+            </view>
+
+          </view>
+          <view class="weui-cell weui-cell_input  " style="height:33%;">
+            <view class="weui-cell__hd" style="width:22%;">
+              <view class=" mp-text-one-font-size">手机号:</view>
+            </view>
+            <view class="weui-cell__bd ">
+              <input class="weui-input mp-text-one-font-size" type="number" placeholder="请输入手机号" name="phone" value="{{phone}}"></input>
+            </view>
+            <!-- <button class='noButtonStyle mp-text-two-font-size' style='color:#E69664; position:absolute;right:15rpx;z-index:2000;' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button> -->
+          </view>
+
+          <view class="weui-cell weui-cell_input  " style="height:33%;">
+            <view class="weui-cell__hd" style="width:22%;">
+              <view class="weui-label mp-text-one-font-size">备注:</view>
+            </view>
+            <view class="weui-cell__bd ">
+              <input class="weui-input mp-text-one-font-size" type="text" placeholder="请输入备注" name="remarks" value="{{remarks}}"></input>
+            </view>
+
+          </view>
+        </view>
+        <view id="last" style="height:1rpx;"></view>
+      </scroll-view>
+
+    </swiper-item>
+    <swiper-item catchtouchmove='catchTouchMove'>
+      <scroll-view style="height:80vh; width:100vw;" scroll-y="{{true}}">
+        <radio-group bindchange="radioChange">
+          <view wx:for-index="index" wx:for="{{themeList}}" wx:key="index" style='background:{{item.isChecked==true?"#FEEED7":"#fff"}};display:flex;width:100%;padding:1% 0rpx;'>
+
+            <view style=' flex:1;'></view>
+            <view style=' flex:6;display:flex; flex-flow: column;justify-content: center;'>
+
+              <text class="mp-text-one-font-size {{skin}}-color" style=' margin-right:12rpx;'>{{item.phase}}    {{item.isAllowSelection==false?"(报名已结束)":""}}   </text>
+              <text class="mp-text-two-font-size" style='color:#666; margin-right:12rpx;'>{{item.title}} </text>
+            </view>
+            <view style='  flex:1;' class='center'>
+              <radio checked="{{item.isChecked}}" wx:if="{{item.isAllowSelection==true}}" value="{{index}}" />
+            </view>
+          </view>
+        </radio-group>
+      </scroll-view>
+      <view style="height:10vh;width:100vw;display:flex;">
+
+        <view style='flex:1;height:100%;' class='center'>
+
+          <view bindtap='back' class='center {{skin}}-background bigButtonStyle' style="width:90%;"> 返回 </view>
+
+        </view>
+        <view style='flex:1;height:100%;' class='center'>
+
+          <view bindtap='deselected' class='center {{skin}}-background bigButtonStyle' style="width:90%;"> 取消选择 </view>
+
+        </view>
+
+      </view>
+
+    </swiper-item>
+  </swiper>
+
+
+  <view class="bottom-suspension" style='display:flex;   height:10%;background:#fff;margin-top:13%;'>
+
+    <view style='flex:2;' class='center  mp-text-one-font-size'>
+
+      总计：
+      <text class="{{skin}}-color" style="">   ¥ {{price}}</text>
+
+
+    </view>
+
+
+    <view style='flex:3;' class='center'>
+
+      <button formType="submit" class='center {{skin}}-background bigButtonStyle' style='height:70%; width:90%;background:#00C250;color:#fff;'> 支付 </button>
+
+
+    </view>
+
+  </view>
+</form>

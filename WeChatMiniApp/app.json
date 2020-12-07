@@ -1,0 +1,119 @@
+{
+  "pages": [
+    "pages/shopping-mall/home/home",
+    "pages/distribution/index/index",
+    "pages/shopping-mall/order/list/list",
+    "pages/shopping-mall/logistics/query-bill/query-bill",
+    "pages/distribution/team/team",
+    "pages/distribution/detail/detail",
+    "pages/distribution/level/level",
+    "pages/distribution/client/client",
+    "pages/shopping-mall/goods/details/basics",
+    "pages/shopping-mall/order/complete/complete",
+    "pages/shopping-mall/goods/poster/poster",
+    "pages/shopping-mall/goods/place-order/place-order",
+    "pages/shopping-mall/logistics/show-query-result/show-query-result",
+    "pages/shopping-mall/classify/filter-query",
+    "pages/live/index/index",
+    "pages/shopping-mall/my/my",
+    "pages/merchants/index/index",
+    "pages/distribution/retailer/retailer-report/retailer-report",
+    "pages/distribution/invitation/accept/accept",
+    "pages/distribution/invitation/invite-next-level/invite-next-level",
+    "pages/distribution/wholesaler/wholesaler-report/wholesaler-report",
+    "pages/distribution/brand/brand-report/brand-report",
+    "pages/distribution/publicity/rule/rule",
+    "pages/distribution/publicity/declaration/declaration",
+    "pages/distribution/poster/poster",
+
+    "pages/login/login",
+    "pages/shopping-mall/cart/cart",
+    "pages/shopping-mall/classify/classify",
+    "pages/shopping-mall/goods/search/search",
+    "pages/shopping-mall/order/details/details",
+    "pages/activity/navigation_activity/choose_commodity",
+    "pages/activity/show-qrcode/show-qrcode",
+    "pages/activity/gift-management/gift-management",
+    "pages/shopping-mall/agreement/agreement",
+    "pages/shopping-mall/order/pay",
+    "pages/activity/activity-management/activity-management",
+    "pages/activity/choice_of_gift/choice_of_gift",
+    "pages/shopping-mall/order/complete",
+    "pages/activity/navigation_activity/navigation_activity",
+    "pages/activity/choice_of_gift/confirmation_of_gifts/confirmation_of_gifts",
+    "pages/activity/choice_of_gift/gift_detail/gift_detail",
+    "pages/activity/navigation_activity/successful_payment",
+    "pages/activity/preview/image/image",
+    "pages/shopping-mall/membership-card-details/membership-card-details",
+   
+    "pages/shopping-mall/rules_for_members/rules_for_members",
+    "pages/activity/view_gift/view_gift",
+    "pages/merchants/base-info/base-info",
+    "pages/merchants/commodity-management/commodity-management",
+    "pages/merchants/fund-management/fund-management",
+    "pages/merchants/order/details/details",
+    "pages/merchants/order/list/list",
+    "pages/merchants/shop-setting/shop-setting",
+    "pages/merchants/activity-management/activity-list/activity-list",
+    "pages/merchants/activity-management/activity-edit/activity-edit",
+    "pages/merchants/activity-management/index/index",
+    "pages/shopping-mall/address/address-list/address-list",
+    "pages/shopping-mall/address/address-detail/address-detail"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于更好的为您服务"
+    }
+  },
+  "tabBar": {
+    "custom": false,
+    "color": "#7A7E83",
+    "selectedColor": "#f96711",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/shopping-mall/home/home",
+        "iconPath": "image/home.png",
+        "selectedIconPath": "image/home-selected.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/shopping-mall/classify/classify",
+        "iconPath": "image/classify.png",
+        "selectedIconPath": "image/classify-selected.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/shopping-mall/cart/cart",
+        "iconPath": "image/cart.png",
+        "selectedIconPath": "image/cart-selected.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/shopping-mall/my/my",
+        "iconPath": "image/my.png",
+        "selectedIconPath": "image/my-selected.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "plugins": {
+    "tencentvideo": {
+      "version": "1.3.16",
+      "provider": "wxa75efa648b60994b"
+    },
+    "live-player-plugin": {
+      "version": "1.2.2",
+      "provider": "wx2b03c6e691cd7370"
+    }
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

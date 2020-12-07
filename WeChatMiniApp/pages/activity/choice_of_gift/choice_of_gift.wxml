@@ -1,0 +1,42 @@
+
+
+
+<view style='background:#F0E6E6;height:100vh'>
+  <view style='height:{{brand?"90vh":"100vh"}};padding-left:15rpx;padding-right:15rpx;'>
+  <view style="height:15rpx;" ></view>
+    <scroll-view style='height:calc(100% - 30rpx);   background:#fff; border-radius: 25rpx;overflow:hidden;' scroll-y="{{true}}" class='center'>
+
+ <view wx:if="{{!brand}}"  class=" bold   center {{skin}}-color mp-title-one-font-size"  >VIP会员专享赠品</view>
+
+      <view bindtap='viewDetails' data-index="{{index}}" data-itemid="{{item.id}}" data-status="1" wx:for-index="index" wx:for="{{productList}}" wx:key="item" style='display:flex;width:100%;height:calc(18% + 50rpx); background:{{item.id==productData.id?"#FEEED7":"#fff"}};margin-bottom:{{index==productList.length?"15rpx":"0px"}};margin-top:{{index==0?"15rpx":"0px"}}; '>
+        <view style='  flex:2;' class='center'>
+          <image mode='scaleToFill' style='height:calc(100% - 15rpx);width:90%;margin-left:15rpx;' src="{{item.image}}"></image>
+        </view>
+        <view style=' flex:4;font-size:23rpx;display:flex; flex-flow: column;justify-content: center;'>
+          <text class="mp-text-one-font-size {{skin}}-color" style='margin-left:12px; font-weight: bold;margin-bottom: 5rpx;text-align: left;'> {{item.title}} </text>
+          <text class="mp-text-two-font-size" style='margin-left:12px;  color:#666;text-align: left;'>  {{item.subtitle}}</text>
+
+        </view>
+        <view style=' flex:1;font-size:23rpx;display:flex;flex-flow: column;justify-content: center;'>
+          <icon wx:if="{{item.id==productData.id}}" style='margin-left:4rpx;' class='center' type="success" size="40rpx" />
+
+        </view>
+
+      </view>
+
+
+
+
+    </scroll-view>
+
+
+
+
+
+  </view>
+  <view class="bottom-suspension"   wx:if="{{brand}}"  style='height:10%;'>
+    <view style='width:100%;height:100%;' class='center'>
+      <view bindtap='next' class='center bigButtonStyle' style='background:{{productData.id?"#e59665":"#666"}};color:#fff;'> 下一步 </view>
+    </view>
+  </view>
+</view>

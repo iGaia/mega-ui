@@ -1,0 +1,51 @@
+<!-- pages/distribution/manage/manage.wxml -->
+<view class="view-main">
+  <view class="divider"></view>
+  <!-- Top -->
+  <view class="manage-content">
+    <!-- Team Name -->
+    <view class="manage-item">
+      <image class="manage-icon" />
+      <text class="manage-title">团队名称</text>
+      <text class="manage-value">{{teamName}} ></text>
+    </view>
+    <!-- Team Background -->
+    <view class="manage-item">
+      <image class="manage-icon" />
+      <text class="manage-title">团队背景</text>
+      <text class="manage-value">{{teamBackground}} ></text>
+    </view>
+  </view>
+  <view class="divider"></view>
+  <!-- Center -->
+  <view class="manage-content">
+    <!-- Invite List -->
+    <view class="manage-item">
+      <image class="manage-icon" />
+      <text class="manage-title">邀请者列表</text>
+      <text class="manage-value">有新成员邀请{{}} ></text>
+    </view>
+    <!-- Invite Friend -->
+    <view class="manage-item">
+      <image class="manage-icon" />
+      <text class="manage-title">邀请好友</text>
+      <text class="manage-value">去邀请 ></text>
+    </view>
+  </view>
+  <view class="divider"></view>
+  <!-- Bottom -->
+  <view class="manage-content">
+    <!-- Sale Goal -->
+    <view class="manage-item">
+      <image class="manage-icon" />
+      <text class="manage-title">销售目标</text>
+      <text class="manage-value">{{saleGoal}} ></text>
+    </view>
+    <!-- Sale Rule -->
+    <view class="manage-item">
+      <image class="manage-icon" />
+      <text class="manage-title">分销规则</text>
+      <text class="manage-value">查看 ></text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,132 @@
+/* pages/distribution/index/index.wxss */
+
+
+  
+  .userinfo-nickname {
+    color: #aaa;
+  }
+
+/* Top */
+
+.view-top {
+    width: 30vw;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-portrait {
+    border-radius: 15rpx;
+    background-color: #9C96BA;
+}
+
+.text-name {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+
+
+.img-level {
+    width: 32rpx;
+    height: 32rpx;
+    margin-left: 2vw;
+    border-radius: 15rpx;
+    /* background-color: #F0C3A8; */
+}
+
+
+/* Center Panel */
+
+.view-panel {
+    width: 88vw;
+    height: 20vh;
+    border-radius: 15rpx;
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: row;
+    background-color: #F1F5FE;
+    justify-content: center;
+    align-items: center;
+}
+
+.divider {
+    width: 10vw;
+    height: 20vh;
+}
+
+.panel-content {
+    width: 28vw;
+    height: 20vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-show {
+    width: 32rpx;
+    height: 32rpx;
+    margin: 3vw;
+    /* background-color: #F0C3A8; */
+    float: right;
+    border-radius: 15rpx;
+}
+
+
+/* Center Menu */
+
+.view-menu {
+    width: 88vw;
+    height: 40vh;
+    border-radius: 15rpx;
+    margin-top: 2vh;
+    background-color: #F1F5FE;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.menu-item {
+    width: 40vw;
+    height: 10vh;
+    margin: 2vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-item-icon {
+    /* background-color: #F68452; */
+    border-radius: 15rpx;
+}
+
+.item-content {
+    width: 24vw;
+    display: flex;
+    flex-direction: column;
+    margin-left: 2vw;
+}
+
+
+/* Bottom */
+
+.view-bottom {
+    width: 88vw;
+    height: 20vh;
+    border-radius: 15rpx;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    background-color: lightcoral;
+}

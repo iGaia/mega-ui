@@ -1,0 +1,18 @@
+<view class="announcement" style="background-color:{{data.details.color2}};color:{{data.details.color1}}">
+
+	<!-- <view style=" font-size:28rpx;  width:10% ;">
+		<image lazy-load src="{{data.details.imgs[0].src}}" class="icon"></image>
+	</view> -->
+
+	<view style=" " class="marquee-area  ">
+		<view class="marquee">
+			<span>
+				{{data.details.imgs[0].text}}
+			</span>
+			<span>
+				{{data.details.imgs[0].text}}
+			</span>
+		</view>
+
+	</view>
+</view>

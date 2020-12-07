@@ -1,0 +1,8 @@
+/* components/home-components/application/application.wxss */
+
+.center {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}

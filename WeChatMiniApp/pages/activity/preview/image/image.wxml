@@ -1,0 +1,14 @@
+<swiper current="{{currentTab}}" style='width:100vw;height:100vh;' bindchange="swiperTab">
+  <block style='width:100vw;height:100vh;' wx:for="{{longImage}}" wx:key="*this">
+    <swiper-item style='width:100vw;height:100vh;background:#000;' class="center">
+
+      <image mode='aspectFit' style='display: block;width:100vw;height:100vh;' src='{{item}}'></image>
+    </swiper-item>
+
+  </block>
+
+
+</swiper>
+<view class="bottom-suspension center" style=' color:#fff;  height:10%;text-shadow:5px 2px 16px #000;'>
+  {{currentTab+1}}/ {{longImage.length}}
+</view>

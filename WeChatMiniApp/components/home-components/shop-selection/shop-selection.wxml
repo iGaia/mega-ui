@@ -1,0 +1,29 @@
+<!--components/home-components/shop-selection/shop-selection.wxml-->
+
+	<view style="height:70vh;display:flex;" class="center red-background">
+		<view style="flex:1;" class="center white-color mp-title-one-font-size" data-type="last" bindtap="swiperChangeClick">
+			{{"<"}}
+		</view>
+		<view style="flex:6;height:100%;">
+			<swiper style="height:100%;width:100%;" current="{{swiperCurrent}}">
+				<block wx:for="{{swiperItemContent}}">
+					<swiper-item style="height:100%;width:100%;">
+						<view style="height:95%;width:100%;background:#fff;padding: 3% 3%;display:flex;flex-flow:column;">
+							<image style="flex:12;width:100%;" src="{{item}}" />
+							<view style="flex:1;" class="mp-text-three-font-size "> 宝贝的标题信息和价格会调用后台数据自动显示 </view>
+							<view style="flex:1;" class="mp-text-three-font-size   grey-color"> 时尚休闲款 质感时尚复古 休闲舒适优雅 </view>
+							<view style="flex:1;display:flex;">
+								<view style="flex:1;" class="mp-text-three-font-size">￥590</view>
+								<view style="flex:3;" class="mp-text-four-font-size   grey-color">已售4000件</view>
+								<view style="flex:2;" class="mp-text-three-font-size"> <text  style="padding:6rpx  25rpx;color:#fff;" class="red-background" >  立即购买  </text> </view>
+							</view>
+						</view>
+					</swiper-item>
+				</block>
+			</swiper>
+		</view>
+		<view style="flex:1;" class="center white-color mp-title-one-font-size" data-type="next" bindtap="swiperChangeClick">
+			{{">"}}
+		</view>
+	</view>
+

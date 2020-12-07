@@ -1,0 +1,54 @@
+<view style='margin-top:10vh; ' class='center'>
+	<icon style="visibility:{{isAccepted==true&&inviter ?'visible':'hidden'}};" type="success" size="75" />
+</view>
+
+<view style='margin-top:3vh;' class='center mp-text-one-font-size'>
+
+	<view wx:if="{{isAccepted==true&&inviter}}">
+		您已成功加盟{{brandName}}销售大家庭!
+
+	</view>
+
+	<view wx:else>欢迎加盟{{brandName}}销售大家庭!</view>
+
+</view>
+
+<view wx:if="{{isAccepted==true&&inviter}}" class='center' style='height:22vh;width:100%;margin-top:3vh;'>
+	<view style="flex:1;height:100%;" class="center  mp-text-one-font-size"> </view>
+	<view style="flex:1;height:100%;" class="center  mp-text-one-font-size"> 邀请人: </view>
+	<view style="flex:2;height:100%;flex-flow: column;" class="center  mp-text-one-font-size">
+
+
+		<view style="height:50%;width:100%;" class="center">
+
+			<image class="avatar" src="{{inviter.avatarUrl}}" mode="cover"></image>
+
+		</view>
+		<view class="mp-text-one-font-size   center " style="width:200rpx;height:40%;">
+			<text class="single-line-ellipsis"> {{inviter.nickName}} </text>
+		</view>
+		<view style="height:10%;"></view>
+
+	</view>
+	<view style="flex:1;height:100%;" class="center  mp-text-one-font-size"> </view>
+
+
+</view>
+
+<view wx:if="{{isAccepted==true&&inviter}}" class="bottom-suspension" style='height:10vh;background:#fff;display:flex;'>
+
+	<view style='flex:1;height:100%;' class='center'>
+		<button bindtap='back' class='center {{skin}}-background bigButtonStyle' style="width:90%;"> 完成 </button>
+	</view>
+</view>
+
+
+<view wx:if="{{isNeedLogin}}" style='margin-top:3vh;padding-left:15rpx;padding-right:15rpx;' class="center mp-title-one-font-size">请点击底部登录按钮，登录后完成邀请。</view>
+
+
+<view wx:if="{{isNeedLogin}}" class="bottom-suspension" style='height:10vh;background:#fff;display:flex;'>
+
+	<view style='flex:1;height:100%;' class='center'>
+		<button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='center {{skin}}-background bigButtonStyle' style="width:90%;"> 登录 </button>
+	</view>
+</view>

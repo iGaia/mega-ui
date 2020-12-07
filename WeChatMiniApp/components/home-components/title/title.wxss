@@ -1,0 +1,32 @@
+.view-title .title {
+  padding: 0px 10px;
+  line-height: 28px;
+  position: relative;
+}
+
+.view-title .title2 {
+  padding: 0px 10px;
+  line-height: 28px;
+  position: relative;
+}
+
+.style0 {
+
+}
+
+.style1 {
+  text-align: center;
+
+}
+
+.style2 {
+  text-align: center;
+
+}
+
+.center {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}

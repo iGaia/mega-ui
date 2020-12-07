@@ -1,0 +1,9 @@
+{
+  "component": true, 
+  "usingComponents": {},
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置将用来为您提供更精准的服务"
+    }
+  }
+}

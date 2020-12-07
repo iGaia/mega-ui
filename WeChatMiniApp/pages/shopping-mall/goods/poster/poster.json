@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+		"aposter": "/components/aposter/index"
+	}
+}

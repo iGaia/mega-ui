@@ -1,0 +1,46 @@
+/* components/home-components/count-down/count-down.wxss */
+@import "/config/skin.wxss";
+
+.center {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.mp-title-one-font-size {
+  font-size: 45rpx;
+  /* font-size: 5vw; */
+}
+
+.mp-text-one-font-size {
+  font-size: 35rpx;
+  /* font-size: 4vw; */
+}
+
+.mp-text-two-font-size {
+  font-size: 30rpx !important;
+  /* font-size: 3.5vw!important; */
+}
+
+.mp-text-three-font-size {
+  font-size: 25rpx !important;
+  /* font-size: 3vw!important; */
+}
+
+.mp-text-four-font-size {
+  font-size: 22rpx !important;
+  /* font-size: 2.7vw!important; */
+}
+
+
+.grey-background {
+  background-color: #f1f1f1;
+}
+
+
+
+
+
+

@@ -1,0 +1,41 @@
+/* pages/distribution/manage/manage.wxss */
+
+.view-main {}
+
+.divider {
+    height: 2vh;
+    background-color: #F4F4F4;
+}
+
+.manage-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.manage-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 3vw;
+}
+
+.manage-icon {
+    width: 72rpx;
+    height: 72rpx;
+    border-radius: 100%;
+    background-color: #FE9E21;
+}
+
+.manage-title {
+    flex: 1;
+    margin-left: 4vw;
+    margin-right: 4vw;
+}
+
+.manage-value {
+    flex: 2;
+    color: grey;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    text-align: right;
+}

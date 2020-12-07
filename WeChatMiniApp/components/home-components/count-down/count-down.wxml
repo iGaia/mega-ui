@@ -1,0 +1,38 @@
+<!--components/home-components/count-down/count-down.wxml-->
+<view style="height:20vh;display:flex;" class="grey-background">
+
+
+<view style="flex:1;display:flex;flex-flow:column;padding-left:5%;">
+  <view style="flex:1;"> </view>
+  <view style="flex:1;  justify-content: flex-start; " class="center mp-text-two-font-size {{skin}}-color"> 新春换季活动</view>
+  <view style="flex:1;  justify-content: flex-start; " class="center mp-text-three-font-size {{skin}}-color"> 距离活动结束还有</view>
+  <view style="flex:1;  justify-content: flex-start; " class="center mp-text-three-font-size {{skin}}-color">
+    <text  style="color:#fff;padding:3rpx;"  class="{{skin}}-background" >{{day}}</text>天
+    <text  style="color:#fff;padding:3rpx;"  class="{{skin}}-background" >{{hou}}</text>时
+    <text  style="color:#fff;padding:3rpx;"  class="{{skin}}-background" >{{min}}</text>分
+    <text  style="color:#fff;padding:3rpx;"  class="{{skin}}-background" >{{sec}}</text>秒</view>
+  <view style="flex:1;"> </view>
+</view>
+
+
+
+<view style="flex:1;display:flex;flex-flow:column;padding-right:5%;">
+  <view style="flex:1;"> </view>
+  <view style="flex:3; display:flex;background:#fff;">
+    <view style="flex:2;" class="center">
+      <image style=" height:60%;   width:90%;" src="http://5b0988e595225.cdn.sohucs.com/images/20190503/f79d3cebc9a94908965f5ab1fd78447d.jpeg"></image>
+
+    </view>
+    <view style="flex:3;flex-flow:column;" class="center">
+
+      <view style="" class="mp-text-four-font-size grey-color">单笔实付满1000元</view>
+      <view style="" class="mp-text-four-font-size">送ins风牛皮胯肩包</view>
+
+    </view>
+
+  </view>
+  <view style="flex:1;"> </view>
+
+</view>
+</view>
+

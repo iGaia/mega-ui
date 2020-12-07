@@ -1,0 +1,15 @@
+<!--pages/distribution/approval/approval.wxml-->
+<view class="view-main">
+  <view class="divider"></view>
+  <view class="list">
+    <block>
+      <view class="list-item" wx:for="{{applyList}}">
+        <view class="item-portrait">
+          <image class="img-portrait" src="{{item.portraitURL}}" mode="widthFix" />
+        </view>
+        <view class="item-name">{{item.userName}}</view>
+        <view class="{{item.status === '通过' ? 'item-passed' : ''}}">{{item.status}}</view>
+      </view>
+    </block>
+  </view>
+</view>

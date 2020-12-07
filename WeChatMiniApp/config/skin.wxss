@@ -1,0 +1,66 @@
+.default-background {
+  background: #e59665;
+  color: #fff !important;
+}
+
+.red-background {
+  background: #f00;
+  color: #fff !important;
+}
+
+.blue-background {
+  background: #526aaf;
+   color: #fff !important;
+}
+
+.coral-background {
+  background: #e8817f;
+   color: #fff !important;
+}
+
+.default-color {
+  color: #e59665;
+}
+
+.blue-color {
+  color: #526aaf;
+}
+
+
+
+.a-background {
+  background: #f00;
+
+}
+
+.b-background {
+  background: #313232;
+ 
+}
+
+.c-background {
+  background: #2353a3;
+  
+}
+
+.d-background {
+  background: #db8eaf;
+ 
+}
+
+.e-background {
+  background: #3d6340;
+ 
+}
+
+.default-color {
+  color: #e59665;
+}
+
+.blue-color {
+  color: #526aaf;
+}
+
+.gray-color {
+  color: #666;
+}

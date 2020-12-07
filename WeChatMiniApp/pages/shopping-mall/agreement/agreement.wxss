@@ -1,0 +1,12 @@
+.one{
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.two{
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.three{
+
+  font-size: 28rpx;
+}

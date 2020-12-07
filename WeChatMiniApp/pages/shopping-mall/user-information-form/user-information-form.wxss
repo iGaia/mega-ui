@@ -1,0 +1,44 @@
+
+.column-height{
+  height: 120rpx;
+}
+.button {
+  width: 90%;
+  position: fixed;
+  bottom: 40rpx;
+  color: #fff;
+ 
+}
+
+
+
+.button {
+  width: 90%;
+  position: fixed;
+  bottom: 40rpx;
+  color: #fff;
+}
+
+.picker {
+  width: 600rpx;
+  height: 100%;
+}
+.ww{
+  width: 250px;
+}
+
+
+.qbdd{
+  background: #fff;
+  width: 92%;
+  font-size: 12px;
+  color: #666;
+  padding: 4%;
+
+}
+
+
+
+
+
+

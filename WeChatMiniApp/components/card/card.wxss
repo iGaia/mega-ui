@@ -1,0 +1,39 @@
+/* components/card/card.wxss */
+
+.tCC {
+  color: #E59665;
+}
+
+.tCBGCoral{
+  background: #e8817f
+}
+.tCBGBlue{
+  background: #526AAF
+}
+
+.center {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.mp-title-one-font-size {
+  font-size: 45rpx;
+}
+
+.mp-text-one-font-size {
+  font-size: 35rpx;
+}
+
+.mp-text-two-font-size {
+  font-size: 30rpx !important;
+}
+
+.mp-text-three-font-size {
+  font-size: 25rpx !important;
+}
+
+.bold{
+  font-weight: bold;
+}

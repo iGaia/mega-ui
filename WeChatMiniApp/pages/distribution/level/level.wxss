@@ -1,0 +1,145 @@
+/* pages/distribution/level/level.wxss */
+
+
+
+/* Info Panel */
+
+.view-top-info {
+    background-image: linear-gradient(to right, #FDF2EE, #FDF6EE);
+}
+
+.info-portrait {
+    width: 128rpx;
+    height: 128rpx;
+    border-radius: 100%;
+    background-color: #9D97BB;
+    border: 4rpx solid white;
+}
+
+.info-text {
+    margin-top: -24rpx;
+    padding-top: 6rpx;
+    padding-bottom: 6rpx;
+    padding-left: 24rpx;
+    padding-right: 24rpx;
+    color: #B87338;
+    border-radius: 16rpx;
+    background-color: #FFEFBB;
+}
+
+
+.progress-circle {
+    width: 36rpx;
+    height: 36rpx;
+    border-radius: 100%;  
+  
+}
+
+/* Top Title */
+
+.view-top-title {
+    margin-top: 36rpx;
+    margin-bottom: 36rpx;
+    text-align: center;
+    color: #EE9B52;
+}
+
+
+/* Info Ratio */
+
+.view-top-status {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.view-status-info {
+    width: 49%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-status-info {
+    width: 72rpx;
+    height: 72rpx;
+    background-color: #EE9B52;
+    border-radius: 100%;
+}
+
+.view-status-info-text {
+    margin: 36rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.status-bottom-text {
+    margin-top: 72rpx;
+    padding-left: 24rpx;
+    padding-right: 24rpx;
+    padding-top: 8rpx;
+    padding-bottom: 8rpx;
+    border-radius: 32rpx;
+    background-color: #FDF8E5;
+    color: #AB8A56;
+    font-size: 24rpx;
+}
+
+
+/* Bottom */
+
+.view-bottom {
+    height: auto;
+    margin-top: 16rpx;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-bottom-title {
+    margin-top: 36rpx;
+    color: grey;
+    font-weight: bold;
+}
+
+.list-bottom {
+    color: grey;
+    padding-top: 72rpx;
+    padding-left: 52rpx;
+    padding-right: 52rpx;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-bottom-rule-role {
+    display: flex;
+    flex-direction: row;
+}
+
+.list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 48rpx;
+}
+
+.list-item-img {
+    background-color: #EE9B52;
+    width: 48rpx;
+    height: 48rpx;
+    border-radius: 100%;
+}
+
+.list-text {
+    margin-left: 16rpx;
+    display: flex;
+    flex-direction: column;
+}

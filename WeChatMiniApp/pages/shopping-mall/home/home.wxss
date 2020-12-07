@@ -1,0 +1,46 @@
+.marquee-area {
+  position: relative;
+  height: 45rpx;
+  border: 0px solid #ccc;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.marquee {
+  position: absolute;
+  line-height: 45rpx;
+  left: 100%;
+  top: 0;
+  white-space: nowrap;
+  -webkit-animation: todayScroll 14s linear infinite;
+  animation: todayScroll 14s linear infinite;
+}
+
+@keyframes todayScroll {
+  0% {
+    transform: translate(-50%);
+  }
+
+  100% {
+    transform: translate(-100%);
+  }
+}
+
+.l_h15 {
+  line-height: 15px;
+  text-align: center;
+}
+
+.dbtext {
+  line-height: 38rpx;
+  color: #666;
+  font-size: 12px;
+}
+
+
+
+
+.bottomRadius {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}

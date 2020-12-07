@@ -1,0 +1,99 @@
+<!--pages/activity/navigation_activity/successful_payment.wxml-->
+
+<view style="height:100vh;width:100vw;background:#f1f1f1;padding-left:15rpx;padding-right:15rpx;">
+
+  <view style="height:15rpx;"></view>
+  <scroll-view style='background:#fff;height:{{showSuccessButton==true?"calc(90vh - 30rpx)":"calc(100vh - 30rpx)"}};width:calc(100vw - 30rpx);  border-radius: 25rpx; ' scroll-y="{{true}}" class=''>
+    <!-- <view style=" width:calc(100% - 30rpx);margin-left:15rpx; background:#fff;border-radius: 25rpx; "> -->
+    <view style="height:3vh;"></view>
+    <view class="center mp-title-one-font-size bold" style="">恭喜您购买航海体验！</view>
+    <view style="margin-left:15rpx;margin-top:15rpx;margin-bottom:15rpx;" class=" mp-text-two-font-size  center">
+
+      <text class="mp-text-two-font-size" style="width:70%;">活动主办方将会基于您选择的日期与您协商最终赴约日期。</text>
+    </view>
+
+    <view style="height:2vh;"></view>
+
+    <view class="center mp-text-one-font-size bold" style="margin-bottom:1vh;"> 您选择的日期 </view>
+
+
+    <view wx:for="{{showThemeList}}" wx:key="id" style="margin-bottom:1vh;">
+
+      <view  style="padding-left:15rpx;padding-right:15rpx;display:flex;">
+        <view style=' flex:1;'></view>
+        <view style=' flex:6;display:flex; flex-flow: column;'>
+
+          <text class="mp-text-one-font-size {{skin}}-color" style=' margin-right:12rpx;'>{{ item.DateOrder==0?"首选日期：":"备选日期："  }} {{item.phase}}  </text>
+          <text class="mp-text-two-font-size" style='color:#666; margin-right:12rpx;'>{{item.title}} </text>
+        </view>
+        <view style='  flex:1;' class='center'>
+
+        </view>
+
+      </view>
+
+
+    </view>
+    <view style="height:2vh;"></view>
+
+    <view class="center mp-text-one-font-size bold" style="margin-bottom:1vh;"> 您选择的套餐 </view>
+
+    <view wx:for="{{productList}}" wx:key="id" class="mp-text-one-font-size" style="display:flex;margin-bottom:1vh;">
+
+      <view style=' flex:1;'></view>
+      <view style=' flex:6;display:flex;color:#666;' class="mp-text-two-font-size">
+
+        <text space="nbsp"> {{item.title}}  ×   {{item.num}}   ￥{{item.price*item.num}} </text>
+      </view>
+      <view style='  flex:1;' class='center'>
+
+      </view>
+
+
+
+    </view>
+    <view style="height:2vh;"></view>
+
+    <view class="center mp-text-one-font-size bold" style="margin-bottom:1vh;"> 您的联系方式 </view>
+
+    <view class="mp-text-two-font-size" style="display:flex;padding-left:15rpx;padding-right:15rpx;color:#666;margin-bottom:10rpx;">
+      <view style="flex:1;" class="center"></view>
+      <view style="flex:6;">{{contactsInfo.name}}，{{contactsInfo.phone}}</view>
+      <!-- <view style="flex:3;">{{contactsInfo.phone}}</view> -->
+      <view style="flex:1;" class="center"></view>
+    </view>
+
+    <view class="mp-text-two-font-size"  wx:if="{{contactsInfo.remarks}}" style="display:flex;padding-left:15rpx;padding-right:15rpx;color:#666;">
+      <view style="flex:1;" class="center"></view>
+      <view style="flex:6;" >
+       
+      备注: {{contactsInfo.remarks}}
+     
+      </view>
+
+      <view style="flex:1;" class="center"></view>
+
+    </view>
+
+
+    <view style="height:3vh;"></view>
+  </scroll-view>
+
+
+
+
+<!-- wx:if="{{showSuccessButton==true}}" -->
+
+
+  <view   class="bottom-suspension" style='height:10vh;'>
+
+  
+    <view style='width:100%;height:100%;display:flex;' class='center'>
+
+   <view style="flex:1;"  class="center" > <view bindtap="contactSeaNavigationCustomerService" style="width:90%;" class=" mp-text-one-font-size  bigButtonStyle {{skin}}-background center"> 联系客服</view>  </view>
+   <view style="flex:1;" wx:if="{{showSuccessButton==true}}" class="center" >   <view bindtap="toMyortoOrerComplete" style="width:90%;" class=" mp-text-one-font-size  bigButtonStyle {{skin}}-background center"> 完成</view> </view>
+      
+    </view>
+  </view>
+
+</view>

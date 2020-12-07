@@ -1,0 +1,51 @@
+
+.userinfo {
+  position: relative;
+  width: 100vw;
+  height: 320rpx;
+  background: #008842;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+
+.qbdd{
+  background: #fff;
+  width: 92%;
+  font-size: 12px;
+  color: #666;
+  padding: 4%;
+
+}
+
+.image{
+  background: #0f0;
+  display: inline-block;
+}
+.swiper-tab{
+  width: 100%;
+  border-bottom: 2rpx solid #ccc;
+  text-align: center;
+  height: 8%;
+  
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+.swiper-tab-item{
+ 
+  width: 50%; 
+  color:#434343;
+}
+.active{
+  color:#E59665;
+  border-bottom: 4rpx solid #E59665;
+}

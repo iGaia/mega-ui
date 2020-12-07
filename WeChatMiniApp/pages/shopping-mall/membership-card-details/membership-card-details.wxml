@@ -1,0 +1,76 @@
+<view style="height:100vh;">
+
+  <card wx:if="{{state=='base'}}"  backgroundColorClass="{{cardBackgroundColor}}"  cardName="{{cardName}}"   brandUpperCase="{{brandUpperCase}}"  isShowButton="{{false}}"   > </card>
+<view  wx:if="{{state=='query'}}">
+  <block     wx:for="{{cardList}}"   wx:key="id" wx:for-item="cardItem"  >
+
+          <card  wx:if="{{brand==cardItem.cardBrand && relationBrand==cardItem.relationBrand}}"      buttonName="查看权益" cardName="{{cardItem.cardName}}" cardSubName="{{cardItem.cardSubName}}"    backgroundColorClass="{{cardItem.backgroundColorClass}}"  cardNumber="{{cardItem.cardNumber}}"   isShowButton="{{false}}"   brandUpperCase="{{cardItem.brandUpperCase}}"   cardEndTime="{{cardItem.cardEndTime}} "   > </card>
+
+
+        </block>
+</view>
+<!-- isShowButton="{{false}}" -->
+
+
+  <view wx:if="{{brand=='MLFS.QAD'||brand=='MLFS.YBK'}}" class='mp-text-two-font-size' style=' height:calc(71% - 60rpx);  padding-left:8%;padding-right:5%;padding-top:5%;'>
+
+  
+
+    <view style='margin-bottom:10%;'>
+      <view style='float:left; height:20px;;width:12rpx;background:#E69664;margin-right:3%;'>
+      </view>
+      <text style='height：20px;'>福利内容</text>
+      <view style='margin-top:3%;' class='mp-text-two-font-size'>
+        <view>1、成为{{brand=="MLFS.QAD"?"俏安朵":"优布客"}}会员；</view>
+        <view>2、享受线上购买品牌方产品9折会员价；</view>
+        <view>3、免费获得一件自选的品牌方服装产品；</view>
+        <view>4、价值1600元扬帆起航优惠礼包一份；</view>
+      </view>
+
+    </view>
+
+    <view style='margin-bottom:10%;'>
+      <view style='float:left; height:20px;;width:12rpx;background:#E69664;margin-right:3%;'>
+      </view>
+      <text style='height：20px;'>使用说明</text>
+
+      <view style='margin-top:3%;'> 此会员卡不与门店促销活动叠加使用</view>
+
+    </view>
+
+
+
+
+  </view>
+  <view wx:else class='mp-text-two-font-size' style=' height:71%;  padding-left:8%;padding-right:5%;padding-top:5%;'>
+
+
+
+    <view style='margin-bottom:10%;'>
+      <view style='float:left; height:20px;;width:12rpx;background:#E69664;margin-right:3%;'>
+      </view>
+      <text style='height：20px;'>福利内容</text>
+      <view style='margin-top:3%;' class='mp-text-two-font-size'>
+        <view>1、定期参加国际会员活动（水手派对、水手脏辫纹身体验、冲浪、潜水、联谊晚宴）；</view>
+        <view>2、内部航海教学材料；</view>
+        <view>3、活动专属纪念品；</view>
+        <view>4、定制水手T恤；</view>
+        <view>5、会员生日礼包-生日当月参加活动赠送萨博船长酒杯或定制咖啡杯；本人第二次报名赠送100元现金优惠券，每增加一期叠加100元现金优惠券;</view>
+        <view>6、船长执照培训9折优惠；</view>
+      </view>
+
+    </view>
+
+  </view>
+
+  <view class="bottom-suspension" style='height:10%;background:#fff;'>
+
+    <view style='width:100%;height:100%;' class='center'>
+
+      <view bindtap='back' class='center {{skin}}-background bigButtonStyle'> 返回 </view>
+
+    </view>
+
+  </view>
+
+</view>

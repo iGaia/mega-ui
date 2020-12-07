@@ -1,0 +1,40 @@
+<!--地址管理-->
+<view style='background:#fff;'>
+  <radio-group>
+    <view class="radio-group" wx:for="{{address}}" wx:key="id">
+      <view  class="address" style='border-radius: 15rpx;'>
+        <view class="address-icon" bindtap="setDefault" data-id="{{item.id}}">
+          <radio color='#E59665' checked="{{item.is_default}}" value="{{item.phone}}" />
+        </view>
+
+        <view class="address-detail">
+          <view class="address-name-phone">
+            <text class="address-name   mp-text-one-font-size  "> {{item.consigneeName}}</text>
+            <text class="address-phone   mp-text-one-font-size ">{{item.phone}}</text>
+          </view>
+          <view class="address-info    mp-text-one-font-size ">{{item.region}}</view>
+          <view class="address-info    mp-text-one-font-size  ">{{item.address}}</view>
+
+          <view class="address-edit">
+            <view>
+
+              <text hidden="{{item.is_default==0?false:true}}"></text>
+            </view>
+            <view>
+              <text hidden="{{item.is_default==0?false:true}}" bindtap="setDefault" data-id="{{item.id}}" class='{{skin}}-color mp-text-one-font-size'>设置默认</text>
+              <text hidden="{{item.is_default==0?false:true}}" style='color:#fff;'> | </text>
+              <text data-id="{{item.id}}" data-id="{{item.id}}" bindtap="editAddress" class='{{skin}}-color mp-text-one-font-size'>编辑</text>
+              <text style='width:12rpx;' style='color:#fff;'> | </text>
+              <text data-id="{{item.id}}" bindtap="delAddress" class='{{skin}}-color mp-text-one-font-size'>删除</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </radio-group>
+  <navigator url="../address?type=found" style='border-radius: 15rpx;'>
+    <view  class="add-address mp-text-one-font-size">
+      <view>新增地址</view>
+    </view>
+  </navigator>
+</view>

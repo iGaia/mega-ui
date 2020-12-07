@@ -1,0 +1,16 @@
+/* components/home-components/group/group.wxss */
+
+@import "/config/skin.wxss";
+.center {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.grey-background {
+  background-color: #f1f1f1;
+}
+
+.white-color {
+  color: #fff;
+}

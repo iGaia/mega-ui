@@ -1,0 +1,41 @@
+<!--pages/login/login.wxml-->
+<view style="height:100vh;">
+
+
+
+  <view style="margin-top:8vh;flex-flow: column;" class="center">
+
+    <image style="height:150rpx;width:150rpx;" src="/image/logo3.jpg"> </image>
+
+    <view class="mp-text-one-font-size" style="margin-top:2vh;">智享精灵</view>
+
+    <view style="margin-top:2vh;border-bottom: 1px lightgrey solid;width:80vw;"> </view>
+  </view>
+
+
+
+ <view style="margin-top:5vh;flex-flow: column;" class="center">
+ 
+  <view   class="mp-title-one-font-size">登陆后应用将获得以下权限</view>
+
+<view   class="mp-text-one-font-size"   style="color:#666;margin-top:2vh;"    >获得你的公开信息（昵称、头像等）</view>
+
+ </view>
+
+
+
+
+  <view class="" style='margin-top:10vh;   height:10%;background:#fff;'>
+
+    <view style='width:100%;height:100%;' class='center'>
+
+      <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='center {{skin}}-background bigButtonStyle' style="background:#00C250;"> 登录 </button>
+
+    </view>
+
+
+  </view>
+
+
+
+</view>

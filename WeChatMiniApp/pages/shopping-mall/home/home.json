@@ -1,0 +1,25 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "dialog": "/components/dialog/dialog",
+    "txv-video": "plugin://tencentvideo/video",
+    "banner": "/components/home-components/banner/banner",
+    "navigation": "/components/home-components/navigation/navigation",
+    "title": "/components/home-components/title/title",
+    "image-list": "/components/home-components/image-list/image-list",
+    "product-list": "/components/home-components/product-list/product-list",
+    "line": "/components/home-components/line/line",
+    "announcement": "/components/home-components/announcement/announcement",
+    "search": "/components/home-components/search/search",
+    "search-bar": "/components/home-components/search-bar/search-bar",
+    "category":"/components/home-components/category/category",
+    "suspension-ball":"/components/home-components/suspension-ball/suspension-ball",
+    "shop-selection":"/components/home-components/shop-selection/shop-selection",
+    "coupon":"/components/home-components/coupon/coupon",
+    "carousel":"/components/home-components/carousel/carousel",
+"application":"/components/home-components/application/application",
+"group":"/components/home-components/group/group",
+"count-down":"/components/home-components/count-down/count-down"
+    
+  }
+}

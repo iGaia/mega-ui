@@ -1,0 +1,106 @@
+<!--pages/choice_of_gift/gift_detail/gift_detail.wxml-->
+<view animation="{{animationData}}" style='height:100vh;' class="">
+
+
+
+  <view wx:if="{{isNeedPreview==true}}" style="height:100%;width:100%; z-index: 99999;background-color: rgba(22, 23, 24, 0.5);position: fixed;" bindtap="cancelPreview">
+    <image style='height:100%;width:100%;' mode='aspectFill' class='slide-image' src="{{previewSrc}}"></image>
+
+  </view>
+
+
+  <scroll-view  scroll-into-view="{{intoView}}"   scroll-y="{{true}}"  style='height:90vh;'>
+    <swiper id="swiperThumbnail" style='height:calc(100vw / 1.6);' indicator-dots="{{indicatorDots}}" autoplay="{{true}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{background}}" wx:for-index="index" wx:for-item="item" wx:key="*this">
+        <swiper-item style="height:100%;width:100%;">
+          <view style="height:100%;width:100%;" class="center">
+
+            <image bindtap="previewImage"  wx:for="{{item}}" wx:for-item="imageSrc"    wx:key="*this"   data-src="{{imageSrc}}" style='' mode='aspectFit'  src="{{imageSrc}}"></image>
+            
+
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <view> </view>
+
+    <view class=" mp-title-one-font-size {{skin}}-color center" decode="{{true}}" style="padding-left:15rpx;padding-right:15rpx;font-weight: bold;">{{giftName}}</view>
+
+
+    <view style='margin-bottom：5rpx;padding-right:15%;'>
+      <text class="cun mp-title-one-font-size" decode="{{true}}" style='font-weight: bold;'>数量</text>
+    </view>
+    <view style='margin-bottom：5rpx;padding-right:15%;display:flex;margin-left:12px;'>
+      <view class="cun mp-text-two-font-size" style="flex:1">{{quantityDescription}}</view>
+
+    </view>
+
+    <view class="shu">
+      <view style='margin-bottom：5rpx;'>
+        <text class="cun mp-title-one-font-size" style='font-weight: bold;'>选择颜色</text>
+        <view class="cun2">
+        </view>
+      </view>
+
+      <view style='margin-bottom：5rpx;' wx:for-item="productContentItem" wx:key="id"    wx:for-index="productContentIndex"  wx:for="{{productData.productContent}}"   >
+        <text     id="{{'productContent'+productContentItem.id}}"  class="cun titleTwoFont" style='display:{{productData.productContent.length==1?"none":"flex" }};   margin-left:12px;'>{{productContentItem.name}}</text>
+        <view class="cun2">
+          <view class="prop-choose" style='margin-left:12px;'>
+            <button bindtap='clickChoose' data-productContentIndex="{{productContentIndex}}"    class="prop-value center  {{productContentItem.selectColor==item?  skin+'-background'   :''}} " data-style='color' data-index='{{index}}' data-color="{{item}}" wx:key="item" wx:for="{{productContentItem.colorList}}" wx:for-index="index" wx:for-item="item">
+              <view style='height:33rpx;width:33rpx;background:{{productContentItem.colorRGBList[index]}}; margin-right:25rpx; '></view> {{item}}
+            </button>
+          </view>
+        </view>
+      </view>
+
+      <view style='margin-bottom：5rpx;padding-right:15%;'>
+        <text class="cun mp-title-one-font-size" decode="{{true}}" style='font-weight: bold;'>产品信息</text>
+      </view>
+
+      <view style='margin-bottom：5rpx;padding-right:15%;display:flex;margin-left:12px;'>
+        <view class="cun mp-text-two-font-size" style="flex:1">款号</view>
+        <text class="cun mp-text-two-font-size" style="flex:7" decode="{{true}}">{{productData.name}}</text>
+      </view>
+      <view style='margin-bottom：5rpx;padding-right:15%;display:flex;margin-left:12px;'>
+        <view class="cun mp-text-two-font-size" style="flex:1">描述</view>
+        <text class="cun mp-text-two-font-size" style="flex:7" decode="{{true}}">{{giftDescribe}}</text>
+      </view>
+      <view style='margin-bottom：5rpx;padding-right:15%;display:flex;margin-left:12px;'>
+        <view class="cun mp-text-two-font-size" style="flex:1">面料</view>
+        <text class="cun mp-text-two-font-size" style="flex:7" decode="{{true}}">罗纹棉</text>
+      </view>
+      <view style='margin-bottom：5rpx;padding-right:15%;display:flex;margin-left:12px;'>
+        <view class="cun mp-text-two-font-size" style="flex:1">版型</view>
+        <text class="cun mp-text-two-font-size" style="flex:7" decode="{{true}}">基础</text>
+      </view>
+      <view style='margin-bottom：5rpx;padding-right:15%;display:flex;margin-left:12px;'>
+        <view class="cun mp-text-two-font-size" style="flex:1">厚度</view>
+        <text class="cun mp-text-two-font-size" style="flex:7" decode="{{true}}">薄款</text>
+      </view>
+      <view style='margin-bottom：5rpx;padding-right:15%;display:flex;margin-left:12px;'>
+        <view class="cun mp-text-two-font-size" style="flex:1">柔软</view>
+        <text class="cun mp-text-two-font-size" style="flex:7" decode="{{true}}">超柔</text>
+      </view>
+      <view style='margin-bottom：5rpx;padding-right:15%;display:flex;margin-left:12px;'>
+        <view class="cun mp-text-two-font-size" style="flex:1">尺码</view>
+        <text class="cun mp-text-two-font-size" style="flex:7" decode="{{true}}">F（均码）</text>
+      </view>
+      <view style='margin-bottom：5rpx;padding-right:15%;display:flex;margin-left:12px;'>
+        <view class="cun mp-text-two-font-size" style="flex:1">体重</view>
+        <text class="cun mp-text-two-font-size" style="flex:7" decode="{{true}}">{{proposalWeight}}</text>
+      </view>
+    </view>
+
+  </scroll-view>
+  <view class=" center" style='height:10%;width:100%;overflow: hidden;position: fixed;bottom: 0;left: 0;'>
+    <view class='center bigButtonStyle {{skin}}-background' bindtap="cancelClick" data-type="buynow" style='flex:1; '> 返回 </view>
+    <view wx:if="{{permission=='edit'}}" class='center bigButtonStyle {{skin}}-background' bindtap="addShopCart" data-type="buynow" style='flex:1;'> 下一步 </view>
+
+  </view>
+
+
+
+
+
+</view>
